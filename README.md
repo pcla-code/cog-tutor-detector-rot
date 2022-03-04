@@ -1,0 +1,1 @@
+# cog-tutor-detector-rot
