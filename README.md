@@ -1,1 +1,2 @@
-# cog-tutor-detector-rot
+# CogTutorGamingDetectors
+Detecting students exhibiting "Gaming The System" behavior.
