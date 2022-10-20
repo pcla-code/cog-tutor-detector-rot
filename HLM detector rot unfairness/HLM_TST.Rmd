@@ -1,0 +1,103 @@
+---
+title: "HLM_TST"
+author: "Clara Belitz"
+date: "10/20/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(lme4)      # for fitting model
+library(lmerTest)  # for getting df, t and p for fixed effects
+library(texreg)    # nice formated output (laTex included)
+library(optimx)    # needed for changing algorithm
+```
+
+## Data Setup
+
+We need to load the general training data, make student ID and gender factor variables (with "none" as the default level for gender), and then make a training dataframe for each machine learning model of interest, including creating a new variable called "Correct" that notes whether the model was correct for a given prediction. These are random forest, decision tree, neural net, XGBoost, and a dummy model, as defined in the previous detector rot paper.
+
+```{r data-setup, echo=FALSE}
+# load training data
+detector_rot_data <- read.csv("data/training_with_gender.csv", header=TRUE)
+
+#make student id and gender factor variables
+detector_rot_data$StudentID<-as.factor(detector_rot_data$StudentID)
+detector_rot_data$gender = factor(detector_rot_data$gender, levels=c("none", "male", "female")) # none is baseline level
+
+# load data for each model
+random_forest_data <- read.csv("data/Random Forest_finalPredictions_with_proba.csv", header=TRUE)
+decision_tree_data <- read.csv("data/Decision Tree_finalPredictions_with_proba.csv", header=TRUE)
+neural_net_data <- read.csv("data/Neural Net_finalPredictions_with_proba.csv", header=TRUE)
+xg_boost_data <-  read.csv("data/XGBoost_finalPredictions_with_proba.csv", header=TRUE)
+dummy_data <-  read.csv("data/Dummy_finalPredictions_with_proba.csv", header=TRUE)
+
+
+
+# create training data for each model (unique dataframe for each)
+rf_prediction_df = data.frame(detector_rot_data)
+rf_prediction_df$prediction <- random_forest_data$label_predict
+
+dt_prediction_df = data.frame(detector_rot_data)
+dt_prediction_df$prediction <- decision_tree_data$label_predict
+
+nn_prediction_df = data.frame(detector_rot_data)
+nn_prediction_df$prediction <- neural_net_data$label_predict
+
+xgb_prediction_df = data.frame(detector_rot_data)
+xgb_prediction_df$prediction <- xg_boost_data$label_predict
+
+dummy_prediction_df = data.frame(detector_rot_data)
+dummy_prediction_df$prediction <- dummy_data$label_predict
+
+# create column to note whether a given observation was predicted correctly or not, for each model
+rf_prediction_df$correct<- with(rf_prediction_df, ifelse(rf_prediction_df$prediction == rf_prediction_df$Target, 1, 0))
+dt_prediction_df$correct <- with(dt_prediction_df, ifelse(dt_prediction_df$prediction == dt_prediction_df$Target, 1, 0))
+nn_prediction_df$correct <- with(nn_prediction_df, ifelse(nn_prediction_df$prediction == nn_prediction_df$Target, 1, 0))
+xgb_prediction_df$correct <- with(xgb_prediction_df, ifelse(xgb_prediction_df$prediction == xgb_prediction_df$Target, 1, 0))
+dummy_prediction_df$correct <- with(dummy_prediction_df, ifelse(dummy_prediction_df$prediction == dummy_prediction_df$Target, 1, 0))
+
+```
+
+## Basic HLM explaining whether the model was correct for each model
+###Analogous to Overall Accuracy Equality.
+
+```{r correct, echo=FALSE}
+rf_modela <- lmer(correct ~ gender + (1 | StudentID), data=rf_prediction_df)
+summary(rf_modela)
+
+
+dt_modela <- lmer(correct ~ gender + (1 | StudentID), data=dt_prediction_df)
+summary(dt_modela)
+
+nn_modela <- lmer(correct ~ gender + (1 | StudentID), data=nn_prediction_df)
+summary(nn_modela)
+
+xgb_modela <- lmer(correct ~ gender + (1 | StudentID), data=xgb_prediction_df)
+summary(xgb_modela)
+
+dummy_modela <- lmer(correct ~ gender + (1 | StudentID), data=dummy_prediction_df)
+summary(dummy_modela)
+```
+
+### Analogous to Statistical Parity
+We can see in the basic model that there are no strong effects of gender on the prediction accuracy. Only 1 in 5 models has a significant value, which can possibly be explained by chance. We can try the models again looking at the prediction of positives only and negatives only, rather than whether the model was correct in general. This is analogous to statistical parity. Because the positive and negative models would be equivalent but reversedm we can run the model just once.
+
+```{r prediction, echo=FALSE}
+rf_prediction_a <- lmer(prediction ~ gender + (1 | StudentID), data=rf_prediction_df)
+summary(rf_prediction_a)
+
+dt_prediction_a <- lmer(prediction ~ gender + (1 | StudentID), data=dt_prediction_df)
+summary(dt_prediction_a)
+
+nn_prediction_a<- lmer(prediction ~ gender + (1 | StudentID), data=nn_prediction_df)
+summary(nn_prediction_a)
+
+xgb_prediction_a <- lmer(prediction ~ gender + (1 | StudentID), data=xgb_prediction_df)
+summary(xgb_prediction_a)
+
+dummy_prediction_a <- lmer(prediction ~ gender + (1 | StudentID), data=dummy_prediction_df)
+summary(dummy_prediction_a)
+
+```
+This also shows no significant effect. So gender is unlikely to affect the prediction with our current data, and statistical parity is met.
