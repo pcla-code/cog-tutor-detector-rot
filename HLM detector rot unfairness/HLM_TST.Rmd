@@ -63,20 +63,25 @@ dummy_prediction_df$correct <- with(dummy_prediction_df, ifelse(dummy_prediction
 ###Analogous to Overall Accuracy Equality.
 
 ```{r correct, echo=FALSE}
-rf_modela <- lmer(correct ~ gender + (1 | StudentID), data=rf_prediction_df)
+rf_modela <- glmer(correct ~ gender + (1 | StudentID), data=rf_prediction_df,
+                   family=binomial)
 summary(rf_modela)
 
 
-dt_modela <- lmer(correct ~ gender + (1 | StudentID), data=dt_prediction_df)
+dt_modela <- glmer(correct ~ gender + (1 | StudentID), data=dt_prediction_df,
+                   family=binomial)
 summary(dt_modela)
 
-nn_modela <- lmer(correct ~ gender + (1 | StudentID), data=nn_prediction_df)
+nn_modela <- glmer(correct ~ gender + (1 | StudentID), data=nn_prediction_df,
+                   family=binomial)
 summary(nn_modela)
 
-xgb_modela <- lmer(correct ~ gender + (1 | StudentID), data=xgb_prediction_df)
+xgb_modela <- glmer(correct ~ gender + (1 | StudentID), data=xgb_prediction_df,
+                    family=binomial)
 summary(xgb_modela)
 
-dummy_modela <- lmer(correct ~ gender + (1 | StudentID), data=dummy_prediction_df)
+dummy_modela <- glmer(correct ~ gender + (1 | StudentID), data=dummy_prediction_df,
+                      family=binomial)
 summary(dummy_modela)
 ```
 
@@ -84,19 +89,24 @@ summary(dummy_modela)
 We can see in the basic model that there are no strong effects of gender on the prediction accuracy. Only 1 in 5 models has a significant value, which can possibly be explained by chance. We can try the models again looking at the prediction of positives only and negatives only, rather than whether the model was correct in general. This is analogous to statistical parity. Because the positive and negative models would be equivalent but reversedm we can run the model just once.
 
 ```{r prediction, echo=FALSE}
-rf_prediction_a <- lmer(prediction ~ gender + (1 | StudentID), data=rf_prediction_df)
+rf_prediction_a <- glmer(prediction ~ gender + (1 | StudentID), data=rf_prediction_df,
+                         family=binomial)
 summary(rf_prediction_a)
 
-dt_prediction_a <- lmer(prediction ~ gender + (1 | StudentID), data=dt_prediction_df)
+dt_prediction_a <- glmer(prediction ~ gender + (1 | StudentID), data=dt_prediction_df,
+                         family=binomial)
 summary(dt_prediction_a)
 
-nn_prediction_a<- lmer(prediction ~ gender + (1 | StudentID), data=nn_prediction_df)
+nn_prediction_a<- glmer(prediction ~ gender + (1 | StudentID), data=nn_prediction_df,
+                        family=binomial)
 summary(nn_prediction_a)
 
-xgb_prediction_a <- lmer(prediction ~ gender + (1 | StudentID), data=xgb_prediction_df)
+xgb_prediction_a <- glmer(prediction ~ gender + (1 | StudentID), data=xgb_prediction_df,
+                          family=binomial)
 summary(xgb_prediction_a)
 
-dummy_prediction_a <- lmer(prediction ~ gender + (1 | StudentID), data=dummy_prediction_df)
+dummy_prediction_a <- glmer(prediction ~ gender + (1 | StudentID), data=dummy_prediction_df,
+                            family=binomial)
 summary(dummy_prediction_a)
 
 ```
