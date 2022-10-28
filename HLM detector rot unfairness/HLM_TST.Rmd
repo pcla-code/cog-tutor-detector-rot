@@ -33,7 +33,6 @@ xg_boost_data <-  read.csv("data/XGBoost_finalPredictions_with_proba.csv", heade
 dummy_data <-  read.csv("data/Dummy_finalPredictions_with_proba.csv", header=TRUE)
 
 
-
 # create training data for each model (unique dataframe for each)
 rf_prediction_df = data.frame(detector_rot_data)
 rf_prediction_df$prediction <- random_forest_data$label_predict
@@ -110,4 +109,137 @@ dummy_prediction_a <- glmer(prediction ~ gender + (1 | StudentID), data=dummy_pr
 summary(dummy_prediction_a)
 
 ```
-This also shows no significant effect. So gender is unlikely to affect the prediction with our current data, and statistical parity is met.
+This also shows no significant effect. So gender is unlikely to affect the prediction with our current data, and statistical parity is met. There is, however, a general pattern emerging where female students are more likely to have incorrect predictions.
+
+### Analogous to conditional procedure accuracy (break groups into pos and neg labels)
+We can look at conditional procedure accuracy with two HLMs per machine learning model. We first break the datasets into two groups based on the ground truth labels: observations where gaming was occuring and observations were gaming was not occuring.
+
+We then look at likelihood of correct predictions for each gender group within the subset.
+```{r dataprep_cpa, echo=FALSE}
+rf_gaming_true_labels = rf_prediction_df[rf_prediction_df$Target == 1, ]
+dt_gaming_true_labels = dt_prediction_df[dt_prediction_df$Target == 1, ]
+nn_gaming_true_labels = nn_prediction_df[nn_prediction_df$Target == 1, ]
+xgb_gaming_true_labels = xgb_prediction_df[xgb_prediction_df$Target == 1, ]
+dummy_gaming_true_labels = dummy_prediction_df[dummy_prediction_df$Target == 1, ]
+
+rf_gaming_false_labels = rf_prediction_df[rf_prediction_df$Target == 0, ]
+dt_gaming_false_labels = dt_prediction_df[dt_prediction_df$Target == 0, ]
+nn_gaming_false_labels = nn_prediction_df[nn_prediction_df$Target == 0, ]
+xgb_gaming_false_labels = xgb_prediction_df[xgb_prediction_df$Target == 0, ]
+dummy_gaming_false_labels = dummy_prediction_df[dummy_prediction_df$Target == 0, ]
+
+rf_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=rf_gaming_true_labels,
+                            family=binomial)
+summary(rf_prediction_true)
+
+rf_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=rf_gaming_false_labels,
+                            family=binomial)
+summary(rf_prediction_false)
+# -------------------------------
+
+# dt_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=dt_gaming_true_labels,
+#                             family=binomial)
+# summary(dt_prediction_true)
+
+dt_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=dt_gaming_false_labels,
+                             family=binomial)
+summary(dt_prediction_false)
+
+# -------------------------------
+
+nn_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=nn_gaming_true_labels,
+                            family=binomial)
+summary(nn_prediction_true)
+
+nn_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=nn_gaming_false_labels,
+                             family=binomial)
+summary(nn_prediction_false)
+
+# -------------------------------
+
+xgb_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=xgb_gaming_true_labels,
+                            family=binomial)
+summary(xgb_prediction_true)
+
+xgb_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=xgb_gaming_false_labels,
+                             family=binomial)
+summary(xgb_prediction_false)
+# -------------------------------
+
+dummy_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=dummy_gaming_true_labels,
+                            family=binomial)
+summary(dummy_prediction_true)
+
+dummy_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=dummy_gaming_false_labels,
+                             family=binomial)
+summary(dummy_prediction_false)
+```
+The true gaming labels group is quite small, 25 observations over 13 students, so it is hard to draw conclusions. But, for the non-gaming labels, we again see the pattern of non-significance but generally worse results for genderfemale.
+
+We can also notice that some of the true models fail to converge or are even non-invertable, which I will be looking into further.
+
+### Analogous to conditional use accuracy (break groups into pos and neg predictions)
+We can also look at conditional use accuracy with two HLMs per machine learning model. We first break the datasets into two groups based on the predicted labels: observations where gaming was predicted as occurring and observations were gaming was not predicted.
+
+We then look at likelihood of correct predictions for each gender group within the subset.
+```{r models_cua, echo=FALSE}
+rf_predicted_gaming = rf_prediction_df[rf_prediction_df$prediction == 1, ]
+dt_predicted_gaming = dt_prediction_df[dt_prediction_df$prediction == 1, ]
+nn_predicted_gaming = nn_prediction_df[nn_prediction_df$prediction == 1, ]
+xgb_predicted_gaming = xgb_prediction_df[xgb_prediction_df$prediction == 1, ]
+dummy_predicted_gaming = dummy_prediction_df[dummy_prediction_df$prediction == 1, ]
+
+rf_predicted_not_gaming = rf_prediction_df[rf_prediction_df$prediction == 0, ]
+dt_predicted_not_gaming = dt_prediction_df[dt_prediction_df$prediction == 0, ]
+nn_predicted_not_gaming = nn_prediction_df[nn_prediction_df$prediction == 0, ]
+xgb_predicted_not_gaming = xgb_prediction_df[xgb_prediction_df$prediction == 0, ]
+dummy_predicted_not_gaming = dummy_prediction_df[dummy_prediction_df$prediction == 0, ]
+
+rf_conditional_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=rf_predicted_gaming,
+                            family=binomial)
+summary(rf_conditional_prediction_true)
+
+rf_conditional_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=rf_predicted_not_gaming,
+                             family=binomial)
+summary(rf_conditional_prediction_false)
+# -------------------------------
+
+dt_conditional_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=dt_predicted_gaming,
+                            family=binomial)
+summary(dt_conditional_prediction_true)
+
+dt_conditional_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=dt_predicted_not_gaming,
+                             family=binomial)
+summary(dt_conditional_prediction_false)
+
+# -------------------------------
+
+nn_conditional_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=nn_predicted_gaming,
+                            family=binomial)
+summary(nn_conditional_prediction_true)
+
+nn_conditional_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=nn_predicted_not_gaming,
+                             family=binomial)
+summary(nn_conditional_prediction_false)
+
+# -------------------------------
+
+# xgb_conditional_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=xgb_predicted_gaming,
+#                              family=binomial)
+# summary(xgb_conditional_prediction_true)
+
+xgb_conditional_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=xgb_predicted_not_gaming,
+                              family=binomial)
+summary(xgb_conditional_prediction_false)
+# -------------------------------
+
+dummy_conditional_prediction_true <- glmer(correct ~ gender + (1 | StudentID), data=dummy_predicted_gaming,
+                               family=binomial)
+summary(dummy_conditional_prediction_true)
+
+dummy_conditional_prediction_false <- glmer(correct ~ gender + (1 | StudentID), data=dummy_predicted_not_gaming,
+                                family=binomial)
+summary(dummy_conditional_prediction_false)
+
+```
+
