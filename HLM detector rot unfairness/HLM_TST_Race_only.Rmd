@@ -1,0 +1,155 @@
+---
+title: "HLM_TST_Race_only"
+author: "Clara Belitz"
+date: "11/23/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(lme4)      # for fitting model
+library(lmerTest)  # for getting df, t and p for fixed effects
+library(texreg)    # nice formated output (laTex included)
+library(optimx)    # needed for changing algorithm
+```
+
+## Data Setup
+
+We need to load the general training data, make student ID and race factor variables (with "none" as the default level for race), and then create a new variable called "Correct" that notes whether the model was correct for a given prediction. The models are random forest, decision tree, neural net, XGBoost, and a dummy model, as defined in the previous detector rot paper.
+
+```{r data-setup}
+# load training data
+detector_rot_bias_data <- read.csv("data/category_ethnicity_race.csv", header=TRUE)
+head(detector_rot_bias_data)
+
+
+#make student id and categories of interest factor variables
+detector_rot_bias_data$StudentID<-as.factor(detector_rot_bias_data$student_id)
+detector_rot_bias_data$race = factor(detector_rot_bias_data$race, levels=c("None", "black", "multiracial")) # none is baseline level
+
+# create column to note whether a given observation was predicted correctly or not, for each model
+detector_rot_bias_data$rf_correct<- with(detector_rot_bias_data, ifelse(rf_pred == target, 1, 0))
+detector_rot_bias_data$dt_correct <- with(detector_rot_bias_data, ifelse(dt_pred == target, 1, 0))
+detector_rot_bias_data$nn_correct <- with(detector_rot_bias_data, ifelse(nn_pred == target, 1, 0))
+detector_rot_bias_data$xgb_correct <- with(detector_rot_bias_data, ifelse(xgb_pred == target, 1, 0))
+detector_rot_bias_data$dm_correct <- with(detector_rot_bias_data, ifelse(dm_pred == target, 1, 0))
+
+```
+Right now, racial categories are very skewed, with the majority of students not mentioning racial identity at all.
+
+``` {r response-counts, echo=FALSE}
+table(detector_rot_bias_data$race)
+```
+
+## Basic HLM explaining whether the model was correct for each model
+###Analogous to Overall Accuracy Equality.
+
+```{r correct, echo=FALSE}
+rf_model_race_aoe <- glmer(rf_correct ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                   family=binomial)
+summary(rf_model_race_aoe)
+
+
+dt_model_race_aoe <- glmer(dt_correct ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                   family=binomial)
+summary(dt_model_race_aoe)
+
+nn_model_race_aoe <- glmer(nn_correct ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                   family=binomial)
+summary(nn_model_race_aoe)
+
+xgb_model_race_aoe <- glmer(xgb_correct ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                    family=binomial)
+summary(xgb_model_race_aoe)
+
+dummy_model_race_aoe <- glmer(dm_correct ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                      family=binomial)
+summary(dummy_model_race_aoe)
+```
+
+These models don't tell us much right now and struggle to converge. We can look at statistical parity to see if there is much difference there.
+
+### Analogous to Statistical Parity
+We can try the models again looking at the prediction of positives only and negatives only, rather than whether the model was correct in general. This is analogous to statistical parity. Because the positive and negative models would be equivalent but reversed we can run the model just once.
+
+```{r stat-parity, echo=FALSE}
+rf_model_race_sp <- glmer(rf_pred ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                   family=binomial)
+summary(rf_model_race_sp)
+
+
+dt_model_race_sp <- glmer(dt_pred ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                   family=binomial)
+summary(dt_model_race_sp)
+
+nn_model_race_sp <- glmer(nn_pred ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                   family=binomial)
+summary(nn_model_race_sp)
+
+xgb_model_race_sp <- glmer(xgb_pred ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                    family=binomial)
+summary(xgb_model_race_sp)
+
+dummy_model_race_sp <- glmer(dm_pred ~ race + (1 | StudentID), data=detector_rot_bias_data,
+                      family=binomial)
+summary(dummy_model_race_sp)
+```
+
+With this data, race has essentially no effect on these models. This is not necessarily surprising, given that about 50% of all respondants are Black, meaning the actual racial difference between "Black" and "None" may not be very strong.
+
+### Analogous to conditional procedure accuracy (break groups into pos and neg labels)
+We can look at conditional procedure accuracy with two HLMs per machine learning model. We first break the datasets into two groups based on the ground truth labels: observations where gaming was occuring and observations were gaming was not occuring.
+
+We then look at likelihood of correct predictions for each racce group within the subset.
+```{r dataprep_cpa, echo=FALSE}
+gaming_true_labels = detector_rot_bias_data[detector_rot_bias_data$target == 1, ]
+
+gaming_false_labels = detector_rot_bias_data[detector_rot_bias_data$target == 0, ]
+
+
+
+rf_true_model_race_cpa <- glmer(rf_correct ~ race + (1 | StudentID), data=gaming_true_labels,
+                            family=binomial)
+summary(rf_true_model_race_cpa)
+
+rf_false_model_race_cpa <- glmer(rf_correct ~ race + (1 | StudentID), data=gaming_false_labels,
+                            family=binomial)
+summary(rf_false_model_race_cpa)
+# -------------------------------
+
+dt_true_model_race_cpa <- glmer(dt_correct ~ race + (1 | StudentID), data=gaming_true_labels,
+                            family=binomial)
+summary(dt_true_model_race_cpa)
+
+# dt_false_model_race_cpa <- glmer(dt_correct ~ race + (1 | StudentID), data=gaming_false_labels,
+#                             family=binomial)
+# summary(dt_false_model_race_cpa)
+
+# -------------------------------
+
+# nn_true_model_race_cpa <- glmer(nn_correct ~ race + (1 | StudentID), data=gaming_true_labels,
+#                             family=binomial)
+# summary(nn_true_model_race_cpa)
+
+# nn_false_model_race_cpa <- glmer(nn_correct ~ race + (1 | StudentID), data=gaming_false_labels,
+#                             family=binomial)
+# summary(nn_false_model_race_cpa)
+
+# -------------------------------
+
+# xgb_true_model_race_cpa <- glmer(xgb_correct ~ race + (1 | StudentID), data=gaming_true_labels,
+#                             family=binomial)
+# summary(xgb_true_model_race_cpa)
+
+xgb_false_model_race_cpa <- glmer(xgb_correct ~ race + (1 | StudentID), data=gaming_false_labels,
+                             family=binomial)
+summary(xgb_false_model_race_cpa)
+# -------------------------------
+
+# dm_true_model_race_cpa <- glmer(dm_correct ~ race + (1 | StudentID), data=gaming_true_labels,
+#                             family=binomial)
+# summary(dm_true_model_race_cpa)
+
+dm_false_model_race_cpa <- glmer(dm_correct ~ race + (1 | StudentID), data=gaming_false_labels,
+                             family=binomial)
+summary(dm_false_model_race_cpa)
+```
