@@ -1,2 +1,5 @@
 #ignore large data files
 /Data_Logs/*
+
+# Ignore editor settings
+.vscode
