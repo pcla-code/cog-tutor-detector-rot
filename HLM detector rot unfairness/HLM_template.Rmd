@@ -13,7 +13,8 @@ library(texreg)    # nice formated output (laTex included)
 library(optimx)    # needed for changing algorithm
 ```
 
-```{r variables, include=FALSE}
+## Variables chosen for this output
+```{r variables}
 # Set variables for usage in the file. Here 'model_col' refers to the column name for that model
 file_name = "data/all_categories_rescaled.csv" # not currently working, need to set manually in next chunk
 
@@ -106,40 +107,40 @@ gaming_false_labels = detector_rot_bias_data[detector_rot_bias_data$target == 0,
 
 
 
-rf_true_model_cpa <- glmer(rf_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=gaming_true_labels,
+rf_true_model_cpa <- glmer(rf_correct ~ gaming_true_labels[, category] + (1 | StudentID), data=gaming_true_labels,
                             family=binomial)
 summary(rf_true_model_cpa)
 
-rf_false_model_cpa <- glmer(rf_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=gaming_false_labels,
+rf_false_model_cpa <- glmer(rf_correct ~ gaming_false_labels[, category] + (1 | StudentID), data=gaming_false_labels,
                             family=binomial)
 summary(rf_false_model_cpa)
 # -------------------------------
 
-dt_true_model_cpa <- glmer(dt_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=gaming_true_labels,
+dt_true_model_cpa <- glmer(dt_correct ~ gaming_true_labels[, category] + (1 | StudentID), data=gaming_true_labels,
                             family=binomial)
 summary(dt_true_model_cpa)
 
-dt_false_model_cpa <- glmer(dt_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=gaming_false_labels,
+dt_false_model_cpa <- glmer(dt_correct ~ gaming_false_labels[, category] + (1 | StudentID), data=gaming_false_labels,
                             family=binomial)
 summary(dt_false_model_cpa)
 
 # -------------------------------
 
-nn_true_model_cpa <- glmer(nn_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=gaming_true_labels,
+nn_true_model_cpa <- glmer(nn_correct ~ gaming_true_labels[, category] + (1 | StudentID), data=gaming_true_labels,
                             family=binomial)
 summary(nn_true_model_cpa)
 
-nn_false_model_cpa <- glmer(nn_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=gaming_false_labels,
+nn_false_model_cpa <- glmer(nn_correct ~ gaming_false_labels[, category] + (1 | StudentID), data=gaming_false_labels,
                             family=binomial)
 summary(nn_false_model_cpa)
 
 # -------------------------------
 
-xgb_true_model_cpa <- glmer(xgb_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=gaming_true_labels,
+xgb_true_model_cpa <- glmer(xgb_correct ~ gaming_true_labels[, category] + (1 | StudentID), data=gaming_true_labels,
                             family=binomial)
 summary(xgb_true_model_cpa)
 
-xgb_false_model_cpa <- glmer(xgb_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=gaming_false_labels,
+xgb_false_model_cpa <- glmer(xgb_correct ~ gaming_false_labels[, category] + (1 | StudentID), data=gaming_false_labels,
                              family=binomial)
 summary(xgb_false_model_cpa)
 ```
@@ -160,38 +161,38 @@ dt_predicted_not_gaming = detector_rot_bias_data[detector_rot_bias_data[, dt_col
 nn_predicted_not_gaming = detector_rot_bias_data[detector_rot_bias_data[, nn_col] == 0, ]
 xgb_predicted_not_gaming = detector_rot_bias_data[detector_rot_bias_data[, xgb_col] == 0, ]
 
-rf_true_model_cua <- glmer(rf_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=rf_predicted_gaming,
+rf_true_model_cua <- glmer(rf_correct ~ rf_predicted_gaming[, category] + (1 | StudentID), data=rf_predicted_gaming,
                             family=binomial)
 summary(rf_true_model_cua)
 
-rf_false_model_cua <- glmer(rf_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=rf_predicted_not_gaming,
+rf_false_model_cua <- glmer(rf_correct ~ rf_predicted_not_gaming[, category] + (1 | StudentID), data=rf_predicted_not_gaming,
                              family=binomial)
 summary(rf_false_model_cua)
 # -------------------------------
 
-dt_true_model_cua <- glmer(dt_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=dt_predicted_gaming,
+dt_true_model_cua <- glmer(dt_correct ~ dt_predicted_gaming[, category] + (1 | StudentID), data=dt_predicted_gaming,
                             family=binomial)
 summary(dt_true_model_cua)
 
-dt_false_model_cua <- glmer(dt_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=dt_predicted_not_gaming,
+dt_false_model_cua <- glmer(dt_correct ~ dt_predicted_not_gaming[, category] + (1 | StudentID), data=dt_predicted_not_gaming,
                              family=binomial)
 summary(dt_false_model_cua)
 
 # -------------------------------
-nn_true_model_cua <- glmer(nn_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=nn_predicted_gaming,
+nn_true_model_cua <- glmer(nn_correct ~ nn_predicted_gaming[, category] + (1 | StudentID), data=nn_predicted_gaming,
                             family=binomial)
 summary(nn_true_model_cua)
 
-nn_false_model_cua <- glmer(nn_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=nn_predicted_not_gaming,
+nn_false_model_cua <- glmer(nn_correct ~ nn_predicted_not_gaming[, category] + (1 | StudentID), data=nn_predicted_not_gaming,
                              family=binomial)
 summary(nn_false_model_cua)
 
 # -------------------------------
-xgb_true_model_cua <- glmer(xgb_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=xgb_predicted_gaming,
+xgb_true_model_cua <- glmer(xgb_correct ~ xgb_predicted_gaming[, category] + (1 | StudentID), data=xgb_predicted_gaming,
                              family=binomial)
 summary(xgb_true_model_cua)
 
-xgb_false_model_cua <- glmer(xgb_correct ~ detector_rot_bias_data[, category] + (1 | StudentID), data=xgb_predicted_not_gaming,
+xgb_false_model_cua <- glmer(xgb_correct ~ xgb_predicted_not_gaming[, category] + (1 | StudentID), data=xgb_predicted_not_gaming,
                               family=binomial)
 summary(xgb_false_model_cua)
 
