@@ -204,6 +204,7 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Extract features from DataShop formatted MATHia logs')
     ap.add_argument('mathia_csv', help='Path to MATHia log file to use as input')
     ap.add_argument('output_dir', help='Output directory path')
+    ap.add_argument('--labels', help='Path to labels file for supervised extraction')
     args = ap.parse_args()
 
     print('Loading')
