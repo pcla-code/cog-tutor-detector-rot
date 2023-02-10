@@ -192,7 +192,8 @@ def process_one_student(df: pd.DataFrame, progress_prop: float, out_dir: str,
         'section_id', 'skill', 'help_or_error', 'semantic_event_id',
         'error_count'
     ]), clip_ids)
-    processed[ORDER].rename_axis('orig_index').to_csv(fname)
+    processed['user_id'] = features.user_id.iloc[0]
+    processed[['user_id'] + ORDER].rename_axis('orig_index').to_csv(fname)
     return fname
 
 
