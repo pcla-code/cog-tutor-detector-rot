@@ -251,6 +251,6 @@ if __name__ == '__main__':
         with open(args.concat, 'w', encoding='utf8') as outfile:
             for i, fname in enumerate(output_fnames):
                 df = pd.read_csv(fname)
-                df.to_csv(outfile, header=i == 0)
+                df.to_csv(outfile, header=i == 0, index=False)
                 if i % 10 == 9 or i == len(output_fnames) - 1:
                     print('Concatenating:', i + 1, '/', len(output_fnames))
