@@ -199,7 +199,7 @@ def process_one_student(df: pd.DataFrame, progress_prop: float, out_dir: str,
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Extract features from DataShop formatted MATHia logs')
-    ap.add_argument('mathia_csv', help='Path to MATHia log file to use as input')
+    ap.add_argument('mathia_csv', help='Path to MATHia log file (CSV or TSV) to use as input')
     ap.add_argument('output_dir', help='Output directory path')
     ap.add_argument('--labels', help='Path to labels TXT file for supervised extraction')
     ap.add_argument('--concat', help='Path to final concatenated output CSV file')
@@ -219,7 +219,8 @@ if __name__ == '__main__':
     prev_df = None
     processed_pids = set()
     output_fnames = []
-    with pd.read_csv(args.mathia_csv, chunksize=100000) as df_reader:
+    sep = '\t' if args.mathia_csv.endswith('.tsv') else None
+    with pd.read_csv(args.mathia_csv, chunksize=100000, sep=sep) as df_reader:
         for chunk_i, chunk in enumerate(df_reader):
             chunk = chunk[[
                 'Anon Student Id', 'Time', 'Level (Workspace Id)', 'Problem Name', 'Step Name',
