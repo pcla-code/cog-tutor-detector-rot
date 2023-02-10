@@ -7,8 +7,8 @@ import numpy as np
 from scipy.stats import zscore
 
 
-def approx_line_count(file_path: str, samples: int=1000, sample_size: int=4096,
-                      line_ending: bytes=b'\n') -> int:
+def approx_line_count(file_path: str, samples: int = 1000, sample_size: int = 4096,
+                      line_ending: bytes = b'\n') -> int:
     """Quickly approximate the number of lines in a huge file via random sampling.
 
     Args:
@@ -36,9 +36,6 @@ def comp_prev(np_array: np.ndarray) -> np.ndarray:
 
 
 def get_features(one_student_df: pd.DataFrame) -> pd.DataFrame:
-    assert not one_student_df.isna().values.any(), 'The input DataFrame contains NaNs'
-    assert one_student_df.index[0] == 0 and one_student_df.index[-1] == len(one_student_df) - 1, \
-        'Input DataFrame has a non-consecutive or non-zero-based index'
     feature_df = one_student_df.copy()
     feature_df['duration'] = feature_df.server_time.diff() / 1000
     feature_df['duration_sd'] = feature_df[['duration']].apply(zscore, nan_policy='omit')
@@ -61,9 +58,11 @@ def get_features(one_student_df: pd.DataFrame) -> pd.DataFrame:
 
     # This will be very slow; vectorization might help depending on how many goalnode IDs there are
     # Or maybe groupby and apply to each group in a view? Is that allowed?
-    feature_df['wrong_attempts'] = [wrong_attempts[gn_id] for gn_id in feature_df.goalnode_id]
-    feature_df['error_perc'] = [error_perc[gn_id] for gn_id in feature_df.goalnode_id]
-    feature_df['numsteps'] = [max_attempts[(p_id, g_id)]
+    feature_df['wrong_attempts'] = [wrong_attempts[g_id] if type(g_id) == str else -1
+                                    for g_id in feature_df.goalnode_id]
+    feature_df['error_perc'] = [error_perc[g_id] if type(g_id) == str else -1
+                                for g_id in feature_df.goalnode_id]
+    feature_df['numsteps'] = [max_attempts[(p_id, g_id)] if type(g_id) == str else -1
                               for p_id, g_id in zip(feature_df.problem_id, feature_df.goalnode_id)]
 
     feature_df['help_or_error'] = ((feature_df.tutor_outcome != 'OK_AMBIGUOUS') &
@@ -91,35 +90,22 @@ def get_features(one_student_df: pd.DataFrame) -> pd.DataFrame:
     return feature_df
 
 
-def get_clip_ids(feat_df: pd.DataFrame) -> dict:
-    feat = feat_df.copy()
-    refined_clips = {}
-    for size in [8, 7, 6, 5, 4, 3, 2]:
-        durations = feat.loc[~feat.index.duplicated(keep='first')].duration.rolling(size).sum()
-        clips = feat.loc[durations <= 20].index
-        if len(clips) == 0:
-            continue
-        refined_clips[size] = [clips[0]]
-        for i in clips:
-            if i - refined_clips[size][-1] >= size:
-                refined_clips[size].append(i)
-        dropIDs = []
-        uniqueIDs = feat.loc[~feat.index.duplicated(keep='first')].index.to_list()
-        for clip_id in refined_clips[size]:
-            pos = bisect(uniqueIDs, clip_id)
-            dropIDs.extend(uniqueIDs[pos-size:pos])
-        feat = feat.drop(index=dropIDs)
-    return refined_clips
+def get_clip_ids(feat_df: pd.DataFrame) -> dict[int, list[int]]:
+    clips = {}
+    for i in range(0, len(feat_df), 8):
+        times = feat_df.server_time.iloc[i:i + 8]
+        times = times[times < times.iloc[0] + 20000]
+        if len(times) not in clips:
+            clips[len(times)] = []
+        clips[len(times)].append(times.index[0])
+    return clips
 
 
 def process_clips(feat_df: pd.DataFrame, clip_ids: dict) -> pd.DataFrame:
-    funique = feat_df[~feat_df.index.duplicated()]  # These are all unique already?
-    findex = funique.index
     cliplist = []
     for size in sorted(clip_ids.keys()):
         for ix in clip_ids[size]:
-            start = findex[ix - size + 1]  # Valid because we asserted consecutive 0-based index
-            cur = feat_df.loc[start:ix].describe().unstack().to_frame().T
+            cur = feat_df.loc[ix:ix + size - 1].describe().unstack().to_frame().T
             # describe() is by far the slowest part of the whole process (>95% of the runtime)
             # Hard to improve on it though...
             cur.index = [ix]
@@ -176,18 +162,27 @@ ORDER = ['assess_BUG_25%', 'assess_BUG_50%', 'assess_BUG_75%', 'assess_BUG_count
          'wrong_attempts_min', 'wrong_attempts_std', 'wrong_attempts_sum']
 
 
-def process_one_student(df: pd.DataFrame, progress_prop: float, out_dir: str) -> None:
+def process_one_student(df: pd.DataFrame, progress_prop: float, out_dir: str,
+                        labels_df: pd.DataFrame = None) -> str:
     fname = os.path.join(out_dir, df.iloc[0].user_id + '.csv')
     if os.path.exists(fname):
         print('%.2f%%' % (progress_prop * 100), 'Already done; skipping', df.iloc[0].user_id)
-        return
+        return fname
     print('%.2f%%' % (progress_prop * 100), 'Processing', df.iloc[0].user_id)
-    df_to_input = df.dropna().drop_duplicates().sort_values('server_time').reset_index(drop=True)
-    if len(df_to_input) == 0:
-        print('No rows to process due to NaNs!')
-        return
-    features = get_features(df_to_input)
-    clip_ids = get_clip_ids(features)
+    assert (df.server_time < df.server_time.shift(fill_value=0)).sum() == 0, 'Non-temporal order'
+    features = get_features(df)
+    if labels_df is not None:
+        clip_ids = {}  # Dict of clip length in rows => list of start indices
+        for idx in features.index[features.index.isin(labels_df.row_num)]:
+            start_time = features.at[idx, 'server_time']
+            # Get clip of 20 seconds or 8 actions, whichever comes first, to determine length
+            clip = features[(features.server_time >= start_time) &
+                            (features.server_time < start_time + 20000)].iloc[:8]
+            if len(clip) not in clip_ids:
+                clip_ids[len(clip)] = []
+            clip_ids[len(clip)].append(idx)
+    else:
+        clip_ids = get_clip_ids(features)
     if not clip_ids:
         print('No clip IDs calculated!')
         return
@@ -197,23 +192,32 @@ def process_one_student(df: pd.DataFrame, progress_prop: float, out_dir: str) ->
         'section_id', 'skill', 'help_or_error', 'semantic_event_id',
         'error_count'
     ]), clip_ids)
-    processed[ORDER].dropna().rename_axis('orig_index').to_csv(fname)
+    processed[ORDER].rename_axis('orig_index').to_csv(fname)
+    return fname
 
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Extract features from DataShop formatted MATHia logs')
     ap.add_argument('mathia_csv', help='Path to MATHia log file to use as input')
     ap.add_argument('output_dir', help='Output directory path')
-    ap.add_argument('--labels', help='Path to labels file for supervised extraction')
+    ap.add_argument('--labels', help='Path to labels TXT file for supervised extraction')
+    ap.add_argument('--concat', help='Path to final concatenated output CSV file')
     args = ap.parse_args()
 
     print('Loading')
     line_count = approx_line_count(args.mathia_csv, 10000)
     print('Approximately', line_count, 'lines in input file')
 
+    labels_df = None
+    if args.labels:
+        labels_df = pd.read_csv(args.labels, sep=' ', header=None)
+        assert len(labels_df.columns) == 3, 'Expected 3 space-separated columns in labels file'
+        labels_df.columns = ['initials', 'row_num', 'label']
+
     prev_pid = None
     prev_df = None
     processed_pids = set()
+    output_fnames = []
     with pd.read_csv(args.mathia_csv, chunksize=100000) as df_reader:
         for chunk_i, chunk in enumerate(df_reader):
             chunk = chunk[[
@@ -229,7 +233,9 @@ if __name__ == '__main__':
             for pid, pid_df in chunk.groupby('user_id', sort=False):  # Preserve original order
                 if pid != prev_pid:  # First chunk or new PID
                     if prev_pid:  # Previous PID done; process
-                        process_one_student(prev_df, progress_prop, args.output_dir)
+                        f = process_one_student(prev_df, progress_prop, args.output_dir, labels_df)
+                        if f:
+                            output_fnames.append(f)
                         assert prev_pid not in processed_pids, 'Ordering assumption violated'
                         processed_pids.add(prev_pid)
                     prev_pid = pid
@@ -237,4 +243,14 @@ if __name__ == '__main__':
                 else:  # Continue on from previous chunk
                     prev_df = pd.concat([prev_df, pid_df])
     if prev_pid:  # One last PID to process
-        process_one_student(prev_df, 1, args.output_dir)
+        f = process_one_student(prev_df, 1, args.output_dir, labels_df)
+        if f:
+            output_fnames.append(f)
+
+    if args.concat:
+        with open(args.concat, 'w', encoding='utf8') as outfile:
+            for i, fname in enumerate(output_fnames):
+                df = pd.read_csv(fname)
+                df.to_csv(outfile, header=i == 0)
+                if i % 10 == 9 or i == len(output_fnames) - 1:
+                    print('Concatenating:', i + 1, '/', len(output_fnames))
