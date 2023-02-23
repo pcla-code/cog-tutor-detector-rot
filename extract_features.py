@@ -201,7 +201,8 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Extract features from DataShop formatted MATHia logs')
     ap.add_argument('mathia_csv', help='Path to MATHia log file (CSV or TSV) to use as input')
     ap.add_argument('output_dir', help='Output directory path')
-    ap.add_argument('--labels', help='Path to labels TXT file for supervised extraction')
+    ap.add_argument('--labels',
+                    help='Path to space-separated labels TXT file for supervised extraction')
     ap.add_argument('--concat', help='Path to final concatenated output CSV file')
     args = ap.parse_args()
 
@@ -252,7 +253,7 @@ if __name__ == '__main__':
     if args.concat:
         with open(args.concat, 'w', encoding='utf8') as outfile:
             for i, fname in enumerate(output_fnames):
-                df = pd.read_csv(fname)
+                df = pd.read_csv(fname).sort_values('orig_index')
                 df.to_csv(outfile, header=i == 0, index=False)
                 if i % 10 == 9 or i == len(output_fnames) - 1:
                     print('Concatenating:', i + 1, '/', len(output_fnames))
