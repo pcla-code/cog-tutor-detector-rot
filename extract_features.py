@@ -192,8 +192,15 @@ def process_one_student(df: pd.DataFrame, progress_prop: float, out_dir: str,
         'section_id', 'skill', 'help_or_error', 'semantic_event_id',
         'error_count'
     ]), clip_ids)
+    processed.sort_index(inplace=True)  # Gets out of order during clip ID generation
     processed['user_id'] = features.user_id.iloc[0]
-    processed[['user_id'] + ORDER].rename_axis('orig_index').to_csv(fname)
+    column_order = ['user_id'] + ORDER
+    if labels_df is not None:  # Get labels for this student and add them to the result
+        student_labels = labels_df[labels_df.row_num.isin(processed.index)]
+        assert all(processed.index == student_labels.row_num)
+        processed['label'] = student_labels.label.values  # .values to ignore index
+        column_order.insert(1, 'label')
+    processed[column_order].rename_axis('orig_index').to_csv(fname)
     return fname
 
 
@@ -253,7 +260,7 @@ if __name__ == '__main__':
     if args.concat:
         with open(args.concat, 'w', encoding='utf8') as outfile:
             for i, fname in enumerate(output_fnames):
-                df = pd.read_csv(fname).sort_values('orig_index')
+                df = pd.read_csv(fname)
                 df.to_csv(outfile, header=i == 0, index=False)
                 if i % 10 == 9 or i == len(output_fnames) - 1:
                     print('Concatenating:', i + 1, '/', len(output_fnames))
