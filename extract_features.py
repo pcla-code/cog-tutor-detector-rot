@@ -227,7 +227,7 @@ if __name__ == '__main__':
     prev_df = None
     processed_pids = set()
     output_fnames = []
-    sep = '\t' if args.mathia_csv.endswith('.tsv') else None
+    sep = '\t' if args.mathia_csv.endswith('.tsv') else ','
     with pd.read_csv(args.mathia_csv, chunksize=100000, sep=sep) as df_reader:
         for chunk_i, chunk in enumerate(df_reader):
             chunk = chunk[[
