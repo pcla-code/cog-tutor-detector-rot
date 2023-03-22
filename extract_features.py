@@ -222,6 +222,9 @@ if __name__ == '__main__':
         labels_df = pd.read_csv(args.labels, sep=' ', header=None)
         assert len(labels_df.columns) == 3, 'Expected 3 space-separated columns in labels file'
         labels_df.columns = ['initials', 'row_num', 'label']
+        labels_df.sort_values('row_num', inplace=True)  # Processing expects labels in row order
+        labels_df.drop_duplicates('row_num', inplace=True)  # Rare mistakes in row selection
+        labels_df.reset_index(drop=True, inplace=True)
 
     prev_pid = None
     prev_df = None
