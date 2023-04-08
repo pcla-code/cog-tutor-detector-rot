@@ -5,9 +5,10 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.model_selection import GroupKFold
 from sklearn.dummy import DummyClassifier
+from sklearn.base import BaseEstimator
 from imblearn.over_sampling import SMOTE
 import argparse
-
+import os
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
@@ -19,13 +20,14 @@ def preprocess_data(training_data: pd.DataFrame, label: str) -> pd.DataFrame:
     return training_data
 
 
-def train_model(feat_df: pd.DataFrame, group_id: str, label: str, clf, num_splits: int = 4, sm: bool = True):
+def train_model(feat_df: pd.DataFrame, group_id: str, label: str, classifier: BaseEstimator, num_splits: int = 4, sm: bool = True):
     features = list(feat_df.columns)
-    features.remove("label")
-    features.remove("user_id")
+    features.remove(label)
+    features.remove(group_id)
     features.remove('orig_index')
     groups = feat_df[group_id]
-    cur_preds = pd.DataFrame(index=feat_df.index, columns=['probability_predict', 'label_predict', 'label'], dtype=float)
+    cur_preds = feat_df.copy(deep=True)
+    cur_preds = cur_preds.reindex(columns=['orig_index', group_id, label, 'probability_predict', 'label_predict'])
 
     for iter_num, fold_indices in enumerate(GroupKFold(n_splits=num_splits).split(X=feat_df, groups=groups)):
         train_indices = fold_indices[0]
@@ -44,12 +46,11 @@ def train_model(feat_df: pd.DataFrame, group_id: str, label: str, clf, num_split
             sm = SMOTE(random_state=42)
             train_X, train_y = sm.fit_resample(train_X, train_y)
 
-        clf.fit(train_X, train_y)
-        probs = clf.predict_proba(test_x)
-        label_predict = clf.predict(test_x)
+        classifier.fit(train_X, train_y)
+        probs = classifier.predict_proba(test_x)
+        label_predict = classifier.predict(test_x)
         cur_preds['probability_predict'].iloc[test_indices] = probs[:, 1]
         cur_preds['label_predict'].iloc[test_indices] = label_predict
-        cur_preds['label'].iloc[test_indices] = test_y
 
     return cur_preds
 
@@ -66,6 +67,7 @@ if __name__ == '__main__':
     df = pd.read_csv(args.features_csv)
     training_label = args.train_label
     student_id = args.user_id
+    filename = os.path.basename(args.features_csv)
 
     processed_df = preprocess_data(df, training_label)
 
@@ -88,4 +90,5 @@ if __name__ == '__main__':
     for name, clf in zip(names, classifiers):
         # new to new predictions
         final_preds = train_model(processed_df, student_id, training_label, clf)
-        final_preds.to_csv(str(name) + '_gaming_predictions_test.csv')
+        final_preds['orig_file'] = filename
+        final_preds.to_csv(str(name) + '_gaming_predictions_pasadena_2021_2022.csv', index=False)
