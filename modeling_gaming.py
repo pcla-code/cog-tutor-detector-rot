@@ -10,11 +10,10 @@ from imblearn.over_sampling import SMOTE
 import argparse
 import os
 import warnings
-warnings.simplefilter(action='ignore', category=FutureWarning)
 
 
 def preprocess_data(training_data: pd.DataFrame, label: str) -> pd.DataFrame:
-    training_data = training_data[training_data[label] != '?']
+    training_data = training_data[training_data[label] != '?'].copy()
     training_data[label] = (training_data[label] == 'G').astype(int)
     training_data = training_data.fillna(0)
     return training_data
@@ -95,13 +94,17 @@ if __name__ == '__main__':
     student_id = args.user_id
     filename = os.path.basename(args.features_csv)
 
-    processed_df = preprocess_data(features_df, training_label)
-    train_data_provided = False
-
     if args.training_data_csv:
         print('Training data provided. All data in the features_csv will be used for testing.')
-        train_data_provided = True
-        training_df = features_df = pd.read_csv(args.training_data_csv)
+        training_df = pd.read_csv(args.training_data_csv)
+        training_df = preprocess_data(training_df, training_label)
+        features_df = features_df.fillna(0)
+
+
+    else:
+        features_df = preprocess_data(features_df, training_label)
+
+
 
     i = 0
     names = [
@@ -116,7 +119,7 @@ if __name__ == '__main__':
         DecisionTreeClassifier(max_depth=5, random_state=i),
         RandomForestClassifier(max_depth=5, random_state=i),
         MLPClassifier(random_state=i),
-        xgb.XGBClassifier(random_state=i, use_label_encoder=False, eval_metric='logloss')
+        xgb.XGBClassifier(random_state=i, eval_metric='logloss')
     ]
 
     for name, clf in zip(names, classifiers):
@@ -124,12 +127,12 @@ if __name__ == '__main__':
         pipeline = Pipeline([('name', clf)])
 
         # if training data was provided, train model and then test on extracted features
-        if train_data_provided:
-             final_preds = train_predict_model(training_df, processed_df, student_id, training_label, pipeline)
+        if args.training_data_csv:
+             final_preds = train_predict_model(training_df, features_df, student_id, training_label, pipeline)
 
         # new to new predictions (if no training data provided)
         else:
-            final_preds = train_predict_model_with_splits(processed_df, student_id, training_label, pipeline)
+            final_preds = train_predict_model_with_splits(features_df, student_id, training_label, pipeline)
 
         final_preds['orig_file'] = filename
-        final_preds.to_csv(str(name) + '_gaming_predictions_test.csv', index=False)
+        final_preds.to_csv(str(name) + '_gaming_predictions_all_brockton_21_22.csv', index=False)
