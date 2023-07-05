@@ -1,9 +1,10 @@
 import xgboost as xgb
 import pandas as pd
+import numpy as np
 from sklearn.neural_network import MLPRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import KFold
+from sklearn.model_selection import KFold, cross_val_predict
 from sklearn.metrics import r2_score
 from sklearn.pipeline import Pipeline
 from imblearn.over_sampling import SMOTE
@@ -12,6 +13,7 @@ import os
 from sklearn.model_selection import GridSearchCV
 
 
+#can replace this whole function with crosval predict
 def train_predict_model_with_splits(feat_df: pd.DataFrame, group_id: str, label: str, pipe: Pipeline, num_splits: int = 4, sm: bool = True):
     features = list(feat_df.columns)
     features.remove(label)
@@ -55,14 +57,15 @@ if __name__ == '__main__':
 
     label_name = "MCAS"
     student_id = "user_id"
-    y = predictive_features[label_name]
-    X = predictive_features.drop([label_name], axis=1)
 
     features = list(predictive_features.columns)
     features.remove(student_id)
     features.remove(label_name)
 
     processed_training_df = preprocess_data(predictive_features, label_name)
+
+    y = processed_training_df[label_name]
+    X = processed_training_df[features]
 
     i = 0
     names = [
@@ -88,10 +91,32 @@ if __name__ == '__main__':
     #     r2score = r2_score(final_preds['MCAS'], final_preds['predicted_MCAS'])
     #     print(name, r2score)
 
-    for name, clf in zip(names, regressors):
-        pipeline = Pipeline([('name', clf)])
-        search = GridSearchCV(pipeline, param_grid, n_jobs=2)
-        search.fit(X_digits, y_digits)
-        print("Best parameter (CV score=%0.3f):" % search.best_score_)
-        print(search.best_params_)
+    # to-do: make this dictionary of names and models (and parameters) rather than two lists
+    gs_names = [
+        "Random Forest"
+    ]
 
+    param_grid = {
+        "model__min_samples_leaf": [1, 2, 4, 8, 16, 32],
+        "model__max_features": ["sqrt", "log2", .1, .25, .5, .75, 0.9, 1.0]
+    }
+
+    for name in gs_names:
+        all_predictions = []
+        for i in range(10):
+            # can do a name check for each regressor
+            if name == "Random Forest":
+                reg = RandomForestRegressor(random_state=i)
+                print(name)
+
+            pipeline = Pipeline([('model', reg)])
+            search = GridSearchCV(pipeline, param_grid, cv=10, n_jobs=2)
+
+            predictions = cross_val_predict(search, X, y, cv=10)
+            # print("Best parameter (CV score=%0.3f):" % search.best_score_)
+            # print(search.best_params_)
+            all_predictions.append(predictions)
+
+        average_pred = np.mean(all_predictions)  # check that this is averaged in correct direction
+        print(average_pred)
+        pd.Series(average_pred).to_csv(str(name) + '_MCAS_predictions_all_brockton_21_22_gs_test.csv', index=False)
