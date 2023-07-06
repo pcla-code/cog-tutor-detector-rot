@@ -53,6 +53,7 @@ def preprocess_data(training_data: pd.DataFrame, label: str) -> pd.DataFrame:
 
 if __name__ == '__main__':
     csv_name = "/Users/clarabelitz/Library/CloudStorage/Box-Box/NSF ECR Mathia algorithmic bias/data/analysis/MCAS predictions from gaming/Feature Extraction from Gaming/features_for_mcas_prediction.csv"
+    # csv_name = "/Users/clarabelitz/Documents/git/illinois/cog-tutor-detector-rot/mcas_small_test_set.csv"
     predictive_features = pd.read_csv(csv_name)
 
     label_name = "MCAS"
@@ -117,6 +118,6 @@ if __name__ == '__main__':
             # print(search.best_params_)
             all_predictions.append(predictions)
 
-        average_pred = np.mean(all_predictions)  # check that this is averaged in correct direction
-        print(average_pred)
-        pd.Series(average_pred).to_csv(str(name) + '_MCAS_predictions_all_brockton_21_22_gs_test.csv', index=False)
+        average_pred = np.mean(all_predictions, axis=0)  # average predictions per student
+        average_df = pd.DataFrame(index=processed_training_df[student_id], data=average_pred, columns=['average_mcas_prediction'])
+        average_df.to_csv(str(name) + '_MCAS_predictions_averaged_all_brockton_21_22.csv')
