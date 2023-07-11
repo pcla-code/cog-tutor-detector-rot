@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.neural_network import MLPRegressor
 from sklearn.tree import DecisionTreeRegressor
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 from sklearn.model_selection import KFold, cross_val_predict
 from sklearn.metrics import r2_score
 from sklearn.pipeline import Pipeline
@@ -94,7 +94,10 @@ if __name__ == '__main__':
 
     # to-do: make this dictionary of names and models (and parameters) rather than two lists
     gs_names = [
-        "Random Forest"
+        # "Random Forest",
+        # "Extra Trees",
+        "Decision Tree",
+        # "XGBoost"
     ]
 
     param_grid = {
@@ -103,12 +106,22 @@ if __name__ == '__main__':
     }
 
     for name in gs_names:
+        print("Training " + name)
         all_predictions = []
         for i in range(10):
             # can do a name check for each regressor
-            if name == "Random Forest":
+            if name == "Decision Tree":
+                reg = DecisionTreeRegressor(random_state=i)
+
+            elif name == "Random Forest":
                 reg = RandomForestRegressor(random_state=i)
-                print(name)
+
+            elif name == "Extra Trees":
+                reg = ExtraTreesRegressor(random_state=i)
+
+            elif name == "XGBoost":
+                reg = xgb.XGBRegressor(random_state=i, eval_metric='logloss')
+
 
             pipeline = Pipeline([('model', reg)])
             search = GridSearchCV(pipeline, param_grid, cv=10, n_jobs=2)
