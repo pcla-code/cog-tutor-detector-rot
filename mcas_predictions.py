@@ -1,6 +1,7 @@
 import xgboost as xgb
 import pandas as pd
 import numpy as np
+from sklearn import linear_model, naive_bayes, preprocessing
 from sklearn.neural_network import MLPRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
@@ -96,14 +97,23 @@ if __name__ == '__main__':
     gs_names = [
         # "Random Forest",
         # "Extra Trees",
-        "Decision Tree",
-        # "XGBoost"
+        # "Decision Tree",
+        # "XGBoost",
+        "GNB",
+        # "Linear Regression"
     ]
 
-    param_grid = {
+    trees_param_grid = {
         "model__min_samples_leaf": [1, 2, 4, 8, 16, 32],
         "model__max_features": ["sqrt", "log2", .1, .25, .5, .75, 0.9, 1.0]
     }
+
+    xgb_param_grid = {
+        "model__min_child_weight": [1, 2, 4, 8, 16, 32],
+        "model__colsample_bytree": [.1, .25, .5, .75, 0.9, 1.0]
+    }
+
+    empty_param_grid = None
 
     for name in gs_names:
         print("Training " + name)
@@ -112,21 +122,42 @@ if __name__ == '__main__':
             # can do a name check for each regressor
             if name == "Decision Tree":
                 reg = DecisionTreeRegressor(random_state=i)
+                param_grid = trees_param_grid
 
             elif name == "Random Forest":
                 reg = RandomForestRegressor(random_state=i)
+                param_grid = trees_param_grid
 
             elif name == "Extra Trees":
                 reg = ExtraTreesRegressor(random_state=i)
+                param_grid = trees_param_grid
 
             elif name == "XGBoost":
-                reg = xgb.XGBRegressor(random_state=i, eval_metric='logloss')
+                reg = xgb.XGBRegressor(random_state=i)
+                param_grid = xgb_param_grid
 
+            elif name == "GNB":
+                reg = naive_bayes.GaussianNB()
+                param_grid = empty_param_grid
+                scaler = preprocessing.StandardScaler()
+                X = pd.DataFrame(scaler.fit_transform(X), columns=X.columns)
+                y = pd.Series(y)
 
-            pipeline = Pipeline([('model', reg)])
-            search = GridSearchCV(pipeline, param_grid, cv=10, n_jobs=2)
+            elif name == "Linear Regression":
+                reg = linear_model.LinearRegression()
+                param_grid = empty_param_grid
 
-            predictions = cross_val_predict(search, X, y, cv=10)
+            if param_grid is None:
+                # no parameters to search, just get predictions
+                predictions = cross_val_predict(reg, X, y, cv=10)
+
+            else:
+                # use gridsearch to optimize hyperparameters
+                pipeline = Pipeline([('model', reg)])
+                search = GridSearchCV(pipeline, param_grid, cv=10, n_jobs=2)
+
+                predictions = cross_val_predict(search, X, y, cv=10)
+
             # print("Best parameter (CV score=%0.3f):" % search.best_score_)
             # print(search.best_params_)
             all_predictions.append(predictions)
