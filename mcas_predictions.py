@@ -93,26 +93,28 @@ if __name__ == '__main__':
     #     r2score = r2_score(final_preds['MCAS'], final_preds['predicted_MCAS'])
     #     print(name, r2score)
 
-    # to-do: make this dictionary of names and models (and parameters) rather than two lists
     gs_names = [
-        # "Random Forest",
-        # "Extra Trees",
-        # "Decision Tree",
-        # "XGBoost",
+        "Random Forest",
+        "Extra Trees",
+        "Decision Tree",
+        "XGBoost",
         "GNB",
-        # "Linear Regression"
+        "Linear Regression"
     ]
 
+    # parameter grid for tree based models
     trees_param_grid = {
         "model__min_samples_leaf": [1, 2, 4, 8, 16, 32],
         "model__max_features": ["sqrt", "log2", .1, .25, .5, .75, 0.9, 1.0]
     }
 
+    # parameter grid for XGB, matches tree based models
     xgb_param_grid = {
         "model__min_child_weight": [1, 2, 4, 8, 16, 32],
         "model__colsample_bytree": [.1, .25, .5, .75, 0.9, 1.0]
     }
 
+    # empty object for models without hyperparameters
     empty_param_grid = None
 
     for name in gs_names:
