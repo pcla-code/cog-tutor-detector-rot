@@ -43,7 +43,7 @@ category = 'gender'
 level_list = c("M", "F") # update as appropriate for the given category
 
 # uncomment for race
-# category = 'ethnicity'
+# category = 'raceGroup'
 
 # black vs non-black only
 # temp_category = 'ethnicity'
@@ -57,7 +57,8 @@ level_list = c("M", "F") # update as appropriate for the given category
 #make student id and categories of interest factor variables
 mcas_bias_data$student_id<-as.factor(mcas_bias_data$student_id)
 mcas_bias_data$anon_classid <- as.factor(mcas_bias_data$anon_classid)
-mcas_bias_data[, category] = factor(mcas_bias_data[, category], levels=level_list) # none is baseline level
+mcas_bias_data[, category] = factor(mcas_bias_data[, category], levels=level_list) # none is baseline level, only use if levels are needed
+# mcas_bias_data[, category] = factor(mcas_bias_data[, category]) # otherwise just set as factor
 
 
 # create column to calculate square error per prediction, for each model
