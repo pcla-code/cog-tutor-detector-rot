@@ -36,7 +36,7 @@ lr_col = 'linear_regression_prediction'
 We need to load the general training data, make student ID and the demographic group of interest factor variables, and then create a new variable called "sq_error" containing the error squared for each prediction. The models are random forest, decision tree, extra trees, XGBoost, and linear regression.
 ```{r data-setup, echo=FALSE}
 # load training data
-mcas_bias_data <- read.csv("data/MCAS_prediction_demographic_merged_df_v1_edits_for_hlm.csv", header=TRUE)
+mcas_bias_data <- read.csv("data/merged_df_v2.csv", header=TRUE)
 
 # uncomment for gender
 category = 'gender'
@@ -115,7 +115,7 @@ summary(lr_model_sp)
 ```
 
 
-### Analogous to conditional procedure accuracy (break groups into pos and neg labels)
+### Analogous to conditional procedure accuracy (break groups up by ground truth)
 In order to do metrics that require conditional groupings, we will use an MCAS score of 486 as the cutoff for creating groups, since students must receive a 486 or above to pass, aligning with [Massachusetts Department of Education Standards](https://www.doe.mass.edu/mcas/graduation.html).
 
 We can look at conditional procedure accuracy with two HLMs per machine learning model. We first break the datasets into two groups based on the ground truth MCAS scores: scores equal to or above 486 compared to scores below 486.
@@ -162,7 +162,7 @@ summary(lr_false_model_cpa)
 ```
 
 
-### Analogous to conditional use accuracy (break groups into pos and neg predictions)
+### Analogous to conditional use accuracy (break groups up by predictions)
 We can also look at conditional use accuracy with two HLMs per machine learning model. We first break the datasets into two groups based on the predicted MCAS scores: scores equal to or above 486 compared to scores below 486.
 
 We then look at the square error for each demographic group within the subset.

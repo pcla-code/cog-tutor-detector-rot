@@ -13,7 +13,7 @@
 
 <meta name="date" content="2023-08-17" />
 
-<title>HLM for Brockton classroom data and MCAS</title>
+<title>HLM for Brockton classroom data and MCAS, Race as fixed effect</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,8 +350,8 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">HLM for Brockton classroom data and
-MCAS</h1>
+<h1 class="title toc-ignore">HLM for Brockton classroom data and MCAS,
+Race as fixed effect</h1>
 <h4 class="author">Clara Belitz</h4>
 <h4 class="date">08/17/2023</h4>
 
@@ -381,7 +381,7 @@ demographic group of interest factor variables, and then create a new
 variable called “sq_error” containing the error squared for each
 prediction. The models are random forest, decision tree, extra trees,
 XGBoost, and linear regression.</p>
-<pre><code>##       student_id decision_tree_prediction extra_tree_prediction
+<pre><code>##      anon_userid decision_tree_prediction extra_tree_prediction
 ## 1 stu_AABNH7699I                 473.7956              472.2160
 ## 2 stu_AAFBK0240X                 472.7057              475.6806
 ## 3 stu_AAFNJ1812T                 481.8554              481.8179
@@ -402,20 +402,20 @@ XGBoost, and linear regression.</p>
 ## 4       481.5529             9          169     7      F  12
 ## 5       483.2588             5          149     7      M  14
 ## 6       464.7760             7          326     8      F  13
-##                    raceGroup hispanicEthnicity isSPED isELL ecoDis  rf_sq_error
-## 1                    4-White                 N      Y            0 150.41685890
-## 2 7-Multi-Race, Non-Hispanic                 N      Y            1 940.86405622
-## 3         1-African American                 N                   1 258.11549165
-## 4         1-African American                 N            Y      1 225.74903536
-## 5         1-African American                 N      Y            1   2.26052909
-## 6         1-African American                 N                   0   0.07191896
-##   dt_sq_error et_sq_error xgb_sq_error lr_sq_error
-## 1  84.7202283 116.2941125   339.448566   34.489108
-## 2 767.6066381 941.3020697   621.968684  877.842774
-## 3 200.0689001 201.1313960   184.063489  240.495611
-## 4 265.1375968 227.6185979   273.999161  235.859103
-## 5   0.2831665   1.3843301    13.996203   20.091003
-## 6   0.1806944   0.5637314     1.498103    2.866086</code></pre>
+##                    raceGroup hispanicEthnicity isSPED isELL ecoDis
+## 1                    4-White                 N      Y            0
+## 2 7-Multi-Race, Non-Hispanic                 N      Y            1
+## 3         1-African American                 N                   1
+## 4         1-African American                 N            Y      1
+## 5         1-African American                 N      Y            1
+## 6         1-African American                 N                   0
+##       student_id  rf_sq_error dt_sq_error et_sq_error xgb_sq_error lr_sq_error
+## 1 stu_AABNH7699I 150.41685816  84.7202283 116.2941129   339.448566   34.489107
+## 2 stu_AAFBK0240X 940.86405447 767.6066371 941.3020703   621.968684  877.842773
+## 3 stu_AAFNJ1812T 258.11549297 200.0688989 201.1313954   184.063489  240.495610
+## 4 stu_AAIFB5697O 225.74903537 265.1375968 227.6185974   273.999161  235.859103
+## 5 stu_AAJWE3484A   2.26052918   0.2831664   1.3843302    13.996203   20.091002
+## 6 stu_AAMCP8122B   0.07191898   0.1806944   0.5637315     1.498103    2.866087</code></pre>
 </div>
 <div id="basic-hlm-explaining-whether-the-model-was-correct-for-each-model" class="section level2">
 <h2>Basic HLM explaining whether the model was correct for each
@@ -429,28 +429,28 @@ prediction error.</p>
 ## Formula: rf_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 55575.5
+## REML criterion at convergence: 55574.2
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.3561 -0.5813 -0.3573  0.2418  8.9418 
+## -1.3425 -0.5837 -0.3507  0.2297  8.9310 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  3972     63.02  
-##  Residual                 69285    263.22  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  4130     64.26  
+##  Residual                 69237    263.13  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  207.668      7.146  486.800  29.060  &lt; 2e-16 ***
-## mcas_bias_data[, category]F  -32.905      8.510 3926.536  -3.866 0.000112 ***
+## (Intercept)                  208.495      7.275  417.984  28.657  &lt; 2e-16 ***
+## mcas_bias_data[, category]F  -33.589      8.513 3926.878  -3.946  8.1e-05 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.565</code></pre>
+## mcs_b_[,c]F -0.554</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: dt_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid)
@@ -460,105 +460,105 @@ prediction error.</p>
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.3360 -0.5768 -0.3529  0.2297  9.8943 
+## -1.3191 -0.5756 -0.3537  0.2311  9.9011 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  4058     63.7   
-##  Residual                 73110    270.4   
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  4157     64.47  
+##  Residual                 73115    270.40  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  212.748      7.303  493.186  29.132  &lt; 2e-16 ***
-## mcas_bias_data[, category]F  -34.197      8.740 3928.344  -3.913 9.27e-05 ***
+## (Intercept)                  213.571      7.415  426.272  28.802  &lt; 2e-16 ***
+## mcas_bias_data[, category]F  -34.909      8.744 3929.624  -3.992 6.67e-05 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.568</code></pre>
+## mcs_b_[,c]F -0.559</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: et_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 55596
+## REML criterion at convergence: 55594.3
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.3777 -0.5735 -0.3520  0.2632  9.3068 
+## -1.3552 -0.5764 -0.3452  0.2447  9.3092 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  4227     65.02  
-##  Residual                 69526    263.68  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  4457     66.76  
+##  Residual                 69442    263.52  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  208.280      7.228  478.237  28.814  &lt; 2e-16 ***
-## mcas_bias_data[, category]F  -33.618      8.530 3923.355  -3.941 8.25e-05 ***
+## (Intercept)                  209.216      7.382  404.387  28.342  &lt; 2e-16 ***
+## mcas_bias_data[, category]F  -34.338      8.531 3922.298  -4.025  5.8e-05 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.560</code></pre>
+## mcs_b_[,c]F -0.547</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: xgb_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 55967.9
+## REML criterion at convergence: 55967.7
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.4028 -0.5873 -0.3535  0.2285  9.3065 
+## -1.3912 -0.5905 -0.3546  0.2268  9.2967 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  3667     60.56  
-##  Residual                 76883    277.28  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  3761     61.33  
+##  Residual                 76875    277.26  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  214.980      7.319  536.130   29.38  &lt; 2e-16 ***
-## mcas_bias_data[, category]F  -28.734      8.950 3936.708   -3.21  0.00134 ** 
+## (Intercept)                  215.614      7.421  464.200  29.053  &lt; 2e-16 ***
+## mcas_bias_data[, category]F  -29.451      8.954 3938.008  -3.289  0.00101 ** 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.581</code></pre>
+## mcs_b_[,c]F -0.573</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: lr_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 56134.3
+## REML criterion at convergence: 56131
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.4298 -0.5686 -0.3428  0.2312  9.4955 
+## -1.4694 -0.5711 -0.3407  0.2315  9.5139 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  5435     73.72  
-##  Residual                 79354    281.70  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  5838     76.41  
+##  Residual                 79182    281.39  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  221.886      7.884  434.126  28.143  &lt; 2e-16 ***
-## mcas_bias_data[, category]F  -36.704      9.123 3913.248  -4.023 5.85e-05 ***
+## (Intercept)                  223.589      8.091  361.831  27.633  &lt; 2e-16 ***
+## mcas_bias_data[, category]F  -37.460      9.121 3910.027  -4.107 4.09e-05 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.548</code></pre>
+## mcs_b_[,c]F -0.533</code></pre>
 </div>
 <div id="analogous-to-statistical-parity" class="section level3">
 <h3>Analogous to Statistical Parity</h3>
@@ -572,144 +572,144 @@ equivalent but reversed we can run the model just once.</p>
 ##     anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 30513.7
+## REML criterion at convergence: 30435.6
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -3.3867 -0.6885 -0.1396  0.5875  4.5186 
+## -3.3544 -0.7014 -0.1330  0.5760  4.5449 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  70.11    8.373  
-##  Residual                 111.14   10.542  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  69.3     8.325  
+##  Residual                 109.7    10.474  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                              Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)                  479.6016     0.5658  335.4496 847.581  &lt; 2e-16 ***
-## mcas_bias_data[, category]F    2.2654     0.3476 3777.0579   6.518 8.07e-11 ***
+## (Intercept)                  479.5279     0.5815  303.3877 824.606  &lt; 2e-16 ***
+## mcas_bias_data[, category]F    2.1763     0.3450 3789.7233   6.308 3.16e-10 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.286</code></pre>
+## mcs_b_[,c]F -0.274</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: mcas_bias_data[, dt_col] ~ mcas_bias_data[, category] + (1 |  
 ##     anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 30578.6
+## REML criterion at convergence: 30502.7
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -3.3526 -0.6680 -0.1498  0.5847  4.1467 
+## -3.3245 -0.6763 -0.1454  0.5750  4.2250 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  70.85    8.417  
-##  Residual                 113.01   10.631  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  70.31    8.385  
+##  Residual                 111.60   10.564  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                              Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)                  479.5924     0.5692  334.6148 842.558  &lt; 2e-16 ***
-## mcas_bias_data[, category]F    2.1655     0.3505 3776.8241   6.179 7.14e-10 ***
+## (Intercept)                  479.5444     0.5859  301.8795 818.499  &lt; 2e-16 ***
+## mcas_bias_data[, category]F    2.0822     0.3480 3788.9280   5.984 2.38e-09 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.287</code></pre>
+## mcs_b_[,c]F -0.274</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: mcas_bias_data[, et_col] ~ mcas_bias_data[, category] + (1 |  
 ##     anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 30470.2
+## REML criterion at convergence: 30391.2
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -3.4217 -0.6810 -0.1461  0.5921  4.8592 
+## -3.3991 -0.6890 -0.1395  0.5794  4.8884 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  68.21    8.259  
-##  Residual                 110.04   10.490  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  67.37    8.208  
+##  Residual                 108.60   10.421  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                              Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)                  479.5855     0.5592  337.5311 857.626   &lt;2e-16 ***
-## mcas_bias_data[, category]F    2.2905     0.3458 3778.9325   6.624    4e-11 ***
+## (Intercept)                  479.5083     0.5744  305.0337 834.785  &lt; 2e-16 ***
+## mcas_bias_data[, category]F    2.2009     0.3432 3791.3271   6.412 1.61e-10 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.288</code></pre>
+## mcs_b_[,c]F -0.276</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: mcas_bias_data[, xgb_col] ~ mcas_bias_data[, category] + (1 |  
 ##     anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 31056.9
+## REML criterion at convergence: 30973.3
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -2.9004 -0.6772 -0.1216  0.5765  4.8958 
+## -3.5229 -0.6820 -0.1098  0.5727  4.9302 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  73.76    8.588  
-##  Residual                 128.16   11.321  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  72.98    8.543  
+##  Residual                 126.28   11.237  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                              Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)                  479.4869     0.5864  337.3250 817.713  &lt; 2e-16 ***
-## mcas_bias_data[, category]F    2.3058     0.3730 3781.7699   6.181 7.04e-10 ***
+## (Intercept)                  479.3197     0.6023  304.5444  795.88  &lt; 2e-16 ***
+## mcas_bias_data[, category]F    2.2162     0.3700 3793.6034    5.99  2.3e-09 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.297</code></pre>
+## mcs_b_[,c]F -0.284</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: mcas_bias_data[, lr_col] ~ mcas_bias_data[, category] + (1 |  
 ##     anon_classid)
 ##    Data: mcas_bias_data
 ## 
-## REML criterion at convergence: 30380.3
+## REML criterion at convergence: 30307.3
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -3.4314 -0.6840 -0.1066  0.6007  4.2885 
+## -3.4289 -0.6878 -0.1050  0.5811  4.3104 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  63.82    7.989  
-##  Residual                 107.87   10.386  
-## Number of obs: 3964, groups:  anon_classid, 293
+##  anon_classid (Intercept)  63.11    7.944  
+##  Residual                 106.60   10.325  
+## Number of obs: 3964, groups:  anon_classid, 267
 ## 
 ## Fixed effects:
 ##                              Estimate Std. Error        df t value Pr(&gt;|t|)    
-## (Intercept)                  479.4979     0.5437  328.4853 881.891  &lt; 2e-16 ***
-## mcas_bias_data[, category]F    2.6223     0.3423 3775.5800   7.661 2.33e-14 ***
+## (Intercept)                  479.4263     0.5587  296.6325 858.182  &lt; 2e-16 ***
+## mcas_bias_data[, category]F    2.5175     0.3400 3788.0438   7.405 1.61e-13 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_b_[,c]F -0.293</code></pre>
+## mcs_b_[,c]F -0.281</code></pre>
 </div>
-<div id="analogous-to-conditional-procedure-accuracy-break-groups-into-pos-and-neg-labels" class="section level3">
-<h3>Analogous to conditional procedure accuracy (break groups into pos
-and neg labels)</h3>
+<div id="analogous-to-conditional-procedure-accuracy-break-groups-up-by-ground-truth" class="section level3">
+<h3>Analogous to conditional procedure accuracy (break groups up by
+ground truth)</h3>
 <p>In order to do metrics that require conditional groupings, we will
 use an MCAS score of 486 as the cutoff for creating groups, since
 students must receive a 486 or above to pass, aligning with <a href="https://www.doe.mass.edu/mcas/graduation.html">Massachusetts
@@ -724,184 +724,22 @@ demographic group within the subset.</p>
 ## Formula: rf_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid)
 ##    Data: mcas_true_pass
 ## 
-## REML criterion at convergence: 21686.5
+## REML criterion at convergence: 21688.7
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.6366 -0.5979 -0.3051  0.2892  8.7013 
+## -1.5937 -0.5898 -0.3072  0.2821  8.6897 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  6427     80.17  
-##  Residual                 69180    263.02  
-## Number of obs: 1545, groups:  anon_classid, 231
+##  anon_classid (Intercept)  6330     79.56  
+##  Residual                 69422    263.48  
+## Number of obs: 1545, groups:  anon_classid, 210
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                   239.45      11.26  454.51  21.257  &lt; 2e-16 ***
-## mcas_true_pass[, category]F   -88.09      13.77 1527.46  -6.399 2.07e-10 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Correlation of Fixed Effects:
-##             (Intr)
-## mcs_t_[,c]F -0.561</code></pre>
-<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
-## lmerModLmerTest]
-## Formula: rf_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
-##    Data: mcas_true_fail
-## 
-## REML criterion at convergence: 33819.1
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -1.1289 -0.5648 -0.3661  0.1825  9.0475 
-## 
-## Random effects:
-##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  3110     55.77  
-##  Residual                 66959    258.76  
-## Number of obs: 2419, groups:  anon_classid, 273
-## 
-## Fixed effects:
-##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  176.364      8.360  443.551  21.095   &lt;2e-16 ***
-## mcas_true_fail[, category]F    4.058     10.717 2407.005   0.379    0.705    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Correlation of Fixed Effects:
-##             (Intr)
-## mcs_t_[,c]F -0.619</code></pre>
-<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
-## lmerModLmerTest]
-## Formula: dt_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid)
-##    Data: mcas_true_pass
-## 
-## REML criterion at convergence: 21804.7
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -1.5851 -0.6051 -0.3039  0.2838  8.0705 
-## 
-## Random effects:
-##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  6595     81.21  
-##  Residual                 74873    273.63  
-## Number of obs: 1545, groups:  anon_classid, 231
-## 
-## Fixed effects:
-##                             Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                   245.98      11.63  454.92  21.151  &lt; 2e-16 ***
-## mcas_true_pass[, category]F   -87.33      14.31 1528.46  -6.103 1.32e-09 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Correlation of Fixed Effects:
-##             (Intr)
-## mcs_t_[,c]F -0.565</code></pre>
-<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
-## lmerModLmerTest]
-## Formula: dt_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
-##    Data: mcas_true_fail
-## 
-## REML criterion at convergence: 33910.9
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -1.1179 -0.5627 -0.3621  0.1905 10.1805 
-## 
-## Random effects:
-##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  3049     55.22  
-##  Residual                 69674    263.96  
-## Number of obs: 2419, groups:  anon_classid, 273
-## 
-## Fixed effects:
-##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  180.556      8.474  453.553   21.31   &lt;2e-16 ***
-## mcas_true_fail[, category]F    1.749     10.924 2408.490    0.16    0.873    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Correlation of Fixed Effects:
-##             (Intr)
-## mcs_t_[,c]F -0.622</code></pre>
-<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
-## lmerModLmerTest]
-## Formula: et_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid)
-##    Data: mcas_true_pass
-## 
-## REML criterion at convergence: 21687.1
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -1.6525 -0.5993 -0.3051  0.2964  8.2201 
-## 
-## Random effects:
-##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  6495     80.59  
-##  Residual                 69172    263.01  
-## Number of obs: 1545, groups:  anon_classid, 231
-## 
-## Fixed effects:
-##                             Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                   241.43      11.28  458.12  21.401  &lt; 2e-16 ***
-## mcas_true_pass[, category]F   -90.75      13.77 1527.44  -6.592 5.98e-11 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Correlation of Fixed Effects:
-##             (Intr)
-## mcs_t_[,c]F -0.560</code></pre>
-<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
-## lmerModLmerTest]
-## Formula: et_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
-##    Data: mcas_true_fail
-## 
-## REML criterion at convergence: 33834.9
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -1.2258 -0.5538 -0.3578  0.1979  9.4664 
-## 
-## Random effects:
-##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  3743     61.18  
-##  Residual                 67008    258.86  
-## Number of obs: 2419, groups:  anon_classid, 273
-## 
-## Fixed effects:
-##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  175.817      8.546  429.420  20.574   &lt;2e-16 ***
-## mcas_true_fail[, category]F    5.030     10.745 2401.985   0.468     0.64    
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Correlation of Fixed Effects:
-##             (Intr)
-## mcs_t_[,c]F -0.607</code></pre>
-<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
-## lmerModLmerTest]
-## Formula: xgb_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid)
-##    Data: mcas_true_pass
-## 
-## REML criterion at convergence: 21884.6
-## 
-## Scaled residuals: 
-##     Min      1Q  Median      3Q     Max 
-## -1.7226 -0.5782 -0.2919  0.2706  8.8816 
-## 
-## Random effects:
-##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  7846     88.58  
-##  Residual                 78372    279.95  
-## Number of obs: 1545, groups:  anon_classid, 231
-## 
-## Fixed effects:
-##                             Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                   248.37      12.12  435.08  20.488  &lt; 2e-16 ***
-## mcas_true_pass[, category]F   -81.24      14.67 1524.97  -5.538  3.6e-08 ***
+## (Intercept)                   240.36      11.37  415.10  21.148  &lt; 2e-16 ***
+## mcas_true_pass[, category]F   -88.19      13.79 1530.56  -6.393 2.15e-10 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -910,88 +748,250 @@ demographic group within the subset.</p>
 ## mcs_t_[,c]F -0.555</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
-## Formula: xgb_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
+## Formula: rf_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
 ##    Data: mcas_true_fail
 ## 
-## REML criterion at convergence: 34002.5
+## REML criterion at convergence: 33816.5
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -0.9423 -0.5826 -0.3751  0.1916  7.9032 
+## -1.1656 -0.5617 -0.3589  0.1768  9.0312 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  2013     44.87  
-##  Residual                 73186    270.53  
-## Number of obs: 2419, groups:  anon_classid, 273
+##  anon_classid (Intercept)  3440     58.65  
+##  Residual                 66709    258.28  
+## Number of obs: 2419, groups:  anon_classid, 252
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  182.946      8.332  485.608  21.956   &lt;2e-16 ***
-## mcas_true_fail[, category]F    6.580     11.142 2415.108   0.591    0.555    
+## (Intercept)                  176.795      8.514  381.849  20.765   &lt;2e-16 ***
+## mcas_true_fail[, category]F    3.711     10.712 2404.455   0.346    0.729    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_t_[,c]F -0.646</code></pre>
+## mcs_t_[,c]F -0.608</code></pre>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: dt_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid)
+##    Data: mcas_true_pass
+## 
+## REML criterion at convergence: 21807.8
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -1.5441 -0.6041 -0.2965  0.2761  8.0587 
+## 
+## Random effects:
+##  Groups       Name        Variance Std.Dev.
+##  anon_classid (Intercept)  6380     79.88  
+##  Residual                 75232    274.29  
+## Number of obs: 1545, groups:  anon_classid, 210
+## 
+## Fixed effects:
+##                             Estimate Std. Error      df t value Pr(&gt;|t|)    
+## (Intercept)                   246.85      11.71  418.73  21.087  &lt; 2e-16 ***
+## mcas_true_pass[, category]F   -87.57      14.34 1531.88  -6.105  1.3e-09 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##             (Intr)
+## mcs_t_[,c]F -0.561</code></pre>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: dt_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
+##    Data: mcas_true_fail
+## 
+## REML criterion at convergence: 33909.3
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -1.1443 -0.5602 -0.3603  0.1890 10.1704 
+## 
+## Random effects:
+##  Groups       Name        Variance Std.Dev.
+##  anon_classid (Intercept)  3296     57.41  
+##  Residual                 69494    263.62  
+## Number of obs: 2419, groups:  anon_classid, 252
+## 
+## Fixed effects:
+##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
+## (Intercept)                  181.034      8.603  391.641   21.04   &lt;2e-16 ***
+## mcas_true_fail[, category]F    1.311     10.922 2406.904    0.12    0.904    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##             (Intr)
+## mcs_t_[,c]F -0.614</code></pre>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: et_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid)
+##    Data: mcas_true_pass
+## 
+## REML criterion at convergence: 21688.9
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -1.6022 -0.5913 -0.3052  0.2861  8.2096 
+## 
+## Random effects:
+##  Groups       Name        Variance Std.Dev.
+##  anon_classid (Intercept)  6456     80.35  
+##  Residual                 69364    263.37  
+## Number of obs: 1545, groups:  anon_classid, 210
+## 
+## Fixed effects:
+##                             Estimate Std. Error      df t value Pr(&gt;|t|)    
+## (Intercept)                   242.47      11.40  416.33  21.276  &lt; 2e-16 ***
+## mcas_true_pass[, category]F   -90.82      13.79 1530.26  -6.585 6.25e-11 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##             (Intr)
+## mcs_t_[,c]F -0.554</code></pre>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: et_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
+##    Data: mcas_true_fail
+## 
+## REML criterion at convergence: 33831.5
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -1.2654 -0.5512 -0.3547  0.1966  9.4527 
+## 
+## Random effects:
+##  Groups       Name        Variance Std.Dev.
+##  anon_classid (Intercept)  4168     64.56  
+##  Residual                 66703    258.27  
+## Number of obs: 2419, groups:  anon_classid, 252
+## 
+## Fixed effects:
+##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
+## (Intercept)                  176.259      8.731  367.936  20.188   &lt;2e-16 ***
+## mcas_true_fail[, category]F    4.660     10.737 2397.965   0.434    0.664    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##             (Intr)
+## mcs_t_[,c]F -0.595</code></pre>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: xgb_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid)
+##    Data: mcas_true_pass
+## 
+## REML criterion at convergence: 21886.5
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -1.6967 -0.5854 -0.2934  0.2621  8.8685 
+## 
+## Random effects:
+##  Groups       Name        Variance Std.Dev.
+##  anon_classid (Intercept)  7795     88.29  
+##  Residual                 78608    280.37  
+## Number of obs: 1545, groups:  anon_classid, 210
+## 
+## Fixed effects:
+##                             Estimate Std. Error      df t value Pr(&gt;|t|)    
+## (Intercept)                   249.73      12.25  392.88  20.385  &lt; 2e-16 ***
+## mcas_true_pass[, category]F   -82.00      14.70 1528.03  -5.579 2.86e-08 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##             (Intr)
+## mcs_t_[,c]F -0.548</code></pre>
+<pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
+## lmerModLmerTest]
+## Formula: xgb_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
+##    Data: mcas_true_fail
+## 
+## REML criterion at convergence: 34000.9
+## 
+## Scaled residuals: 
+##     Min      1Q  Median      3Q     Max 
+## -0.9841 -0.5815 -0.3713  0.1931  7.9037 
+## 
+## Random effects:
+##  Groups       Name        Variance Std.Dev.
+##  anon_classid (Intercept)  2279     47.74  
+##  Residual                 72958    270.11  
+## Number of obs: 2419, groups:  anon_classid, 252
+## 
+## Fixed effects:
+##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
+## (Intercept)                  183.231      8.451  415.818   21.68   &lt;2e-16 ***
+## mcas_true_fail[, category]F    6.355     11.140 2414.396    0.57    0.568    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Correlation of Fixed Effects:
+##             (Intr)
+## mcs_t_[,c]F -0.637</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: lr_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid)
 ##    Data: mcas_true_pass
 ## 
-## REML criterion at convergence: 21822.7
+## REML criterion at convergence: 21825.1
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.7349 -0.5893 -0.2880  0.2882  6.9281 
+## -1.6673 -0.5861 -0.2896  0.2782  6.9757 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  8433     91.83  
-##  Residual                 74834    273.56  
-## Number of obs: 1545, groups:  anon_classid, 231
+##  anon_classid (Intercept)  8215     90.64  
+##  Residual                 75180    274.19  
+## Number of obs: 1545, groups:  anon_classid, 210
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                   247.61      12.07  426.64  20.520  &lt; 2e-16 ***
-## mcas_true_pass[, category]F  -102.00      14.36 1521.86  -7.102 1.89e-12 ***
+## (Intercept)                   249.40      12.17  396.39  20.493  &lt; 2e-16 ***
+## mcas_true_pass[, category]F  -102.28      14.40 1526.29  -7.104 1.85e-12 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_t_[,c]F -0.544</code></pre>
+## mcs_t_[,c]F -0.539</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: lr_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid)
 ##    Data: mcas_true_fail
 ## 
-## REML criterion at convergence: 34239.4
+## REML criterion at convergence: 34233.3
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.2916 -0.5511 -0.3577  0.1959  9.4943 
+## -1.3779 -0.5428 -0.3564  0.2011  9.4995 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  4842     69.59  
-##  Residual                 78960    281.00  
-## Number of obs: 2419, groups:  anon_classid, 273
+##  anon_classid (Intercept)  5690     75.43  
+##  Residual                 78334    279.88  
+## Number of obs: 2419, groups:  anon_classid, 252
 ## 
 ## Fixed effects:
 ##                             Estimate Std. Error       df t value Pr(&gt;|t|)    
-## (Intercept)                  190.079      9.388  391.114  20.247   &lt;2e-16 ***
-## mcas_true_fail[, category]F    6.974     11.678 2397.222   0.597     0.55    
+## (Intercept)                  190.953      9.672  331.852  19.743   &lt;2e-16 ***
+## mcas_true_fail[, category]F    6.596     11.658 2389.493   0.566    0.572    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## mcs_t_[,c]F -0.601</code></pre>
+## mcs_t_[,c]F -0.583</code></pre>
 </div>
-<div id="analogous-to-conditional-use-accuracy-break-groups-into-pos-and-neg-predictions" class="section level3">
-<h3>Analogous to conditional use accuracy (break groups into pos and neg
+<div id="analogous-to-conditional-use-accuracybreak-groups-up-by-predictions" class="section level3">
+<h3>Analogous to conditional use accuracy(break groups up by
 predictions)</h3>
 <p>We can also look at conditional use accuracy with two HLMs per
 machine learning model. We first break the datasets into two groups
@@ -1004,49 +1004,49 @@ the subset.</p>
 ## Formula: rf_sq_error ~ rf_predicted_pass[, category] + (1 | anon_classid)
 ##    Data: rf_predicted_pass
 ## 
-## REML criterion at convergence: 17898.5
+## REML criterion at convergence: 17899.9
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.0567 -0.5397 -0.3399  0.1808  8.1784 
+## -1.0374 -0.5428 -0.3421  0.1772  8.1948 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  4851     69.65  
-##  Residual                 79771    282.44  
-## Number of obs: 1264, groups:  anon_classid, 234
+##  anon_classid (Intercept)  4439     66.63  
+##  Residual                 80205    283.21  
+## Number of obs: 1264, groups:  anon_classid, 218
 ## 
 ## Fixed effects:
 ##                                Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                      199.44      13.37  352.16  14.912   &lt;2e-16 ***
-## rf_predicted_pass[, category]F   -18.11      16.32 1251.36  -1.109    0.268    
+## (Intercept)                      200.19      13.40  307.65  14.935   &lt;2e-16 ***
+## rf_predicted_pass[, category]F   -18.39      16.36 1255.94  -1.124    0.261    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## rf_pr_[,c]F -0.673</code></pre>
+## rf_pr_[,c]F -0.672</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: rf_sq_error ~ rf_predicted_fail[, category] + (1 | anon_classid)
 ##    Data: rf_predicted_fail
 ## 
-## REML criterion at convergence: 37632.5
+## REML criterion at convergence: 37624.2
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.7613 -0.5943 -0.3399  0.2769  8.9565 
+## -1.8382 -0.5932 -0.3339  0.2626  8.9101 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  7497     86.58  
-##  Residual                 61837    248.67  
-## Number of obs: 2700, groups:  anon_classid, 275
+##  anon_classid (Intercept)  8264     90.91  
+##  Residual                 61442    247.87  
+## Number of obs: 2700, groups:  anon_classid, 252
 ## 
 ## Fixed effects:
 ##                                Estimate Std. Error       df t value Pr(&gt;|t|)
-## (Intercept)                     217.515      8.713  287.412  24.966  &lt; 2e-16
-## rf_predicted_fail[, category]F  -36.807      9.904 2615.228  -3.716 0.000206
+## (Intercept)                     218.882      9.019  260.334  24.268  &lt; 2e-16
+## rf_predicted_fail[, category]F  -37.774      9.881 2611.053  -3.823 0.000135
 ##                                   
 ## (Intercept)                    ***
 ## rf_predicted_fail[, category]F ***
@@ -1055,28 +1055,28 @@ the subset.</p>
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## rf_pr_[,c]F -0.498</code></pre>
+## rf_pr_[,c]F -0.479</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: dt_sq_error ~ dt_predicted_pass[, category] + (1 | anon_classid)
 ##    Data: dt_predicted_pass
 ## 
-## REML criterion at convergence: 18497.1
+## REML criterion at convergence: 18498.6
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -0.9968 -0.5396 -0.3439  0.1513  9.0760 
+## -0.9778 -0.5391 -0.3499  0.1456  9.0939 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  4562     67.55  
-##  Residual                 85829    292.97  
-## Number of obs: 1300, groups:  anon_classid, 232
+##  anon_classid (Intercept)  4145     64.38  
+##  Residual                 86276    293.73  
+## Number of obs: 1300, groups:  anon_classid, 217
 ## 
 ## Fixed effects:
 ##                                Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                      203.83      13.53  356.59  15.067   &lt;2e-16 ***
-## dt_predicted_pass[, category]F   -20.81      16.66 1289.95  -1.249    0.212    
+## (Intercept)                      204.49      13.54  309.23   15.10   &lt;2e-16 ***
+## dt_predicted_pass[, category]F   -21.04      16.69 1293.55   -1.26    0.208    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -1088,22 +1088,22 @@ the subset.</p>
 ## Formula: dt_sq_error ~ dt_predicted_fail[, category] + (1 | anon_classid)
 ##    Data: dt_predicted_fail
 ## 
-## REML criterion at convergence: 37238.6
+## REML criterion at convergence: 37229.6
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.8070 -0.5967 -0.3338  0.2840  8.2769 
+## -1.9026 -0.6000 -0.3351  0.2848  8.2181 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  7577     87.05  
-##  Residual                 64477    253.92  
-## Number of obs: 2664, groups:  anon_classid, 278
+##  anon_classid (Intercept)  8443     91.89  
+##  Residual                 64009    253.00  
+## Number of obs: 2664, groups:  anon_classid, 253
 ## 
 ## Fixed effects:
 ##                                Estimate Std. Error       df t value Pr(&gt;|t|)
-## (Intercept)                     222.357      8.873  295.210  25.059  &lt; 2e-16
-## dt_predicted_fail[, category]F  -37.689     10.192 2590.458  -3.698 0.000222
+## (Intercept)                     223.683      9.203  263.634  24.306  &lt; 2e-16
+## dt_predicted_fail[, category]F  -38.256     10.163 2582.101  -3.764 0.000171
 ##                                   
 ## (Intercept)                    ***
 ## dt_predicted_fail[, category]F ***
@@ -1112,55 +1112,55 @@ the subset.</p>
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## dt_pr_[,c]F -0.502</code></pre>
+## dt_pr_[,c]F -0.483</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: et_sq_error ~ et_predicted_pass[, category] + (1 | anon_classid)
 ##    Data: et_predicted_pass
 ## 
-## REML criterion at convergence: 17712.3
+## REML criterion at convergence: 17713.6
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.1677 -0.5403 -0.3362  0.2097  8.4341 
+## -1.1246 -0.5410 -0.3349  0.2008  8.4440 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  5719     75.62  
-##  Residual                 81945    286.26  
-## Number of obs: 1248, groups:  anon_classid, 230
+##  anon_classid (Intercept)  5398     73.47  
+##  Residual                 82322    286.92  
+## Number of obs: 1248, groups:  anon_classid, 214
 ## 
 ## Fixed effects:
 ##                                Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                      205.59      13.80  341.18  14.893   &lt;2e-16 ***
-## et_predicted_pass[, category]F   -20.24      16.69 1234.40  -1.213    0.226    
+## (Intercept)                      206.47      13.86  297.64  14.897   &lt;2e-16 ***
+## et_predicted_pass[, category]F   -20.52      16.73 1238.02  -1.226     0.22    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## et_pr_[,c]F -0.665</code></pre>
+## et_pr_[,c]F -0.662</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: et_sq_error ~ et_predicted_fail[, category] + (1 | anon_classid)
 ##    Data: et_predicted_fail
 ## 
-## REML criterion at convergence: 37829.2
+## REML criterion at convergence: 37819.9
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.7436 -0.5931 -0.3418  0.2818  8.3022 
+## -1.8387 -0.5933 -0.3382  0.2830  8.2425 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  7990     89.38  
-##  Residual                 61003    246.99  
-## Number of obs: 2716, groups:  anon_classid, 276
+##  anon_classid (Intercept)  8851     94.08  
+##  Residual                 60576    246.12  
+## Number of obs: 2716, groups:  anon_classid, 254
 ## 
 ## Fixed effects:
 ##                                Estimate Std. Error       df t value Pr(&gt;|t|)
-## (Intercept)                     215.776      8.780  286.566  24.576  &lt; 2e-16
-## et_predicted_fail[, category]F  -36.674      9.823 2627.924  -3.733 0.000193
+## (Intercept)                     216.980      9.112  259.538  23.813  &lt; 2e-16
+## et_predicted_fail[, category]F  -37.536      9.796 2622.907  -3.832  0.00013
 ##                                   
 ## (Intercept)                    ***
 ## et_predicted_fail[, category]F ***
@@ -1169,28 +1169,28 @@ the subset.</p>
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## et_pr_[,c]F -0.491</code></pre>
+## et_pr_[,c]F -0.472</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: xgb_sq_error ~ xgb_predicted_pass[, category] + (1 | anon_classid)
 ##    Data: xgb_predicted_pass
 ## 
-## REML criterion at convergence: 18860.2
+## REML criterion at convergence: 18860.4
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -0.9300 -0.5921 -0.3702  0.2371  7.0448 
+## -0.8940 -0.5899 -0.3720  0.2418  7.0462 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  2254     47.48  
-##  Residual                 90977    301.62  
-## Number of obs: 1322, groups:  anon_classid, 229
+##  anon_classid (Intercept)  2043     45.2   
+##  Residual                 91190    302.0   
+## Number of obs: 1322, groups:  anon_classid, 211
 ## 
 ## Fixed effects:
 ##                                 Estimate Std. Error      df t value Pr(&gt;|t|)
-## (Intercept)                       217.66      13.11  403.06  16.599   &lt;2e-16
-## xgb_predicted_pass[, category]F   -20.08      16.86 1319.07  -1.191    0.234
+## (Intercept)                       218.26      13.12  364.43  16.634   &lt;2e-16
+## xgb_predicted_pass[, category]F   -20.39      16.88 1319.96  -1.208    0.227
 ##                                    
 ## (Intercept)                     ***
 ## xgb_predicted_pass[, category]F    
@@ -1199,28 +1199,28 @@ the subset.</p>
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## xgb_p_[,c]F -0.708</code></pre>
+## xgb_p_[,c]F -0.707</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: xgb_sq_error ~ xgb_predicted_fail[, category] + (1 | anon_classid)
 ##    Data: xgb_predicted_fail
 ## 
-## REML criterion at convergence: 37069.9
+## REML criterion at convergence: 37060.9
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.5840 -0.5855 -0.3438  0.2332  9.2719 
+## -1.7215 -0.5864 -0.3303  0.2398  9.1826 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  6546     80.91  
-##  Residual                 68597    261.91  
-## Number of obs: 2642, groups:  anon_classid, 282
+##  anon_classid (Intercept)  7550     86.89  
+##  Residual                 67992    260.75  
+## Number of obs: 2642, groups:  anon_classid, 259
 ## 
 ## Fixed effects:
 ##                                 Estimate Std. Error       df t value Pr(&gt;|t|)
-## (Intercept)                      218.770      8.801  317.582   24.86  &lt; 2e-16
-## xgb_predicted_fail[, category]F  -32.847     10.528 2587.884   -3.12  0.00183
+## (Intercept)                      219.916      9.143  277.923  24.053  &lt; 2e-16
+## xgb_predicted_fail[, category]F  -33.281     10.505 2582.024  -3.168  0.00155
 ##                                    
 ## (Intercept)                     ***
 ## xgb_predicted_fail[, category]F ** 
@@ -1229,55 +1229,55 @@ the subset.</p>
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## xgb_p_[,c]F -0.524</code></pre>
+## xgb_p_[,c]F -0.502</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: lr_sq_error ~ lr_predicted_pass[, category] + (1 | anon_classid)
 ##    Data: lr_predicted_pass
 ## 
-## REML criterion at convergence: 18888.8
+## REML criterion at convergence: 18887.3
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.4058 -0.5211 -0.3315  0.1840  8.2880 
+## -1.4391 -0.5202 -0.3242  0.1885  8.2387 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept) 11783    108.6   
-##  Residual                 93255    305.4   
-## Number of obs: 1316, groups:  anon_classid, 234
+##  anon_classid (Intercept) 12940    113.8   
+##  Residual                 92794    304.6   
+## Number of obs: 1316, groups:  anon_classid, 220
 ## 
 ## Fixed effects:
 ##                                Estimate Std. Error      df t value Pr(&gt;|t|)    
-## (Intercept)                      232.00      15.37  266.13  15.096   &lt;2e-16 ***
-## lr_predicted_pass[, category]F   -34.88      17.51 1274.44  -1.991   0.0467 *  
+## (Intercept)                      233.24      15.74  216.65  14.817   &lt;2e-16 ***
+## lr_predicted_pass[, category]F   -34.45      17.53 1275.06  -1.965   0.0496 *  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## lr_pr_[,c]F -0.623</code></pre>
+## lr_pr_[,c]F -0.606</code></pre>
 <pre><code>## Linear mixed model fit by REML. t-tests use Satterthwaite&#39;s method [
 ## lmerModLmerTest]
 ## Formula: lr_sq_error ~ lr_predicted_fail[, category] + (1 | anon_classid)
 ##    Data: lr_predicted_fail
 ## 
-## REML criterion at convergence: 37196.6
+## REML criterion at convergence: 37186.9
 ## 
 ## Scaled residuals: 
 ##     Min      1Q  Median      3Q     Max 
-## -1.5083 -0.5845 -0.3517  0.2486  7.6585 
+## -1.6785 -0.5877 -0.3462  0.2584  7.7187 
 ## 
 ## Random effects:
 ##  Groups       Name        Variance Std.Dev.
-##  anon_classid (Intercept)  6008     77.51  
-##  Residual                 70035    264.64  
-## Number of obs: 2648, groups:  anon_classid, 275
+##  anon_classid (Intercept)  7170     84.67  
+##  Residual                 69307    263.26  
+## Number of obs: 2648, groups:  anon_classid, 252
 ## 
 ## Fixed effects:
 ##                                Estimate Std. Error       df t value Pr(&gt;|t|)
-## (Intercept)                     220.948      8.743  330.597  25.271  &lt; 2e-16
-## lr_predicted_fail[, category]F  -36.966     10.612 2602.754  -3.483 0.000503
+## (Intercept)                     222.986      9.122  279.745  24.446  &lt; 2e-16
+## lr_predicted_fail[, category]F  -37.379     10.584 2592.358  -3.532  0.00042
 ##                                   
 ## (Intercept)                    ***
 ## lr_predicted_fail[, category]F ***
@@ -1286,7 +1286,7 @@ the subset.</p>
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## lr_pr_[,c]F -0.534</code></pre>
+## lr_pr_[,c]F -0.510</code></pre>
 </div>
 </div>
 
