@@ -1,0 +1,215 @@
+---
+title: "HLM for Brockton classroom data"
+author: "Clara Belitz"
+date: "08/13/2023"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+library(lme4)      # for fitting model
+library(lmerTest)  # for getting df, t and p for fixed effects
+library(texreg)    # nice formated output (laTex included)
+library(optimx)    # needed for changing algorithm
+```
+
+## Variables chosen for this output
+```{r variables}
+# Set variables for usage in the file. Here 'model_col' refers to the column name for that model
+# file_name = "data/brockton_and_pasadena_prediction_with_demographic_features.csv" # not currently working, need to set manually in next chunk
+
+# rf_col = 'rf_pred_thresh'
+# dt_col = 'dt_pred_thresh'
+# nn_col = 'nn_pred_thresh'
+# xgb_col = 'xgb_pred_thresh'
+
+rf_col = 'random_forest_prediction'
+dt_col = 'decision_tree_prediction'
+et_col = 'extra_tree_prediction'
+xgb_col = 'xgb_prediction'
+lr_col = 'linear_regression_prediction'
+
+```
+
+## Data Setup
+
+We need to load the general training data, make student ID and the demographic group of interest factor variables, and then create a new variable called "sq_error" containing the error squared for each prediction. The models are random forest, decision tree, extra trees, XGBoost, and linear regression.
+```{r data-setup, echo=FALSE}
+# load training data
+mcas_bias_data <- read.csv("data/MCAS_prediction_demographic_merged_df_v1_edits_for_hlm.csv", header=TRUE)
+
+# uncomment for gender
+category = 'gender'
+level_list = c("M", "F") # update as appropriate for the given category
+
+# uncomment for race
+# category = 'ethnicity'
+
+# black vs non-black only
+# temp_category = 'ethnicity'
+# mcas_bias_data$black = with(mcas_bias_data, ifelse(mcas_bias_data[, temp_category] == 'black', 'black', 'non-black'))
+# category = 'black'
+
+# uncomment for student role
+# category = 'role'
+# level_list = c("none", "negative", "neutral", "positive") # update as appropriate for the given category
+
+#make student id and categories of interest factor variables
+mcas_bias_data$student_id<-as.factor(mcas_bias_data$student_id)
+mcas_bias_data$anon_classid <- as.factor(mcas_bias_data$anon_classid)
+mcas_bias_data[, category] = factor(mcas_bias_data[, category], levels=level_list) # none is baseline level
+
+
+# create column to calculate square error per prediction, for each model
+mcas_bias_data$rf_sq_error<- with(mcas_bias_data, (mcas_bias_data[, rf_col] - true_MCAS)^2)  
+mcas_bias_data$dt_sq_error <- with(mcas_bias_data, (mcas_bias_data[, dt_col] - true_MCAS)^2)
+mcas_bias_data$et_sq_error <- with(mcas_bias_data, (mcas_bias_data[, et_col] - true_MCAS)^2)
+mcas_bias_data$xgb_sq_error <- with(mcas_bias_data, (mcas_bias_data[, xgb_col] - true_MCAS)^2)
+mcas_bias_data$lr_sq_error <- with(mcas_bias_data, (mcas_bias_data[, lr_col] - true_MCAS)^2)
+
+head(mcas_bias_data)
+```
+
+
+## Basic HLM explaining whether the model was correct for each model
+### Analogous to Overall Accuracy Equality.
+Need to compare accuracy across groups, for regression, we can use prediction error. 
+
+```{r correct, echo=FALSE}
+rf_model_oae <- lmer(rf_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(rf_model_oae)
+
+dt_model_oae <- lmer(dt_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(dt_model_oae)
+
+et_model_oae <- lmer(et_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(et_model_oae)
+
+xgb_model_oae <- lmer(xgb_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(xgb_model_oae)
+
+lr_model_oae <- lmer(lr_sq_error ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(lr_model_oae)
+```
+
+
+### Analogous to Statistical Parity
+We can try the models again looking at the prediction of scores, rather than looking at the error of the model. This is analogous to statistical parity. Because the positive and negative models would be equivalent but reversed we can run the model just once.
+
+```{r stat-parity, echo=FALSE}
+rf_model_sp <- lmer(mcas_bias_data[, rf_col] ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(rf_model_sp)
+
+dt_model_sp <- lmer(mcas_bias_data[, dt_col] ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(dt_model_sp)
+
+et_model_sp <- lmer(mcas_bias_data[, et_col] ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(et_model_sp)
+
+xgb_model_sp <- lmer(mcas_bias_data[, xgb_col] ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(xgb_model_sp)
+
+lr_model_sp <- lmer(mcas_bias_data[, lr_col] ~ mcas_bias_data[, category] + (1 | anon_classid), data=mcas_bias_data)
+summary(lr_model_sp)
+```
+
+
+### Analogous to conditional procedure accuracy (break groups into pos and neg labels)
+In order to do metrics that require conditional groupings, we will use an MCAS score of 486 as the cutoff for creating groups, since students must receive a 486 or above to pass, aligning with [Massachusetts Department of Education Standards](https://www.doe.mass.edu/mcas/graduation.html).
+
+We can look at conditional procedure accuracy with two HLMs per machine learning model. We first break the datasets into two groups based on the ground truth MCAS scores: scores equal to or above 486 compared to scores below 486.
+We then look at the square error for each demographic group within the subset.
+```{r cpa, echo=FALSE}
+mcas_true_pass = mcas_bias_data[mcas_bias_data$true_MCAS >= 486, ]
+
+mcas_true_fail = mcas_bias_data[mcas_bias_data$true_MCAS < 486, ]
+
+# -------------------------------
+rf_true_model_cpa <- lmer(rf_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid), data=mcas_true_pass)
+summary(rf_true_model_cpa)
+
+rf_false_model_cpa <- lmer(rf_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid), data=mcas_true_fail)
+summary(rf_false_model_cpa)
+
+# -------------------------------
+dt_true_model_cpa <- lmer(dt_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid), data=mcas_true_pass)
+summary(dt_true_model_cpa)
+
+dt_false_model_cpa <- lmer(dt_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid), data=mcas_true_fail)
+summary(dt_false_model_cpa)
+
+# -------------------------------
+et_true_model_cpa <- lmer(et_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid), data=mcas_true_pass)
+summary(et_true_model_cpa)
+
+et_false_model_cpa <- lmer(et_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid), data=mcas_true_fail)
+summary(et_false_model_cpa)
+
+# -------------------------------
+xgb_true_model_cpa <- lmer(xgb_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid), data=mcas_true_pass)
+summary(xgb_true_model_cpa)
+
+xgb_false_model_cpa <- lmer(xgb_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid), data=mcas_true_fail)
+summary(xgb_false_model_cpa)
+
+# -------------------------------
+lr_true_model_cpa <- lmer(lr_sq_error ~ mcas_true_pass[, category] + (1 | anon_classid), data=mcas_true_pass)
+summary(lr_true_model_cpa)
+
+lr_false_model_cpa <- lmer(lr_sq_error ~ mcas_true_fail[, category] + (1 | anon_classid), data=mcas_true_fail)
+summary(lr_false_model_cpa)
+```
+
+
+### Analogous to conditional use accuracy (break groups into pos and neg predictions)
+We can also look at conditional use accuracy with two HLMs per machine learning model. We first break the datasets into two groups based on the predicted MCAS scores: scores equal to or above 486 compared to scores below 486.
+
+We then look at the square error for each demographic group within the subset.
+```{r cua, echo=FALSE}
+rf_predicted_pass = mcas_bias_data[mcas_bias_data[, rf_col] >= 486, ]
+dt_predicted_pass = mcas_bias_data[mcas_bias_data[, dt_col] >= 486, ]
+et_predicted_pass = mcas_bias_data[mcas_bias_data[, et_col] >= 486, ]
+xgb_predicted_pass = mcas_bias_data[mcas_bias_data[, xgb_col] >= 486, ]
+lr_predicted_pass = mcas_bias_data[mcas_bias_data[, lr_col] >= 486, ]
+
+rf_predicted_fail = mcas_bias_data[mcas_bias_data[, rf_col] < 486, ]
+dt_predicted_fail = mcas_bias_data[mcas_bias_data[, dt_col] < 486, ]
+et_predicted_fail = mcas_bias_data[mcas_bias_data[, et_col] < 486, ]
+xgb_predicted_fail = mcas_bias_data[mcas_bias_data[, xgb_col] < 486, ]
+lr_predicted_fail = mcas_bias_data[mcas_bias_data[, lr_col] < 486, ]
+
+rf_true_model_cua <- lmer(rf_sq_error ~ rf_predicted_pass[, category] + (1 | anon_classid), data=rf_predicted_pass)
+summary(rf_true_model_cua)
+
+rf_false_model_cua <- lmer(rf_sq_error ~ rf_predicted_fail[, category] + (1 | anon_classid), data=rf_predicted_fail)
+summary(rf_false_model_cua)
+# -------------------------------
+
+dt_true_model_cua <- lmer(dt_sq_error ~ dt_predicted_pass[, category] + (1 | anon_classid), data=dt_predicted_pass)
+summary(dt_true_model_cua)
+
+dt_false_model_cua <- lmer(dt_sq_error ~ dt_predicted_fail[, category] + (1 | anon_classid), data=dt_predicted_fail)
+summary(dt_false_model_cua)
+
+# -------------------------------
+et_true_model_cua <- lmer(et_sq_error ~ et_predicted_pass[, category] + (1 | anon_classid), data=et_predicted_pass)
+summary(et_true_model_cua)
+
+et_false_model_cua <- lmer(et_sq_error ~ et_predicted_fail[, category] + (1 | anon_classid), data=et_predicted_fail)
+summary(et_false_model_cua)
+
+# -------------------------------
+xgb_true_model_cua <- lmer(xgb_sq_error ~ xgb_predicted_pass[, category] + (1 | anon_classid), data=xgb_predicted_pass)
+summary(xgb_true_model_cua)
+
+xgb_false_model_cua <- lmer(xgb_sq_error ~ xgb_predicted_fail[, category] + (1 | anon_classid), data=xgb_predicted_fail)
+summary(xgb_false_model_cua)
+
+# -------------------------------
+lr_true_model_cua <- lmer(lr_sq_error ~ lr_predicted_pass[, category] + (1 | anon_classid), data=lr_predicted_pass)
+summary(lr_true_model_cua)
+
+lr_false_model_cua <- lmer(lr_sq_error ~ lr_predicted_fail[, category] + (1 | anon_classid), data=lr_predicted_fail)
+summary(lr_false_model_cua)
+
+```
