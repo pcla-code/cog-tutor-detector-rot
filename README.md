@@ -2,7 +2,7 @@
 Detecting students exhibiting "Gaming The System" behavior.
 
 
-## Extracting features from raw logfiles
+## Step 1: Extracting features from raw logfiles
 The first step for the gaming detector requires feature extraction from the raw MATHia (or other datashop formatted) logifles.
 This is done using `extract_features.py`. This file takes command line args with both required and optional flags.
 
@@ -16,4 +16,26 @@ The `--concat` flag is used to indicate that you also wish to save a version of 
 This should include a full path, including file name, to which the data will be saved.
 
 For example, you might run the command
-```python extract_features.py ./path/to/logfile.csv ./extractedFeaturesDir  --concat ./extractedFeaturesDir/final_file.csv```
+```
+python extract_features.py ./path/to/logfile.csv ./extractedFeaturesDir  --concat ./extractedFeaturesDir/final_features_file.csv
+```
+
+
+## Step 2: Running the gaming detector
+
+The second step is to run the gaming detector using the features extracted in step one. This
+is done using 'modeling_gaming.py`. This file takes command line args with both required and optional
+flags.
+
+* 'features_csv' (required): Path to extracted features file (CSV or TSV) to use as input
+* 'train_label' (required): column name of training labels
+* `user_id` (required): column name for student/user ID
+* `--training_data_csv` (optional): Path to training data. If provided, all of the features csv will be used for testing
+
+This script currently has hardcoded lines to save to a file with the original filename concatenated with "_gaming_predictions_all_brockton_21_22.csv".
+This should be updated directly in the code if you wish for it to be different (feature flag coming soon).
+
+For example, you might run the command
+``` 
+python modeling_gaming.py ./path/to/final_features_file.csv "label" "user_id" --training_data_csv training_data_2022.csv
+```
