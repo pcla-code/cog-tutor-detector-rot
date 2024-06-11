@@ -81,7 +81,7 @@ def train_predict_model_with_splits(feat_df: pd.DataFrame, group_id: str, label:
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Build predictive models for gaming the system in MATHia')
     ap.add_argument('features_csv', help='Path to extracted features file (CSV or TSV) to use as input')
-    ap.add_argument('train_label', help='column name of ground truth labels')
+    ap.add_argument('train_label', help='column name of training labels')
     ap.add_argument('user_id', help='column name for student/user ID')
     ap.add_argument('--training_data_csv',
                     help='Path to training data. If provided, all of the features csv will be used for testing.')
