@@ -83,6 +83,7 @@ if __name__ == '__main__':
     ap.add_argument('features_csv', help='Path to extracted features file (CSV or TSV) to use as input')
     ap.add_argument('train_label', help='column name of training labels')
     ap.add_argument('user_id', help='column name for student/user ID')
+    ap.add_argument('output_dir', help='Path to where to write CSV output file')
     ap.add_argument('--training_data_csv',
                     help='Path to training data. If provided, all of the features csv will be used for testing.')
     args = ap.parse_args()
@@ -92,6 +93,7 @@ if __name__ == '__main__':
     features_df = pd.read_csv(args.features_csv)
     training_label = args.train_label
     student_id = args.user_id
+    output_csv = args.output_dir
     filename = os.path.basename(args.features_csv)
 
     if args.training_data_csv:
@@ -135,4 +137,4 @@ if __name__ == '__main__':
             final_preds = train_predict_model_with_splits(features_df, student_id, training_label, pipeline)
 
         final_preds['orig_file'] = filename
-        final_preds.to_csv(str(name) + '_gaming_predictions_all_brockton_21_22.csv', index=False)
+        final_preds.to_csv(str(output_csv + '_' + name) + '.csv', index=False)
