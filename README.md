@@ -27,15 +27,13 @@ The second step is to run the gaming detector using the features extracted in st
 is done using 'modeling_gaming.py`. This file takes command line args with both required and optional
 flags.
 
-* 'features_csv' (required): Path to extracted features file (CSV or TSV) to use as input
-* 'train_label' (required): column name of training labels
+* `features_csv` (required): Path to extracted features file (CSV or TSV) to use as input
+* `train_label` (required): column name of training labels
 * `user_id` (required): column name for student/user ID
+* `output_dir` (required): Path to where to write CSV output file, including name (but not including '.csv'). Each model run will save as a unique file.
 * `--training_data_csv` (optional): Path to training data. If provided, all of the features csv will be used for testing
-
-This script currently has hardcoded lines to save to a file with the original filename concatenated with "_gaming_predictions_all_brockton_21_22.csv".
-This should be updated directly in the code if you wish for it to be different (feature flag coming soon).
 
 For example, you might run the command
 ``` 
-python modeling_gaming.py ./path/to/final_features_file.csv "label" "user_id" --training_data_csv training_data_2022.csv
+python modeling_gaming.py ./path/to/final_features_file.csv "label" "user_id" ./extractedFeaturesDir/YEAR_SCHOOL_gaming_predictions --training_data_csv training_data.csv
 ```
