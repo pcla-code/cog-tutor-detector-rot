@@ -40,8 +40,11 @@ def get_features(one_student_df: pd.DataFrame) -> pd.DataFrame:
     feature_df['duration'] = feature_df.server_time.diff() / 1000
     feature_df['duration_sd'] = feature_df[['duration']].apply(zscore, nan_policy='omit')
 
-    for outcome in ['OK', 'BUG', 'ERROR', 'INITIAL_HINT']:
+    for outcome in ['ERROR', 'INITIAL_HINT']:
         feature_df['assess_' + outcome] = (one_student_df.tutor_outcome == outcome) * 1
+
+    feature_df['assess_OK'] = one_student_df[one_student_df.tutor_outcome.isin(['OK', 'OK_AMBIGUOUS'])]
+    feature_df['assess_BUG'] = one_student_df[one_student_df.tutor_outcome.isin(['JIT', 'FREEBIE_JIT', 'BUG'])]
 
     feature_df['prob_first_att'] = 0
     feature_df.loc[feature_df[['problem_id', 'goalnode_id']].drop_duplicates().index,
