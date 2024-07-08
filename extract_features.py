@@ -43,8 +43,8 @@ def get_features(one_student_df: pd.DataFrame) -> pd.DataFrame:
     for outcome in ['ERROR', 'INITIAL_HINT']:
         feature_df['assess_' + outcome] = (one_student_df.tutor_outcome == outcome) * 1
 
-    feature_df['assess_OK'] = one_student_df[one_student_df.tutor_outcome.isin(['OK', 'OK_AMBIGUOUS'])]
-    feature_df['assess_BUG'] = one_student_df[one_student_df.tutor_outcome.isin(['JIT', 'FREEBIE_JIT', 'BUG'])]
+    feature_df['assess_OK'] = (one_student_df[one_student_df.tutor_outcome.isin(['OK', 'OK_AMBIGUOUS'])]) * 1
+    feature_df['assess_BUG'] = (one_student_df[one_student_df.tutor_outcome.isin(['JIT', 'FREEBIE_JIT', 'BUG'])]) * 1
 
     feature_df['prob_first_att'] = 0
     feature_df.loc[feature_df[['problem_id', 'goalnode_id']].drop_duplicates().index,
