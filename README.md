@@ -1,5 +1,5 @@
 # CogTutorGamingDetectors
-Detecting students exhibiting "Gaming The System" behavior.
+Detecting students exhibiting "Gaming The System" behavior and predicting year end test scores based on these behaviors.
 
 
 ## Step 1: Extracting features from raw logfiles
