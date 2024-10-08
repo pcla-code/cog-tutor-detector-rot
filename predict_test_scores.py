@@ -53,11 +53,23 @@ def preprocess_data(training_data: pd.DataFrame, label: str) -> pd.DataFrame:
 
 
 if __name__ == '__main__':
-    csv_name = "path/to/features_file.csv"
+    ap = argparse.ArgumentParser(description='Build predictive models test score prediction using MATHia gaming features')
+    ap.add_argument('features_csv', help='Path to extracted features file (CSV or TSV) to use as input')
+    ap.add_argument('train_label', help='column name of training labels')
+    ap.add_argument('user_id', help='column name for student/user ID')
+    ap.add_argument('output_dir', help='Path to where to write CSV output file')
+
+    args = ap.parse_args()
+
+    print('Loading')
+
+    sep = '\t' if args.features_csv.endswith('.tsv') else ','
+    csv_name = args.features_csv
     predictive_features = pd.read_csv(csv_name)
 
-    label_name = "test_score"
-    student_id = "user_id"
+    label_name = args.train_label
+    student_id = args.user_id
+    output_csv = args.output_dir
 
     features = list(predictive_features.columns)
     features.remove(student_id)
@@ -156,4 +168,4 @@ if __name__ == '__main__':
 
         average_pred = np.mean(all_predictions, axis=0)  # average predictions per student
         average_df = pd.DataFrame(index=processed_training_df[student_id], data=average_pred, columns=['average_score_prediction'])
-        average_df.to_csv(str(name) + '_score_predictions_averaged_all_students_21_22.csv')
+        average_df.to_csv(str(output_csv) + '_' + str(name) + '.csv', index=False)
