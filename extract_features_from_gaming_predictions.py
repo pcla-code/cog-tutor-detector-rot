@@ -12,7 +12,7 @@ def extract_features(input_df: pd.DataFrame, id_column: str, output_pathname: st
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(description='Extract features from gaming predictions in MATHia')
-    ap.add_argument('mathia_csv', help='Path to gaming predictions (CSV or TSV) to use as input')
+    ap.add_argument('features_csv', help='Path to gaming predictions (CSV or TSV) to use as input')
     ap.add_argument('user_id', help='column name for student/user ID')
     ap.add_argument('output_dir', help='Output directory path')
     args = ap.parse_args()

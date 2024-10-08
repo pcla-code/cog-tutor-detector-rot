@@ -37,3 +37,32 @@ For example, you might run the command
 ``` 
 python modeling_gaming.py ./path/to/final_features_file.csv "label" "user_id" ./extractedFeaturesDir/YEAR_SCHOOL_gaming_predictions --training_data_csv training_data.csv
 ```
+
+## Step 3: Extract features from gaming predictions
+
+The third step is to extract features from the predictions created by the gaming detector. This is done using `extract_features_from_gaming_predictions.py`. This file takes command line args with required flags. Only one output file will be created.
+
+* `features_csv` (required): Path to gaming predictions (CSV or TSV) to use as input
+* `user_id` (required): column name for student/user ID
+* `output_dir` (required): Path to where to write CSV output file, including name.
+
+For example, you might run the command
+```
+python extract_features_from_gaming_predictions.py ./path/to/gaming_predictions.csv "user_id" ./path/to/final_features_file.csv
+```
+
+
+## Step 4: Running the test score predictive models
+
+The fourth step is to predict test scores using the features extracted in step three. This
+is done using 'predict_test_scores.py`. This file takes command line args with required flags.
+
+* `features_csv` (required): Path to extracted features file (CSV or TSV) to use as input
+* `train_label` (required): column name of training labels
+* `user_id` (required): column name for student/user ID
+* `output_dir` (required): Path to where to write CSV output file, including name (but not including '.csv'). Each model run will save as a unique file.
+
+For example, you might run the command
+```
+python modeling_gaming.py ./path/to/final_features_file.csv "label" "user_id" ./extractedFeaturesDir/YEAR_SCHOOL_test_score_predictions
+```
