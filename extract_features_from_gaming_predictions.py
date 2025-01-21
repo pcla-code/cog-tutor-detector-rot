@@ -19,10 +19,9 @@ if __name__ == '__main__':
 
     print('Loading')
     sep = '\t' if args.features_csv.endswith('.tsv') else ','
-    predictions_df = pd.read_csv(args.mathia_csv)
+    features_df = pd.read_csv(args.features_csv)
     student_id = args.user_id
     output_csv = args.output_dir
-    filename = os.path.basename(args.features_csv)
 
-    extract_features(predictions_df, student_id, output_csv)
+    extract_features(features_df, student_id, output_csv)
 
