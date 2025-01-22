@@ -8,7 +8,6 @@ from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 from sklearn.model_selection import KFold, cross_val_predict
 from sklearn.metrics import r2_score
 from sklearn.pipeline import Pipeline
-from imblearn.over_sampling import SMOTE
 import argparse
 import os
 from sklearn.model_selection import GridSearchCV
@@ -34,10 +33,6 @@ def train_predict_model_with_splits(feat_df: pd.DataFrame, group_id: str, label:
 
         test_x = test_inst[features].copy()
         test_y = test_inst[label].copy()
-
-#         if sm:
-#             sm = SMOTE(random_state=42)
-#             train_x, train_y = sm.fit_resample(train_x, train_y)
 
         pipe.fit(train_x, train_y)
         label_predict = pipe.predict(test_x)

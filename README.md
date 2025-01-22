@@ -64,5 +64,5 @@ is done using 'predict_test_scores.py`. This file takes command line args with r
 
 For example, you might run the command
 ```
-python modeling_gaming.py ./path/to/final_features_file.csv "label" "user_id" ./extractedFeaturesDir/YEAR_SCHOOL_test_score_predictions
+python predict_test_scores.py ./path/to/final_features_file.csv "label" "user_id" ./extractedFeaturesDir/YEAR_SCHOOL_test_score_predictions
 ```
