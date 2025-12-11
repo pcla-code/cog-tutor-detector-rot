@@ -1,0 +1,615 @@
+anon_userid,Timestamp,Answer Rank,Who Am I?,sorting,coder,Code,Valence
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,3,a person,0.010752973,clara,21,none
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,16,A hater,0.031258184,clara,44,negative
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,12,not everyones favriote,0.084666887,clara,46,negative
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,19,A niece,0.17929908100000003,clara,12,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,19,A niece,0.17929908100000003,clara,2,girl
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,7,A student,0.214543249,clara,14,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,20,i have too many aunties to count,0.22219898800000001,clara,12,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,2,9th grader,0.313964586,clara,22,9thgrade
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,2,9th grader,0.313964586,clara,4,9thgrade
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,2,9th grader,0.313964586,clara,14,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,13,A introvert,0.344780594,clara,44,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,14,A Simp,0.37733998399999996,clara,46,negative
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,18,A aunt,0.48368140200000004,clara,12,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,6,A Friend,0.711781685,frank,10,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,4,indapendent,0.721963481,frank,44,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,15,A lover,0.7392713590000001,frank,44,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,5,A sister,0.742175505,frank,12,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,5,A sister,0.742175505,frank,2,girl
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,17,bad grade student,0.776819198,frank,25,negative
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,17,bad grade student,0.776819198,frank,14,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,11,[SCHOOL NAME] student,0.822989185,frank,14,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,9,A Cousin,0.934596183,frank,12,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,1,A Girl,0.944306303,frank,2,girl
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,8,A Daughter,0.9462894709999999,frank,12,neutral
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,8,A Daughter,0.9462894709999999,frank,2,girl
+stu_AJMSL3816R,2022/05/16 2:33:05 PM AST,10,mommys baby,0.9561778590000001,frank,12,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,19,I am a pilot in [POPULAR VIDEO GAME],0.101410944,clara,28,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,20,"I am the top driver in the [YEAR, POPULAR F1 CHAMPIONSHIP]",0.281834392,clara,28,positive
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,9,I am 14,0.335979955,clara,4,14
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,5,I am done with the toll,0.34771858899999997,clara,47,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,8,I am in math class,0.38121436799999997,clara,47,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,13,I am related to no one in vermont,0.41492119899999996,clara,48,none
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,6,I am going to not do ib,0.42064912,clara,14,negative
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,3,I am tall,0.42861378299999997,clara,35,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,2,I am filling out a survey,0.453483934,clara,47,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,11,I am a citizen,0.484350936,clara,8,citizen
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,1,[FIRST & LAST NAME],0.548999156,frank,5,none
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,16,I am a son,0.563937871,frank,12,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,16,I am a son,0.563937871,frank,2,boy
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,17,I am having trouble coming up with more answers,0.594048192,frank,47,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,10,I am a corner infielder,0.607095367,frank,29,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,15,I am a student,0.7010051709999999,frank,14,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,18,I am good at graphic design,0.727095339,frank,27,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,18,I am good at graphic design,0.727095339,frank,26,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,7,I am level 12 in Pokemon Go,0.740044075,frank,28,neutral
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,12,I am never using an iphone,0.7594740809999999,frank,27,negative
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,14,I am in [CITY],0.945720074,frank,9,not sure
+stu_AUQLX2144H,2022/05/16 2:27:30 PM AST,4,I am 19% done with mathia,0.963170127,frank,47,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,6,I have a brother.,0.070097623,clara,12,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,7,I'm learning to drive in a year.,0.206375007,clara,31,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,2,I'm learning how to play guitar.,0.278088606,clara,26,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,12,My birthday is [DATE],0.399729839,clara,48,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,11,My favorite animal is a frog.,0.45032735700000004,clara,24,positive
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,13,,,,48,none
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,10,My favorite color is green.,0.554030794,frank,24,positive
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,15,,0.677380008,frank,48,none
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,8,I'm an artist.,0.7797252920000001,frank,26,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,5,I like rock/indie music.,0.815145784,frank,26,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,5,I like rock/indie music.,0.815145784,frank,24,positive
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,1,I'm 14 years old.,0.8607841409999999,frank,4,14 year old
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,9,I'm a writer.,0.8758329770000001,frank,25,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,14,,0.9018006829999999,frank,48,none
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,4,I can skateboard.,0.924060056,frank,29,neutral
+stu_BUYXD2520P,2022/03/17 12:29:42 PM AST,3,I have a dog.,0.925940436,frank,32,none
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,2,[FIRST & LAST NAME],0.12620867300000002,clara,5,none
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,20,likes plain clothes,0.158036607,clara,24,positive
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,10,a kid,0.18980028399999999,clara,22,kid
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,10,a kid,0.18980028399999999,clara,4,kid
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,8,has brown eyes,0.19868249300000002,clara,35,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,18,funny sometimes,0.215475867,clara,44,positive
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,18,simple,0.27798016600000003,clara,45,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,6,straight,0.291452858,clara,3,straight
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,16,short,0.43086277,clara,35,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,4,has brown hair,0.44086602700000005,clara,35,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,12,a quiet person sometimes,0.480703129,clara,44,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,10,a person with find grades,0.503529585,clara,14,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,12,Chinese,0.506513643,frank,7,chinese
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,20,boring sometimes,0.586283212,frank,44,negative
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,4,A girl,0.6157690570000001,frank,2,girl
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,16,an introvert,0.648782463,frank,44,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,14,A person who likes art,0.667651676,frank,26,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,14,A person who likes art,0.667651676,frank,24,positive
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,8,Not studious,0.689023543,frank,41,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,14,an extrovert,0.7200495729999999,frank,44,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,2,likes drawing,0.961220668,frank,26,neutral
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,2,likes drawing,0.961220668,frank,24,positive
+stu_CDQME8338E,2022/03/15 6:02:03 PM AST,6,13 years old,0.961319039,frank,4,13 year old
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,12,I am a black girl,0.112621311,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,12,I am a black girl,0.112621311,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,6,I am a black girl,0.113759175,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,6,I am a black girl,0.113759175,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,17,I am a black girl,0.17116199399999998,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,17,I am a black girl,0.17116199399999998,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,18,I am a black girl,0.24104989699999999,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,18,I am a black girl,0.24104989699999999,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,20,I am a black girl,0.310383132,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,20,I am a black girl,0.310383132,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,14,I am a black girl,0.404720015,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,14,I am a black girl,0.404720015,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,11,I am a black girl,0.40821080299999996,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,11,I am a black girl,0.40821080299999996,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,19,I am a black girl,0.422319457,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,19,I am a black girl,0.422319457,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,4,I am a black girl,0.428756436,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,4,I am a black girl,0.428756436,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,13,I am a black girl,0.451554668,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,13,I am a black girl,0.451554668,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,3,I am a black girl,0.49123234600000004,clara,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,3,I am a black girl,0.49123234600000004,clara,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,8,I am a black girl,0.577042129,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,8,I am a black girl,0.577042129,frank,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,16,I am a black girl,0.670769602,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,16,I am a black girl,0.670769602,frank,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,9,I am a black girl,0.675799175,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,9,I am a black girl,0.675799175,frank,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,5,I am a black girl,0.716112675,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,5,I am a black girl,0.716112675,frank,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,15,I am a black girl,0.722305077,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,15,I am a black girl,0.722305077,frank,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,7,I am a black girl,0.84935452,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,7,I am a black girl,0.84935452,frank,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,2,I am a black girl,0.861444585,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,2,I am a black girl,0.861444585,frank,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,1,I am a black girl,0.886734224,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,1,I am a black girl,0.886734224,frank,2,girl
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,10,I am a black girl,0.9465109290000001,frank,6,black
+stu_DYWGH4533N,2022/03/15 5:13:53 PM AST,10,I am a black girl,0.9465109290000001,frank,2,girl
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,5,I am quater Japanese,0.158978595,clara,7,japanese
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,20,Im am man,0.159312021,clara,2,man
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,13,I am trying to learn a new language,0.247365577,clara,31,neutral
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,6,I am Greman,0.26307364,clara,7,german
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,19,I am goodish at drawing,0.272904492,clara,26,positive
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,3,A star wars nerd,0.289786294,clara,22,nerd
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,10,I am someone with long hair I am someone who likes to cosplay,0.330807254,clara,35,neutral
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,10,I am someone with long hair I am someone who likes to cosplay,0.330807254,clara,24,positive
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,10,I am someone with long hair I am someone who likes to cosplay,0.330807254,clara,31,positive
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,11,I am not good with social interactions,0.35181302600000003,clara,45,negative
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,8,I am somone that dosent like to read,0.368747515,clara,25,negative
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,8,I am somone that dosent like to read,0.368747515,clara,24,negative
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,16,I am an anime fan,0.37762477899999997,clara,24,positive
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,14,I am not good at fashion,0.42386392799999995,clara,30,negative
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,9,I am a theme park nerd,0.44453882100000003,clara,22,nerd
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,18,I am a bad at talking to new people,0.598526346,frank,44,negative
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,4,a mostly A grade student,0.6395897079999999,frank,25,neutral
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,4,a mostly A grade student,0.6395897079999999,frank,14,neutral
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,17,I am an ok cook,0.690611443,frank,31,neutral
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,12,I am not very good at sports,0.707719652,frank,29,neutral
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,7,i am somtimes smart,0.754110101,frank,43,positive
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,15,I am a Marvel fan,0.8738149470000001,frank,24,positive
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,2,funny sometimes,0.9756531540000001,frank,44,positive
+stu_EPPBQ3873F,2022/03/15 5:33:42 PM AST,1,[FIRST & LAST NAME],0.987986012,frank,5,none
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,12,I like tennis,0.040171299,clara,24,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,15,I like going on vacations.,0.126362513,clara,31,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,15,I like going on vacations.,0.126362513,clara,24,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,17,I love listening to classical music,0.194109177,clara,26,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,17,I love listening to classical music,0.194109177,clara,24,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,14,I like swimming,0.20226563,clara,29,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,14,I like swimming,0.20226563,clara,24,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,16,I am a triliguist.,0.255935287,clara,22,trilingual
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,13,I hate running,0.276930716,clara,29,negative
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,13,I hate running,0.276930716,clara,24,negative
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,6,I am extroverted.,0.297623837,clara,44,neutral
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,19,"I like consider myself smart, although I'm not sure.",0.330851416,clara,43,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,10,I enjoy eating food.,0.352914679,clara,24,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,7,I am a lover of the arts.,0.40403334,clara,25,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,7,I am a lover of the arts.,0.40403334,clara,24,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,5,I identify as a heterosexual female.,0.40562962700000005,clara,3,female
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,5,I identify as a heterosexual female.,0.40562962700000005,clara,1,heterosexual
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,8,I am a writer.,0.457173148,clara,26,neutral
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,3,I am Moroccan-Italian.,0.45966558700000004,clara,7,moroccan-italian
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,1,I identify as female.,0.503779998,clara,1,female
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,20,I am young,0.507783996,frank,4,young
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,2,I identify as North African-American.,0.519234517,frank,7,north african-american
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,4,I am funny.,0.551191537,frank,46,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,11,I enjoy doing mathematics.,0.5877530129999999,frank,25,neutral
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,11,I enjoy doing mathematics.,0.5877530129999999,frank,24,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,18,I like watching television.,0.758637722,frank,27,neutral
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,18,I like watching television.,0.758637722,frank,24,positive
+stu_FRYMF1735S,2022/03/15 6:04:55 PM AST,9,I am a student.,0.8104968359999999,frank,14,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,14,I am all out of pencils. Please lend me some.,0.008583295,clara,47,negative
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,5,I am a blonde.,0.015681611,clara,35,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,3,I'm a 13 year old,0.064888673,clara,4,13
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,17,I am [CHARACTER NAME] in the play.,0.090056622,clara,26,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,16,I am a student.,0.206014306,clara,14,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,7,I am a great volleyball player and softball player.,0.351170876,clara,29,positive
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,19,I am person who was not prepared to explore their identity for a 5$ amazon giftcard.,0.444457815,clara,47,negative
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,12,I am a trail runner.,0.48779487899999996,clara,29,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,18,"I am a gemini, therefor I have an amazing personality.",0.6063756220000001,frank,45,positive
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,18,"I am a gemini, therefor I have an amazing personality.",0.6063756220000001,frank,22,gemini
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,1,I am an athlete?,0.6227832870000001,frank,29,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,11,I am a girl.,0.65653272,frank,2,girl
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,9,I am a person scared about moving.,0.682772357,frank,47,negative
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,4,I am a person confused about this survey.,0.696274535,frank,47,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,8,I am broke.,0.715930792,frank,34,poor
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,13,I am happy.,0.751328868,frank,45,positive
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,6,I am an artist and performer.,0.801209753,frank,26,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,15,I am a walking dad joke dispenser.,0.804038673,frank,45,neutral
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,2,I'm [FIRST NAME],0.912052765,frank,5,none
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,10,I am a member of my community.,0.961728417,frank,22,not sure
+stu_HDDFY3165H,2022/03/15 1:58:30 PM AST,20,I am feeling very accomplished for finishing this survey.,0.97724696,frank,47,positive
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,7,Cool kid,0.059633585999999995,clara,46,positive
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,7,Cool kid,0.059633585999999995,clara,4,kid
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,7,Cool kid,0.059633585999999995,clara,22,kid
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,2,[CLASSMATE'S FIRST & LAST NAME]'s plug,0.084204298,clara,10,positive
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,6,[FIRST NAME INITIAL]-W69,0.10559885599999999,clara,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,4,[FIRST NAME INITIAL & LAST NAME],0.136887851,clara,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,13,[FIRST NAME & LAST INITAL],0.199403628,clara,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,17,[VARIATION OF NAME],0.266852021,clara,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,3,NBA Lil [NAME INITIAL],0.37018080600000003,clara,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,10,[FIRST & LAST NAME],0.37289714700000004,clara,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,20,[VARIATION OF NAME],0.373358342,clara,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,8,[POPULAR VIDEO GAME],0.48294647399999996,clara,48,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,19,[VARIATION OF NAME],0.48987266799999996,clara,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,9,[FIRST NAME],0.574760525,frank,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,15,[POPULAR VIDEO GAME],0.713758033,frank,28,neutral
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,14,[FIRST INITIAL & LAST NAME],0.7801195740000001,frank,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,18,[VARIATION OF NAME],0.819410998,frank,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,1,[CLASSMATE'S FIRST & LAST NAME]'s mom,0.8542229459999999,frank,48,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,5,The Big [FIRST NAME INITIAL],0.8670004570000001,frank,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,16,[INTERNET USERNAME],0.9627870059999999,frank,27,neutral
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,16,[INTERNET USERNAME],0.9627870059999999,frank,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,11,[FIRST & LAST NAME],0.9645231009999999,frank,5,none
+stu_HSPMF9210Q,2022/03/15 5:17:15 PM AST,12,[FIRST NAME],0.9816433520000001,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,2,I am [FIRST & LAST NAME],0.106429358,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,17,I am [FIRST & LAST NAME],0.12727380900000002,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,15,I am [FIRST & LAST NAME],0.139099417,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,5,I am [FIRST & LAST NAME],0.238015605,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,3,I am [FIRST & LAST NAME],0.333907087,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,6,I am [FIRST & LAST NAME],0.357914374,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,14,I am [FIRST & LAST NAME],0.385107528,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,19,I am [FIRST & LAST NAME],0.417088209,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,4,I am [FIRST & LAST NAME],0.49516469399999996,clara,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,8,I am [FIRST & LAST NAME],0.594933798,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,9,I am [FIRST & LAST NAME],0.595560534,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,7,I am [FIRST & LAST NAME],0.606039033,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,11,I am [FIRST & LAST NAME],0.660820161,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,10,I am [FIRST & LAST NAME],0.702047392,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,16,I am [FIRST & LAST NAME],0.7079171870000001,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,12,I am [FIRST & LAST NAME],0.8053522120000001,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,13,I am [FIRST & LAST NAME],0.809188021,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,18,I am [FIRST & LAST NAME],0.9047542159999999,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,1,I am [FIRST & LAST NAME],0.9101282279999999,frank,5,none
+stu_IJDRZ1838Q,2022/03/15 5:15:54 PM AST,20,I am [FIRST & LAST NAME],0.9553928559999999,frank,5,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,7,I am not mean,0.035408415,clara,44,positive
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,16,....,0.068603899,clara,48,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,2,I like science,0.091728091,clara,25,positive
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,2,I like science,0.091728091,clara,24,positive
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,1,I am a human,0.115697096,clara,21,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,20,....,0.21792144800000002,clara,48,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,19,....,0.220444004,clara,48,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,10,I don't know,0.43831925,clara,20,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,8,I like being human,0.451698421,clara,24,positive
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,8,I like being human,0.451698421,clara,21,human
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,12,...,0.551931701,frank,48,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,9,I am a kid,0.62584185,frank,4,child
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,17,....,0.6425048729999999,frank,48,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,18,....,0.648739022,frank,48,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,4,I am a soccer player,0.661928975,frank,29,neutral
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,5,I am considered athletic,0.7440699540000001,frank,29,neutral
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,11,I don't know,0.82899952,frank,20,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,3,I was in math academy,0.85433372,frank,25,neutral
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,14,......,0.9196394040000001,frank,48,none
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,6,I am in middle school,0.9346434779999999,frank,22,middleschooler
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,6,I am in middle school,0.9346434779999999,frank,14,neutral
+stu_ISMGM5117Q,2022/03/15 1:57:42 PM AST,13,.....,0.996844953,frank,48,none
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,12,a fisherman,0.059639414,clara,31,neutral
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,8,a kid,0.092837076,clara,22,kid
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,8,a kid,0.092837076,clara,4,kid
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,5,an aisian,0.228883408,clara,6,asian
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,11,a [POPULAR VIDEO GAME] player,0.311255414,clara,28,neutral
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,10,a football kid,0.37013564,clara,29,neutral
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,10,a football kid,0.37013564,clara,4,kid
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,3,a human,0.464937936,clara,21,none
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,4,a friend,0.501950051,clara,10,neutral
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,16,,0.612359645,frank,48,none
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,2,at [SCHOOL NAME],0.621097417,frank,14,neutral
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,1,an 8th grader,0.699431754,frank,14,neutral
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,6,a gamer,0.7689951890000001,frank,28,neutral
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,19,,0.824497813,frank,48,none
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,17,,0.828865548,frank,48,none
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,14,,0.8303592390000001,frank,48,none
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,9,a teen,0.870333749,frank,22,teenager
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,7,a playa,0.879522055,frank,44,neutral
+stu_JYAJW1106C,2022/03/16 8:30:10 PM AST,15,,0.9561294109999999,frank,48,none
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,6,I'm Korean,0.021658899,clara,7,korean
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,9,I'm a cracked fortnite gamer,0.027191612,clara,28,positive
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,3,I'm a friend of [FIRST NAME],0.085600118,clara,10,neutral
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,8,I'm [FIRST NAME],0.19954809199999998,clara,5,none
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,1,I'm human,0.27745161399999996,clara,21,none
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,7,I'm Asian,0.358960692,clara,6,asian
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,4,I'm [NAME INITIALS]'s friend,0.568134904,frank,10,neutral
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,11,Im a mathematician,0.580394864,frank,25,neutral
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,12,Im an architectural designer,0.581893063,frank,26,neutral
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,12,Im an architectural designer,0.581893063,frank,25,neutral
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,20,,0.7347469759999999,frank,48,none
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,5,I'm a playa,0.7642446279999999,frank,44,neutral
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,2,I'm in [SCHOOL NAME],0.8763530079999999,frank,14,neutral
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,18,,0.88038497,frank,48,none
+stu_KGGVG8695W,2022/03/15 2:02:22 PM AST,10,Im a duck,0.912659715,frank,48,none
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,6,outside and inside guy,0.048482542,clara,44,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,9,computer science/coding,0.17442111600000001,clara,27,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,8,2 languages,0.22743995600000003,clara,22,bilingual
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,11,love to try foods from other cultures,0.309516232,clara,31,positive
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,11,love to try foods from other cultures,0.309516232,clara,24,positive
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,18,watching basketball,0.313009597,clara,47,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,2,A athlete,0.368795111,clara,29,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,16,watching hockey,0.530745192,frank,47,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,7,early to everything,0.5529520729999999,frank,43,none
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,20,[POPULAR SKIING MOUNTAIN] :),0.556596422,frank,29,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,1,A friend/happy/caring,0.568820855,frank,10,positive
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,10,films/editing,0.571453726,frank,27,neural
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,3,a hard worker,0.605881679,frank,41,positive
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,19,watching baeball,0.622514606,frank,47,neutralneutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,19,watching baeball,0.622514606,frank,29,neutralneutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,14,going on very fast/big roller coasters,0.636175015,frank,47,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,12,going to new places,0.638512339,frank,31,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,13,seeing live sporting events,0.7041665579999999,frank,29,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,17,watching soccer,0.713545764,frank,47,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,17,watching soccer,0.713545764,frank,29,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,4,"skier, snowboarder, and a surfer sometimes",0.8032898709999999,frank,29,neutral
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,5,A math person,0.873004472,frank,25,positive
+stu_MMPEO7609Y,2022/03/18 10:03:01 AM AST,15,watching football,0.9722718359999999,frank,47,neutral
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,10,[FIRST & LAST NAME],0.027307712,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,13,[FIRST & LAST NAME],0.029395694,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,20,[FIRST & LAST NAME],0.036486049,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,18,[FIRST & LAST NAME],0.053068185,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,9,[FIRST & LAST NAME],0.054946642000000004,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,6,[FIRST & LAST NAME],0.099704274,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,15,[FIRST & LAST NAME],0.20534925199999998,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,2,Student,0.211386338,clara,14,neutral
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,5,[FIRST & LAST NAME],0.30251801100000003,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,14,[FIRST & LAST NAME],0.44829381799999996,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,11,[FIRST & LAST NAME],0.450532324,clara,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,4,[FIRST & LAST NAME],0.578295067,frank,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,17,[FIRST & LAST NAME],0.644053316,frank,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,1,[FIRST & LAST NAME],0.663049349,frank,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,16,[FIRST & LAST NAME],0.7263875870000001,frank,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,8,[FIRST & LAST NAME],0.81775028,frank,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,3,Teenage girl,0.951904634,frank,22,teenager
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,3,Teenage girl,0.951904634,frank,2,girl
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,3,Teenage girl,0.951904634,frank,4,teenager
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,7,[FIRST & LAST NAME],0.9534589790000001,frank,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,12,[FIRST & LAST NAME],0.9549807579999999,frank,5,none
+stu_MPFAT1157P,2022/03/15 5:15:39 PM AST,19,[FIRST & LAST NAME],0.9965662190000001,frank,5,none
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,1,I love Soccer,0.031376745,clara,29,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,1,I love Soccer,0.031376745,clara,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,14,I love soccer,0.083384116,clara,29,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,14,I love soccer,0.083384116,clara,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,10,I love my best friend [FIRST NAME],0.12197277699999999,clara,10,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,9,I love my best friend [FIRST NAME],0.16129204,clara,10,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,16,I love playing wing-back in soccer,0.16343505,clara,29,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,16,I love playing wing-back in soccer,0.16343505,clara,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,5,I love music,0.18223474,clara,26,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,5,I love music,0.18223474,clara,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,18,I have good grades and work hard,0.197191287,clara,41,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,18,I have good grades and work hard,0.197191287,clara,14,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,2,I love dogs,0.274070172,clara,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,6,Soccer is my life,0.311794283,clara,29,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,19,I strongly dislike math,0.370884593,clara,25,negative
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,19,I strongly dislike math,0.370884593,clara,24,negative
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,11,I love my best friend [FIRST NAME],0.392522996,clara,10,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,4,I love my sister,0.43262709299999996,clara,12,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,8,I love La Jolla/Ventura,0.461431799,clara,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,15,I love soccer,0.499266274,clara,29,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,15,I love soccer,0.499266274,clara,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,13,I love acting,0.602366453,frank,26,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,13,I love acting,0.602366453,frank,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,20,I love soccer,0.630235074,frank,29,neutral
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,20,I love soccer,0.630235074,frank,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,12,I love Soccer,0.677927262,frank,29,neutral
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,12,I love Soccer,0.677927262,frank,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,7,I care about my grades,0.7230745359999999,frank,25,neutral
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,3,I love my parents,0.7671451,frank,24,positive
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,3,I love my parents,0.7671451,frank,12,neutral
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,17,I love talk to my friends,0.904013264,frank,31,neutral
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,17,I love talk to my friends,0.904013264,frank,10,neutral
+stu_MYPPF5696O,2022/03/15 2:04:19 PM AST,17,I love talk to my friends,0.904013264,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,18,I like listening to documentaries,0.017716789,clara,31,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,18,I like listening to documentaries,0.017716789,clara,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,15,I like playing baseball,0.08343545,clara,29,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,15,I like playing baseball,0.08343545,clara,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,5,I am 15 years old,0.089176556,clara,4,15
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,8,I like reading books,0.21400962199999998,clara,25,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,8,I like reading books,0.21400962199999998,clara,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,10,I am friendly,0.26015176100000004,clara,44,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,6,I live in [CITY],0.316833872,clara,9,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,20,I love my family,0.326594382,clara,12,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,14,I like watching action movies or science fiction movies,0.632174417,frank,31,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,14,I like watching action movies or science fiction movies,0.632174417,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,13,I like learning about anything medical,0.635691682,frank,25,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,13,I like learning about anything medical,0.635691682,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,11,I like playing games,0.658228949,frank,28,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,11,I like playing games,0.658228949,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,7,I excel in Mathematics,0.782149722,frank,25,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,17,I like observing things like animal behavior,0.8108617690000001,frank,31,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,17,I like observing things like animal behavior,0.8108617690000001,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,16,I like solving puzzles,0.8274942670000001,frank,31,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,16,I like solving puzzles,0.8274942670000001,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,3,I am FIlipino,0.8527746009999999,frank,7,filipino
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,12,I like biology,0.8598992129999999,frank,25,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,12,I like biology,0.8598992129999999,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,2,I'm a second child,0.884424914,frank,12,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,19,I like talking with my sister,0.888968667,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,19,I like talking with my sister,0.888968667,frank,12,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,9,I like playing badminton,0.899278482,frank,29,neutral
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,9,I like playing badminton,0.899278482,frank,24,positive
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,4,I was born at [BIRTHDATE],0.94103354,frank,4,not sure
+stu_PTDFD3837B,2022/05/16 3:27:47 PM AST,1,"I am [FIRST, MIDDLE & LAST NAME]",0.963547886,frank,5,none
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,11,I am big,0.01217307,clara,35,neutral
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,20,I like spring,0.031678318,clara,24,positive
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,12,I LOVE math,0.174716018,clara,25,positive
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,12,I LOVE math,0.174716018,clara,24,positive
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,2,I like water,0.207000779,clara,24,positive
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,1,I'm a boy,0.352450327,clara,2,boy
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,6,In 8th grade,0.447965321,clara,22,8thgrade
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,6,In 8th grade,0.447965321,clara,4,8thgrade
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,6,In 8th grade,0.447965321,clara,14,neutral
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,8,I play baseball,0.488563265,clara,29,neutral
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,18,I don't like soccer,0.53842879,frank,29,negative
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,18,I don't like soccer,0.53842879,frank,24,negative
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,14,I'm not short,0.60075085,frank,35,neutral
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,7,Going to high school next year,0.604011202,frank,14,middleschooler
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,7,Going to high school next year,0.604011202,frank,4,teenager
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,17,I like baseball,0.616066404,frank,29,neutral
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,17,I like baseball,0.616066404,frank,24,positive
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,16,I like computers,0.664252274,frank,27,neutral
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,16,I like computers,0.664252274,frank,24,positive
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,3,Food is enjoyable,0.675290697,frank,24,positive
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,19,I don't like winter,0.679839621,frank,24,negative
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,5,I am an Aquarius,0.749401441,frank,22,aquarius
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,4,Air is pretty nice,0.840035787,frank,48,none
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,15,I think I'm smart,0.855267895,frank,43,positive
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,10,I am tall,0.868112641,frank,35,neutral
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,13,School is okay,0.8889267359999999,frank,14,neutral
+stu_QBTFP2812O,2022/03/15 6:03:12 PM AST,9,I'm good at baseball,0.985532678,frank,29,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,16,a reader,0.089375161,clara,25,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,4,involved,0.102886041,clara,43,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,2,bisexual,0.146006532,clara,3,bisexual
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,1,In an honors 8 math class,0.161759235,clara,14,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,8,Going to [SCHOOL NAME] for highshool,0.21691313899999998,clara,14,neutral
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,17,love to sing,0.341698864,clara,26,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,17,love to sing,0.341698864,clara,24,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,3,Funny,0.43695636299999996,clara,44,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,9,[FIRST & LAST NAME],0.449596083,clara,5,none
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,6,confident,0.454933266,clara,45,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,7,A reader,0.46553042200000005,clara,25,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,19,crafter,0.46755336700000005,clara,26,neutral
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,12,Friendly,0.556154704,frank,44,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,5,hopefully pretty,0.575823463,frank,35,positive
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,11,A hopeless romantic,0.5959747710000001,frank,44,neutral
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,20,The girl on [A YOUTUBE CHANNEL],0.6351786389999999,frank,27,neutral
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,20,The girl on [A YOUTUBE CHANNEL],0.6351786389999999,frank,2,girl
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,15,Want to be a writer,0.63648785,frank,25,neutral
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,10,Brown short hair,0.646166739,frank,35,neutral
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,14,A polar bear in a past life,0.682070375,frank,48,none
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,18,"very uncultured, but I am trying to get better",0.754077647,frank,44,neutral
+stu_QVQAC5837Q,2022/03/15 1:51:50 PM AST,13,In my best life,0.860441268,frank,42,positive
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,17,missing,0.01818394,clara,48,none
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,3,Friendly,0.0590155,clara,44,positive
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,1,Son,0.103269739,clara,12,neutral
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,1,Son,0.103269739,clara,2,boy
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,19,silly,0.1412559,clara,45,neutral
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,20,I am [FIRST & LAST NAME],0.214221777,clara,5,none
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,2,Student,0.25174745600000004,clara,14,neutral
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,4,myself,0.31122059,clara,19,none
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,16,unhappy,0.315455871,clara,45,negative
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,12,popular (Alot of my close friends say this),0.37178489,clara,46,positive
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,15,unstable,0.381554671,clara,42,negative
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,6,Bisexual,0.50128409,clara,3,bisexual
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,10,stupid,0.564166492,frank,43,negative
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,18,talkative,0.5662289229999999,frank,44,neutral
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,7,happy,0.6147664860000001,frank,45,positive
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,14,male,0.643669908,frank,1,m
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,8,crazy,0.650226937,frank,45,neutral
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,9,smart,0.681528578,frank,43,positive
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,5,awake,0.736991485,frank,47,neutral
+stu_TBLLD7751R,2022/05/16 2:25:58 PM AST,11,interesting,0.999027676,frank,40,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,18,courages,0.016764433000000002,clara,41,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,1,i am a latino,0.061777834000000004,clara,7,latino
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,17,intellegente,0.077569866,clara,,
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,5,i have too many uncles to count,0.17470871,clara,12,neutral
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,19,strong,0.21470471800000002,clara,43,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,2,i am a 15 years old,0.290740182,clara,4,15
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,6,my only grandparent lives in mexico,0.32640386600000004,clara,12,neutral
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,13,i am lazy,0.41800123200000006,clara,41,negative
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,12,i have 5 family members,0.44693808700000004,clara,12,neutral
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,11,my favorite show is dragon ball,0.447079901,clara,24,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,3,i am an A student,0.491590112,clara,14,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,8,i am the best at math in my family,0.501309793,clara,25,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,7,i am the tallest in my family,0.537208351,frank,35,neutral
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,10,i love video games,0.53726084,frank,28,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,10,i love video games,0.53726084,frank,24,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,16,funny,0.60548311,frank,44,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,9,i teach my older brother math,0.64456452,frank,12,neutral
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,20,hard working,0.806107056,frank,41,positive
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,15,tall,0.9207263379999999,frank,35,neutral
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,4,i am the youngest son,0.9560744659999999,frank,12,neutral
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,4,i am the youngest son,0.9560744659999999,frank,2,boy
+stu_TZHMJ7937V,2022/05/17 12:56:16 AM AST,14,i am for the most part joyful,0.966425027,frank,45,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,17,SINGING IS AWESOME!!!,0.059736427,clara,26,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,20,I LOVE VOLLEYBALL!!!!!??,0.085419538,clara,29,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,20,I LOVE VOLLEYBALL!!!!!??,0.085419538,clara,24,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,1,I am a volleyball player.,0.107986551,clara,29,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,19,I hate snakes and cats (FIRST NAME & ANOTHER FIRST NAME).,0.17198181,clara,24,negative
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,3,I am an actress.,0.208765917,clara,26,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,12,Mathia is better then iready.,0.219949752,clara,47,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,2,I am a singer.,0.282962986,clara,26,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,13,VOLLEYBALL IS AWESOME!!!!!,0.336440505,clara,29,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,9,I love songwriting.,0.37459552700000004,clara,26,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,9,I love songwriting.,0.37459552700000004,clara,24,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,14,I am in 8th grade.,0.43818731,clara,22,8thgrade
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,14,I am in 8th grade.,0.43818731,clara,4,8thgrade
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,14,I am in 8th grade.,0.43818731,clara,14,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,15,I am 14.,0.466200127,clara,4,14
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,8,I love music.,0.468074675,clara,24,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,18,Drawing funny things is fun.,0.545719297,frank,26,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,6,I am a Star Wars fan.,0.547597121,frank,24,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,16,I like writing poems.,0.571334075,frank,26,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,16,I like writing poems.,0.571334075,frank,24,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,16,I like writing poems.,0.571334075,frank,25,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,11,I like using Staedtler erasers.,0.8279455640000001,frank,31,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,11,I like using Staedtler erasers.,0.8279455640000001,frank,24,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,7,I am a Marvel fan.,0.854795814,frank,24,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,5,I am a ukulele player.,0.965998452,frank,26,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,10,I love my friends.,0.9856530640000001,frank,24,positive
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,10,I love my friends.,0.9856530640000001,frank,10,neutral
+stu_UGGVA3982I,2022/03/15 1:57:14 PM AST,4,I am a piano player.,0.987177379,frank,26,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,3,a hopeless romantic,0.007810667,clara,45,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,4,a singer,0.009007105,clara,26,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,15,a comedian,0.029976015,clara,45,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,2,a poet,0.145926029,clara,26,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,17,a dog lover,0.20757186600000002,clara,24,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,5,a romance novel lover,0.288173432,clara,25,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,5,a romance novel lover,0.288173432,clara,24,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,16,someone who loves their hair curlers,0.41133433399999997,clara,31,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,16,someone who loves their hair curlers,0.41133433399999997,clara,24,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,8,a mushroom lover,0.44284604299999997,clara,24,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,6,an emotional person,0.46608722399999997,clara,45,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,9,an artistic mind,0.479141858,clara,26,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,13,an old soul,0.51594805,frank,19,none
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,19,a swiftie,0.553985097,frank,24,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,18,[A POPULAR TV SHOW WEBSITE] member,0.605534782,frank,27,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,1,A swimmer,0.7036001890000001,frank,29,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,14,a passionate athlete,0.7451732959999999,frank,29,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,12,a music lover,0.74970177,frank,26,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,12,a music lover,0.74970177,frank,24,positive
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,7,a pisces,0.756325397,frank,22,pisces
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,20,a stresser,0.884117391,frank,45,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,10,a shoe collector,0.885021735,frank,30,neutral
+stu_VVZZF7786I,2022/03/15 1:57:05 PM AST,11,someone who is allergic to pollen,0.8861786009999999,frank,36,neutral
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,7,ur great grandma,0.093428429,clara,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,9,a straight person,0.126932257,clara,3,straight
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,19,[FRIEND'S FIRST NAME] father,0.15351897,clara,10,neutral
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,17,TREEE,0.232446326,clara,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,15,They hating,0.31548461699999997,clara,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,6,ur grandpa,0.374394389,clara,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,16,told me to try to catch them dirty,0.37927835200000004,clara,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,18,[FAMOUS BASEBALL PLAYER],0.41140496299999996,clara,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,12,A Table,0.41729288299999995,clara,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,8,ur great grandpa,0.41978322,clara,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,13,Helicopter Helicopter,0.529342816,frank,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,3,ur uncle,0.5298664439999999,frank,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,1,ur mother,0.542380581,frank,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,11,I don't know you tell me,0.543061948,frank,20,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,5,ur grandma,0.599357335,frank,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,20,POKEMON GOTTA CATCH THEM ALL,0.661555546,frank,28,neutral
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,4,ur aunt,0.908564012,frank,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,2,ur father,0.90929376,frank,48,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,10,[FIRST & LAST NAME],0.9418338940000001,frank,5,none
+stu_XDOLV9291L,2022/03/15 5:15:47 PM AST,14,They see me rolling,0.943305067,frank,48,none
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,1,A female.,0.080219823,clara,1,female
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,6,Someone that is failing my classes.,0.081282822,clara,14,negative
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,13,Water polo player.,0.285398007,clara,29,neutral
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,2,I am white/European and Armenian.  Like the Kardashians :).,0.345011698,clara,7,armenian
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,2,I am white/European and Armenian.  Like the Kardashians :).,0.345011698,clara,6,white
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,4,Someone with adhd.,0.382988789,clara,38,none
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,11,Sister.,0.49868326399999996,clara,12,positive
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,11,Sister.,0.49868326399999996,clara,2,girl
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,18,,0.563945617,frank,48,none
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,12,Friend.,0.566562644,frank,10,neutral
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,16,,0.578091892,frank,48,none
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,5,Someone with anxiety.,0.5971561479999999,frank,37,neutral
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,10,I am very privileged money wise and very grateful for it.,0.687627964,frank,34,rich
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,8,Atheist.,0.782936503,frank,16,atheist
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,9,Supporter of the lgbtq+ community and blm.,0.807317705,frank,23,"lgbtq,blm supporter"
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,7,Pansexual.,0.84438394,frank,3,pansexual
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,19,,0.949725233,frank,48,none
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,3,Someone that was depressed over Covid.,0.952115811,frank,37,neutral
+stu_ZCTSK2718U,2022/03/15 5:20:28 PM AST,17,,0.982529595,frank,48,none
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,16,A child,0.00290839,clara,22,child
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,16,A child,0.00290839,clara,4,child
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,10,A human,0.010552825,clara,21,none
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,1,A middle schooler,0.010835118999999999,clara,22,middle schooler
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,18,A person,0.282649097,clara,21,none
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,6,A human,0.31038181600000003,clara,21,none
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,13,A person filling out this survey.,0.434411289,clara,47,neutral
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,5,A nintendo fan in general,0.527717959,frank,28,positive
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,5,A nintendo fan in general,0.527717959,frank,24,positive
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,20,A DC hater kind of,0.575362799,frank,24,negative
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,7,A proud Armenian,0.580125976,frank,7,armenian
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,14,A Mr. [TEACHER NAME] hater,0.599087646,frank,24,negative
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,15,A minor,0.640441222,frank,4,child
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,2,A kid who is good at math,0.682304111,frank,25,positive
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,2,A kid who is good at math,0.682304111,frank,4,child
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,17,A person,0.70221949,frank,21,none
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,19,A Marvel and Star Wars fan,0.763082893,frank,24,positive
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,8,A very nonathletic person,0.8356560259999999,frank,29,neutral
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,3,A pokemon fan,0.8395958370000001,frank,27,neutral
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,3,A pokemon fan,0.8395958370000001,frank,24,positive
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,4,A zelda fan,0.844611675,frank,29,neutral
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,4,A zelda fan,0.844611675,frank,24,positive
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,11,A dude,0.920526596,frank,2,boy
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,9,A person,0.965192527,frank,19,none
+stu_ZWGAX6637V,2022/03/15 1:56:31 PM AST,12,A Mathia user,0.98522038,frank,22,mathia user

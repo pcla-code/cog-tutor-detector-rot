@@ -1,0 +1,615 @@
+anon_userid,Answer Rank,Who Am I?,Code,Valence
+stu_AJMSL3816R,3,a person,21.0,none
+stu_AJMSL3816R,16,A hater,44.0,negative
+stu_AJMSL3816R,12,not everyones favriote,46.0,negative
+stu_AJMSL3816R,19,A niece,12.0,neutral
+stu_AJMSL3816R,19,A niece,2.0,girl
+stu_AJMSL3816R,7,A student,14.0,neutral
+stu_AJMSL3816R,20,i have too many aunties to count,12.0,neutral
+stu_AJMSL3816R,2,9th grader,22.0,9thgrade
+stu_AJMSL3816R,2,9th grader,4.0,9thgrade
+stu_AJMSL3816R,2,9th grader,14.0,neutral
+stu_AJMSL3816R,13,A introvert,44.0,neutral
+stu_AJMSL3816R,14,A Simp,46.0,negative
+stu_AJMSL3816R,18,A aunt,12.0,neutral
+stu_AJMSL3816R,6,A Friend,10.0,neutral
+stu_AJMSL3816R,4,indapendent,44.0,neutral
+stu_AJMSL3816R,15,A lover,44.0,neutral
+stu_AJMSL3816R,5,A sister,12.0,neutral
+stu_AJMSL3816R,5,A sister,2.0,girl
+stu_AJMSL3816R,17,bad grade student,25.0,negative
+stu_AJMSL3816R,17,bad grade student,14.0,neutral
+stu_AJMSL3816R,11,[SCHOOL NAME] student,14.0,neutral
+stu_AJMSL3816R,9,A Cousin,12.0,neutral
+stu_AJMSL3816R,1,A Girl,2.0,girl
+stu_AJMSL3816R,8,A Daughter,12.0,neutral
+stu_AJMSL3816R,8,A Daughter,2.0,girl
+stu_AJMSL3816R,10,mommys baby,12.0,neutral
+stu_AUQLX2144H,19,I am a pilot in [POPULAR VIDEO GAME],28.0,neutral
+stu_AUQLX2144H,20,"I am the top driver in the [YEAR, POPULAR F1 CHAMPIONSHIP]",28.0,positive
+stu_AUQLX2144H,9,I am 14,4.0,14
+stu_AUQLX2144H,5,I am done with the toll,47.0,neutral
+stu_AUQLX2144H,8,I am in math class,47.0,neutral
+stu_AUQLX2144H,13,I am related to no one in vermont,48.0,none
+stu_AUQLX2144H,6,I am going to not do ib,14.0,negative
+stu_AUQLX2144H,3,I am tall,35.0,neutral
+stu_AUQLX2144H,2,I am filling out a survey,47.0,neutral
+stu_AUQLX2144H,11,I am a citizen,8.0,citizen
+stu_AUQLX2144H,1,[FIRST & LAST NAME],5.0,none
+stu_AUQLX2144H,16,I am a son,12.0,neutral
+stu_AUQLX2144H,16,I am a son,2.0,boy
+stu_AUQLX2144H,17,I am having trouble coming up with more answers,47.0,neutral
+stu_AUQLX2144H,10,I am a corner infielder,29.0,neutral
+stu_AUQLX2144H,15,I am a student,14.0,neutral
+stu_AUQLX2144H,18,I am good at graphic design,27.0,neutral
+stu_AUQLX2144H,18,I am good at graphic design,26.0,neutral
+stu_AUQLX2144H,7,I am level 12 in Pokemon Go,28.0,neutral
+stu_AUQLX2144H,12,I am never using an iphone,27.0,negative
+stu_AUQLX2144H,14,I am in [CITY],9.0,not sure
+stu_AUQLX2144H,4,I am 19% done with mathia,47.0,neutral
+stu_BUYXD2520P,6,I have a brother.,12.0,neutral
+stu_BUYXD2520P,7,I'm learning to drive in a year.,31.0,neutral
+stu_BUYXD2520P,2,I'm learning how to play guitar.,26.0,neutral
+stu_BUYXD2520P,12,My birthday is [DATE],48.0,neutral
+stu_BUYXD2520P,11,My favorite animal is a frog.,24.0,positive
+stu_BUYXD2520P,13,,48.0,none
+stu_BUYXD2520P,10,My favorite color is green.,24.0,positive
+stu_BUYXD2520P,15,,48.0,none
+stu_BUYXD2520P,8,I'm an artist.,26.0,neutral
+stu_BUYXD2520P,5,I like rock/indie music.,26.0,neutral
+stu_BUYXD2520P,5,I like rock/indie music.,24.0,positive
+stu_BUYXD2520P,1,I'm 14 years old.,4.0,14 year old
+stu_BUYXD2520P,9,I'm a writer.,25.0,neutral
+stu_BUYXD2520P,14,,48.0,none
+stu_BUYXD2520P,4,I can skateboard.,29.0,neutral
+stu_BUYXD2520P,3,I have a dog.,32.0,none
+stu_CDQME8338E,2,[FIRST & LAST NAME],5.0,none
+stu_CDQME8338E,20,likes plain clothes,24.0,positive
+stu_CDQME8338E,10,a kid,22.0,kid
+stu_CDQME8338E,10,a kid,4.0,kid
+stu_CDQME8338E,8,has brown eyes,35.0,neutral
+stu_CDQME8338E,18,funny sometimes,44.0,positive
+stu_CDQME8338E,18,simple,45.0,neutral
+stu_CDQME8338E,6,straight,3.0,straight
+stu_CDQME8338E,16,short,35.0,neutral
+stu_CDQME8338E,4,has brown hair,35.0,neutral
+stu_CDQME8338E,12,a quiet person sometimes,44.0,neutral
+stu_CDQME8338E,10,a person with find grades,14.0,neutral
+stu_CDQME8338E,12,Chinese,7.0,chinese
+stu_CDQME8338E,20,boring sometimes,44.0,negative
+stu_CDQME8338E,4,A girl,2.0,girl
+stu_CDQME8338E,16,an introvert,44.0,neutral
+stu_CDQME8338E,14,A person who likes art,26.0,neutral
+stu_CDQME8338E,14,A person who likes art,24.0,positive
+stu_CDQME8338E,8,Not studious,41.0,neutral
+stu_CDQME8338E,14,an extrovert,44.0,neutral
+stu_CDQME8338E,2,likes drawing,26.0,neutral
+stu_CDQME8338E,2,likes drawing,24.0,positive
+stu_CDQME8338E,6,13 years old,4.0,13 year old
+stu_DYWGH4533N,12,I am a black girl,6.0,black
+stu_DYWGH4533N,12,I am a black girl,2.0,girl
+stu_DYWGH4533N,6,I am a black girl,6.0,black
+stu_DYWGH4533N,6,I am a black girl,2.0,girl
+stu_DYWGH4533N,17,I am a black girl,6.0,black
+stu_DYWGH4533N,17,I am a black girl,2.0,girl
+stu_DYWGH4533N,18,I am a black girl,6.0,black
+stu_DYWGH4533N,18,I am a black girl,2.0,girl
+stu_DYWGH4533N,20,I am a black girl,6.0,black
+stu_DYWGH4533N,20,I am a black girl,2.0,girl
+stu_DYWGH4533N,14,I am a black girl,6.0,black
+stu_DYWGH4533N,14,I am a black girl,2.0,girl
+stu_DYWGH4533N,11,I am a black girl,6.0,black
+stu_DYWGH4533N,11,I am a black girl,2.0,girl
+stu_DYWGH4533N,19,I am a black girl,6.0,black
+stu_DYWGH4533N,19,I am a black girl,2.0,girl
+stu_DYWGH4533N,4,I am a black girl,6.0,black
+stu_DYWGH4533N,4,I am a black girl,2.0,girl
+stu_DYWGH4533N,13,I am a black girl,6.0,black
+stu_DYWGH4533N,13,I am a black girl,2.0,girl
+stu_DYWGH4533N,3,I am a black girl,6.0,black
+stu_DYWGH4533N,3,I am a black girl,2.0,girl
+stu_DYWGH4533N,8,I am a black girl,6.0,black
+stu_DYWGH4533N,8,I am a black girl,2.0,girl
+stu_DYWGH4533N,16,I am a black girl,6.0,black
+stu_DYWGH4533N,16,I am a black girl,2.0,girl
+stu_DYWGH4533N,9,I am a black girl,6.0,black
+stu_DYWGH4533N,9,I am a black girl,2.0,girl
+stu_DYWGH4533N,5,I am a black girl,6.0,black
+stu_DYWGH4533N,5,I am a black girl,2.0,girl
+stu_DYWGH4533N,15,I am a black girl,6.0,black
+stu_DYWGH4533N,15,I am a black girl,2.0,girl
+stu_DYWGH4533N,7,I am a black girl,6.0,black
+stu_DYWGH4533N,7,I am a black girl,2.0,girl
+stu_DYWGH4533N,2,I am a black girl,6.0,black
+stu_DYWGH4533N,2,I am a black girl,2.0,girl
+stu_DYWGH4533N,1,I am a black girl,6.0,black
+stu_DYWGH4533N,1,I am a black girl,2.0,girl
+stu_DYWGH4533N,10,I am a black girl,6.0,black
+stu_DYWGH4533N,10,I am a black girl,2.0,girl
+stu_EPPBQ3873F,5,I am quater Japanese,7.0,japanese
+stu_EPPBQ3873F,20,Im am man,2.0,man
+stu_EPPBQ3873F,13,I am trying to learn a new language,31.0,neutral
+stu_EPPBQ3873F,6,I am Greman,7.0,german
+stu_EPPBQ3873F,19,I am goodish at drawing,26.0,positive
+stu_EPPBQ3873F,3,A star wars nerd,22.0,nerd
+stu_EPPBQ3873F,10,I am someone with long hair I am someone who likes to cosplay,35.0,neutral
+stu_EPPBQ3873F,10,I am someone with long hair I am someone who likes to cosplay,24.0,positive
+stu_EPPBQ3873F,10,I am someone with long hair I am someone who likes to cosplay,31.0,positive
+stu_EPPBQ3873F,11,I am not good with social interactions,45.0,negative
+stu_EPPBQ3873F,8,I am somone that dosent like to read,25.0,negative
+stu_EPPBQ3873F,8,I am somone that dosent like to read,24.0,negative
+stu_EPPBQ3873F,16,I am an anime fan,24.0,positive
+stu_EPPBQ3873F,14,I am not good at fashion,30.0,negative
+stu_EPPBQ3873F,9,I am a theme park nerd,22.0,nerd
+stu_EPPBQ3873F,18,I am a bad at talking to new people,44.0,negative
+stu_EPPBQ3873F,4,a mostly A grade student,25.0,neutral
+stu_EPPBQ3873F,4,a mostly A grade student,14.0,neutral
+stu_EPPBQ3873F,17,I am an ok cook,31.0,neutral
+stu_EPPBQ3873F,12,I am not very good at sports,29.0,neutral
+stu_EPPBQ3873F,7,i am somtimes smart,43.0,positive
+stu_EPPBQ3873F,15,I am a Marvel fan,24.0,positive
+stu_EPPBQ3873F,2,funny sometimes,44.0,positive
+stu_EPPBQ3873F,1,[FIRST & LAST NAME],5.0,none
+stu_FRYMF1735S,12,I like tennis,24.0,positive
+stu_FRYMF1735S,15,I like going on vacations.,31.0,positive
+stu_FRYMF1735S,15,I like going on vacations.,24.0,positive
+stu_FRYMF1735S,17,I love listening to classical music,26.0,positive
+stu_FRYMF1735S,17,I love listening to classical music,24.0,positive
+stu_FRYMF1735S,14,I like swimming,29.0,positive
+stu_FRYMF1735S,14,I like swimming,24.0,positive
+stu_FRYMF1735S,16,I am a triliguist.,22.0,trilingual
+stu_FRYMF1735S,13,I hate running,29.0,negative
+stu_FRYMF1735S,13,I hate running,24.0,negative
+stu_FRYMF1735S,6,I am extroverted.,44.0,neutral
+stu_FRYMF1735S,19,"I like consider myself smart, although I'm not sure.",43.0,positive
+stu_FRYMF1735S,10,I enjoy eating food.,24.0,positive
+stu_FRYMF1735S,7,I am a lover of the arts.,25.0,positive
+stu_FRYMF1735S,7,I am a lover of the arts.,24.0,positive
+stu_FRYMF1735S,5,I identify as a heterosexual female.,3.0,female
+stu_FRYMF1735S,5,I identify as a heterosexual female.,1.0,heterosexual
+stu_FRYMF1735S,8,I am a writer.,26.0,neutral
+stu_FRYMF1735S,3,I am Moroccan-Italian.,7.0,moroccan-italian
+stu_FRYMF1735S,1,I identify as female.,1.0,female
+stu_FRYMF1735S,20,I am young,4.0,young
+stu_FRYMF1735S,2,I identify as North African-American.,7.0,north african-american
+stu_FRYMF1735S,4,I am funny.,46.0,positive
+stu_FRYMF1735S,11,I enjoy doing mathematics.,25.0,neutral
+stu_FRYMF1735S,11,I enjoy doing mathematics.,24.0,positive
+stu_FRYMF1735S,18,I like watching television.,27.0,neutral
+stu_FRYMF1735S,18,I like watching television.,24.0,positive
+stu_FRYMF1735S,9,I am a student.,14.0,neutral
+stu_HDDFY3165H,14,I am all out of pencils. Please lend me some.,47.0,negative
+stu_HDDFY3165H,5,I am a blonde.,35.0,neutral
+stu_HDDFY3165H,3,I'm a 13 year old,4.0,13
+stu_HDDFY3165H,17,I am [CHARACTER NAME] in the play.,26.0,neutral
+stu_HDDFY3165H,16,I am a student.,14.0,neutral
+stu_HDDFY3165H,7,I am a great volleyball player and softball player.,29.0,positive
+stu_HDDFY3165H,19,I am person who was not prepared to explore their identity for a 5$ amazon giftcard.,47.0,negative
+stu_HDDFY3165H,12,I am a trail runner.,29.0,neutral
+stu_HDDFY3165H,18,"I am a gemini, therefor I have an amazing personality.",45.0,positive
+stu_HDDFY3165H,18,"I am a gemini, therefor I have an amazing personality.",22.0,gemini
+stu_HDDFY3165H,1,I am an athlete?,29.0,neutral
+stu_HDDFY3165H,11,I am a girl.,2.0,girl
+stu_HDDFY3165H,9,I am a person scared about moving.,47.0,negative
+stu_HDDFY3165H,4,I am a person confused about this survey.,47.0,neutral
+stu_HDDFY3165H,8,I am broke.,34.0,poor
+stu_HDDFY3165H,13,I am happy.,45.0,positive
+stu_HDDFY3165H,6,I am an artist and performer.,26.0,neutral
+stu_HDDFY3165H,15,I am a walking dad joke dispenser.,45.0,neutral
+stu_HDDFY3165H,2,I'm [FIRST NAME],5.0,none
+stu_HDDFY3165H,10,I am a member of my community.,22.0,not sure
+stu_HDDFY3165H,20,I am feeling very accomplished for finishing this survey.,47.0,positive
+stu_HSPMF9210Q,7,Cool kid,46.0,positive
+stu_HSPMF9210Q,7,Cool kid,4.0,kid
+stu_HSPMF9210Q,7,Cool kid,22.0,kid
+stu_HSPMF9210Q,2,[CLASSMATE'S FIRST & LAST NAME]'s plug,10.0,positive
+stu_HSPMF9210Q,6,[FIRST NAME INITIAL]-W69,5.0,none
+stu_HSPMF9210Q,4,[FIRST NAME INITIAL & LAST NAME],5.0,none
+stu_HSPMF9210Q,13,[FIRST NAME & LAST INITAL],5.0,none
+stu_HSPMF9210Q,17,[VARIATION OF NAME],5.0,none
+stu_HSPMF9210Q,3,NBA Lil [NAME INITIAL],5.0,none
+stu_HSPMF9210Q,10,[FIRST & LAST NAME],5.0,none
+stu_HSPMF9210Q,20,[VARIATION OF NAME],5.0,none
+stu_HSPMF9210Q,8,[POPULAR VIDEO GAME],48.0,none
+stu_HSPMF9210Q,19,[VARIATION OF NAME],5.0,none
+stu_HSPMF9210Q,9,[FIRST NAME],5.0,none
+stu_HSPMF9210Q,15,[POPULAR VIDEO GAME],28.0,neutral
+stu_HSPMF9210Q,14,[FIRST INITIAL & LAST NAME],5.0,none
+stu_HSPMF9210Q,18,[VARIATION OF NAME],5.0,none
+stu_HSPMF9210Q,1,[CLASSMATE'S FIRST & LAST NAME]'s mom,48.0,none
+stu_HSPMF9210Q,5,The Big [FIRST NAME INITIAL],5.0,none
+stu_HSPMF9210Q,16,[INTERNET USERNAME],27.0,neutral
+stu_HSPMF9210Q,16,[INTERNET USERNAME],5.0,none
+stu_HSPMF9210Q,11,[FIRST & LAST NAME],5.0,none
+stu_HSPMF9210Q,12,[FIRST NAME],5.0,none
+stu_IJDRZ1838Q,2,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,17,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,15,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,5,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,3,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,6,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,14,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,19,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,4,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,8,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,9,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,7,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,11,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,10,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,16,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,12,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,13,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,18,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,1,I am [FIRST & LAST NAME],5.0,none
+stu_IJDRZ1838Q,20,I am [FIRST & LAST NAME],5.0,none
+stu_ISMGM5117Q,7,I am not mean,44.0,positive
+stu_ISMGM5117Q,16,....,48.0,none
+stu_ISMGM5117Q,2,I like science,25.0,positive
+stu_ISMGM5117Q,2,I like science,24.0,positive
+stu_ISMGM5117Q,1,I am a human,21.0,none
+stu_ISMGM5117Q,20,....,48.0,none
+stu_ISMGM5117Q,19,....,48.0,none
+stu_ISMGM5117Q,10,I don't know,20.0,none
+stu_ISMGM5117Q,8,I like being human,24.0,positive
+stu_ISMGM5117Q,8,I like being human,21.0,human
+stu_ISMGM5117Q,12,...,48.0,none
+stu_ISMGM5117Q,9,I am a kid,4.0,child
+stu_ISMGM5117Q,17,....,48.0,none
+stu_ISMGM5117Q,18,....,48.0,none
+stu_ISMGM5117Q,4,I am a soccer player,29.0,neutral
+stu_ISMGM5117Q,5,I am considered athletic,29.0,neutral
+stu_ISMGM5117Q,11,I don't know,20.0,none
+stu_ISMGM5117Q,3,I was in math academy,25.0,neutral
+stu_ISMGM5117Q,14,......,48.0,none
+stu_ISMGM5117Q,6,I am in middle school,22.0,middleschooler
+stu_ISMGM5117Q,6,I am in middle school,14.0,neutral
+stu_ISMGM5117Q,13,.....,48.0,none
+stu_JYAJW1106C,12,a fisherman,31.0,neutral
+stu_JYAJW1106C,8,a kid,22.0,kid
+stu_JYAJW1106C,8,a kid,4.0,kid
+stu_JYAJW1106C,5,an aisian,6.0,asian
+stu_JYAJW1106C,11,a [POPULAR VIDEO GAME] player,28.0,neutral
+stu_JYAJW1106C,10,a football kid,29.0,neutral
+stu_JYAJW1106C,10,a football kid,4.0,kid
+stu_JYAJW1106C,3,a human,21.0,none
+stu_JYAJW1106C,4,a friend,10.0,neutral
+stu_JYAJW1106C,16,,48.0,none
+stu_JYAJW1106C,2,at [SCHOOL NAME],14.0,neutral
+stu_JYAJW1106C,1,an 8th grader,14.0,neutral
+stu_JYAJW1106C,6,a gamer,28.0,neutral
+stu_JYAJW1106C,19,,48.0,none
+stu_JYAJW1106C,17,,48.0,none
+stu_JYAJW1106C,14,,48.0,none
+stu_JYAJW1106C,9,a teen,22.0,teenager
+stu_JYAJW1106C,7,a playa,44.0,neutral
+stu_JYAJW1106C,15,,48.0,none
+stu_KGGVG8695W,6,I'm Korean,7.0,korean
+stu_KGGVG8695W,9,I'm a cracked fortnite gamer,28.0,positive
+stu_KGGVG8695W,3,I'm a friend of [FIRST NAME],10.0,neutral
+stu_KGGVG8695W,8,I'm [FIRST NAME],5.0,none
+stu_KGGVG8695W,1,I'm human,21.0,none
+stu_KGGVG8695W,7,I'm Asian,6.0,asian
+stu_KGGVG8695W,4,I'm [NAME INITIALS]'s friend,10.0,neutral
+stu_KGGVG8695W,11,Im a mathematician,25.0,neutral
+stu_KGGVG8695W,12,Im an architectural designer,26.0,neutral
+stu_KGGVG8695W,12,Im an architectural designer,25.0,neutral
+stu_KGGVG8695W,20,,48.0,none
+stu_KGGVG8695W,5,I'm a playa,44.0,neutral
+stu_KGGVG8695W,2,I'm in [SCHOOL NAME],14.0,neutral
+stu_KGGVG8695W,18,,48.0,none
+stu_KGGVG8695W,10,Im a duck,48.0,none
+stu_MMPEO7609Y,6,outside and inside guy,44.0,neutral
+stu_MMPEO7609Y,9,computer science/coding,27.0,neutral
+stu_MMPEO7609Y,8,2 languages,22.0,bilingual
+stu_MMPEO7609Y,11,love to try foods from other cultures,31.0,positive
+stu_MMPEO7609Y,11,love to try foods from other cultures,24.0,positive
+stu_MMPEO7609Y,18,watching basketball,47.0,neutral
+stu_MMPEO7609Y,2,A athlete,29.0,neutral
+stu_MMPEO7609Y,16,watching hockey,47.0,neutral
+stu_MMPEO7609Y,7,early to everything,43.0,none
+stu_MMPEO7609Y,20,[POPULAR SKIING MOUNTAIN] :),29.0,neutral
+stu_MMPEO7609Y,1,A friend/happy/caring,10.0,positive
+stu_MMPEO7609Y,10,films/editing,27.0,neural
+stu_MMPEO7609Y,3,a hard worker,41.0,positive
+stu_MMPEO7609Y,19,watching baeball,47.0,neutralneutral
+stu_MMPEO7609Y,19,watching baeball,29.0,neutralneutral
+stu_MMPEO7609Y,14,going on very fast/big roller coasters,47.0,neutral
+stu_MMPEO7609Y,12,going to new places,31.0,neutral
+stu_MMPEO7609Y,13,seeing live sporting events,29.0,neutral
+stu_MMPEO7609Y,17,watching soccer,47.0,neutral
+stu_MMPEO7609Y,17,watching soccer,29.0,neutral
+stu_MMPEO7609Y,4,"skier, snowboarder, and a surfer sometimes",29.0,neutral
+stu_MMPEO7609Y,5,A math person,25.0,positive
+stu_MMPEO7609Y,15,watching football,47.0,neutral
+stu_MPFAT1157P,10,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,13,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,20,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,18,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,9,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,6,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,15,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,2,Student,14.0,neutral
+stu_MPFAT1157P,5,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,14,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,11,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,4,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,17,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,1,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,16,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,8,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,3,Teenage girl,22.0,teenager
+stu_MPFAT1157P,3,Teenage girl,2.0,girl
+stu_MPFAT1157P,3,Teenage girl,4.0,teenager
+stu_MPFAT1157P,7,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,12,[FIRST & LAST NAME],5.0,none
+stu_MPFAT1157P,19,[FIRST & LAST NAME],5.0,none
+stu_MYPPF5696O,1,I love Soccer,29.0,positive
+stu_MYPPF5696O,1,I love Soccer,24.0,positive
+stu_MYPPF5696O,14,I love soccer,29.0,positive
+stu_MYPPF5696O,14,I love soccer,24.0,positive
+stu_MYPPF5696O,10,I love my best friend [FIRST NAME],10.0,positive
+stu_MYPPF5696O,9,I love my best friend [FIRST NAME],10.0,positive
+stu_MYPPF5696O,16,I love playing wing-back in soccer,29.0,positive
+stu_MYPPF5696O,16,I love playing wing-back in soccer,24.0,positive
+stu_MYPPF5696O,5,I love music,26.0,positive
+stu_MYPPF5696O,5,I love music,24.0,positive
+stu_MYPPF5696O,18,I have good grades and work hard,41.0,positive
+stu_MYPPF5696O,18,I have good grades and work hard,14.0,positive
+stu_MYPPF5696O,2,I love dogs,24.0,positive
+stu_MYPPF5696O,6,Soccer is my life,29.0,positive
+stu_MYPPF5696O,19,I strongly dislike math,25.0,negative
+stu_MYPPF5696O,19,I strongly dislike math,24.0,negative
+stu_MYPPF5696O,11,I love my best friend [FIRST NAME],10.0,positive
+stu_MYPPF5696O,4,I love my sister,12.0,positive
+stu_MYPPF5696O,8,I love La Jolla/Ventura,24.0,positive
+stu_MYPPF5696O,15,I love soccer,29.0,positive
+stu_MYPPF5696O,15,I love soccer,24.0,positive
+stu_MYPPF5696O,13,I love acting,26.0,positive
+stu_MYPPF5696O,13,I love acting,24.0,positive
+stu_MYPPF5696O,20,I love soccer,29.0,neutral
+stu_MYPPF5696O,20,I love soccer,24.0,positive
+stu_MYPPF5696O,12,I love Soccer,29.0,neutral
+stu_MYPPF5696O,12,I love Soccer,24.0,positive
+stu_MYPPF5696O,7,I care about my grades,25.0,neutral
+stu_MYPPF5696O,3,I love my parents,24.0,positive
+stu_MYPPF5696O,3,I love my parents,12.0,neutral
+stu_MYPPF5696O,17,I love talk to my friends,31.0,neutral
+stu_MYPPF5696O,17,I love talk to my friends,10.0,neutral
+stu_MYPPF5696O,17,I love talk to my friends,24.0,positive
+stu_PTDFD3837B,18,I like listening to documentaries,31.0,positive
+stu_PTDFD3837B,18,I like listening to documentaries,24.0,positive
+stu_PTDFD3837B,15,I like playing baseball,29.0,positive
+stu_PTDFD3837B,15,I like playing baseball,24.0,positive
+stu_PTDFD3837B,5,I am 15 years old,4.0,15
+stu_PTDFD3837B,8,I like reading books,25.0,positive
+stu_PTDFD3837B,8,I like reading books,24.0,positive
+stu_PTDFD3837B,10,I am friendly,44.0,positive
+stu_PTDFD3837B,6,I live in [CITY],9.0,neutral
+stu_PTDFD3837B,20,I love my family,12.0,positive
+stu_PTDFD3837B,14,I like watching action movies or science fiction movies,31.0,neutral
+stu_PTDFD3837B,14,I like watching action movies or science fiction movies,24.0,positive
+stu_PTDFD3837B,13,I like learning about anything medical,25.0,neutral
+stu_PTDFD3837B,13,I like learning about anything medical,24.0,positive
+stu_PTDFD3837B,11,I like playing games,28.0,neutral
+stu_PTDFD3837B,11,I like playing games,24.0,positive
+stu_PTDFD3837B,7,I excel in Mathematics,25.0,positive
+stu_PTDFD3837B,17,I like observing things like animal behavior,31.0,neutral
+stu_PTDFD3837B,17,I like observing things like animal behavior,24.0,positive
+stu_PTDFD3837B,16,I like solving puzzles,31.0,neutral
+stu_PTDFD3837B,16,I like solving puzzles,24.0,positive
+stu_PTDFD3837B,3,I am FIlipino,7.0,filipino
+stu_PTDFD3837B,12,I like biology,25.0,neutral
+stu_PTDFD3837B,12,I like biology,24.0,positive
+stu_PTDFD3837B,2,I'm a second child,12.0,neutral
+stu_PTDFD3837B,19,I like talking with my sister,24.0,positive
+stu_PTDFD3837B,19,I like talking with my sister,12.0,neutral
+stu_PTDFD3837B,9,I like playing badminton,29.0,neutral
+stu_PTDFD3837B,9,I like playing badminton,24.0,positive
+stu_PTDFD3837B,4,I was born at [BIRTHDATE],4.0,not sure
+stu_PTDFD3837B,1,"I am [FIRST, MIDDLE & LAST NAME]",5.0,none
+stu_QBTFP2812O,11,I am big,35.0,neutral
+stu_QBTFP2812O,20,I like spring,24.0,positive
+stu_QBTFP2812O,12,I LOVE math,25.0,positive
+stu_QBTFP2812O,12,I LOVE math,24.0,positive
+stu_QBTFP2812O,2,I like water,24.0,positive
+stu_QBTFP2812O,1,I'm a boy,2.0,boy
+stu_QBTFP2812O,6,In 8th grade,22.0,8thgrade
+stu_QBTFP2812O,6,In 8th grade,4.0,8thgrade
+stu_QBTFP2812O,6,In 8th grade,14.0,neutral
+stu_QBTFP2812O,8,I play baseball,29.0,neutral
+stu_QBTFP2812O,18,I don't like soccer,29.0,negative
+stu_QBTFP2812O,18,I don't like soccer,24.0,negative
+stu_QBTFP2812O,14,I'm not short,35.0,neutral
+stu_QBTFP2812O,7,Going to high school next year,14.0,middleschooler
+stu_QBTFP2812O,7,Going to high school next year,4.0,teenager
+stu_QBTFP2812O,17,I like baseball,29.0,neutral
+stu_QBTFP2812O,17,I like baseball,24.0,positive
+stu_QBTFP2812O,16,I like computers,27.0,neutral
+stu_QBTFP2812O,16,I like computers,24.0,positive
+stu_QBTFP2812O,3,Food is enjoyable,24.0,positive
+stu_QBTFP2812O,19,I don't like winter,24.0,negative
+stu_QBTFP2812O,5,I am an Aquarius,22.0,aquarius
+stu_QBTFP2812O,4,Air is pretty nice,48.0,none
+stu_QBTFP2812O,15,I think I'm smart,43.0,positive
+stu_QBTFP2812O,10,I am tall,35.0,neutral
+stu_QBTFP2812O,13,School is okay,14.0,neutral
+stu_QBTFP2812O,9,I'm good at baseball,29.0,positive
+stu_QVQAC5837Q,16,a reader,25.0,positive
+stu_QVQAC5837Q,4,involved,43.0,positive
+stu_QVQAC5837Q,2,bisexual,3.0,bisexual
+stu_QVQAC5837Q,1,In an honors 8 math class,14.0,positive
+stu_QVQAC5837Q,8,Going to [SCHOOL NAME] for highshool,14.0,neutral
+stu_QVQAC5837Q,17,love to sing,26.0,positive
+stu_QVQAC5837Q,17,love to sing,24.0,positive
+stu_QVQAC5837Q,3,Funny,44.0,positive
+stu_QVQAC5837Q,9,[FIRST & LAST NAME],5.0,none
+stu_QVQAC5837Q,6,confident,45.0,positive
+stu_QVQAC5837Q,7,A reader,25.0,positive
+stu_QVQAC5837Q,19,crafter,26.0,neutral
+stu_QVQAC5837Q,12,Friendly,44.0,positive
+stu_QVQAC5837Q,5,hopefully pretty,35.0,positive
+stu_QVQAC5837Q,11,A hopeless romantic,44.0,neutral
+stu_QVQAC5837Q,20,The girl on [A YOUTUBE CHANNEL],27.0,neutral
+stu_QVQAC5837Q,20,The girl on [A YOUTUBE CHANNEL],2.0,girl
+stu_QVQAC5837Q,15,Want to be a writer,25.0,neutral
+stu_QVQAC5837Q,10,Brown short hair,35.0,neutral
+stu_QVQAC5837Q,14,A polar bear in a past life,48.0,none
+stu_QVQAC5837Q,18,"very uncultured, but I am trying to get better",44.0,neutral
+stu_QVQAC5837Q,13,In my best life,42.0,positive
+stu_TBLLD7751R,17,missing,48.0,none
+stu_TBLLD7751R,3,Friendly,44.0,positive
+stu_TBLLD7751R,1,Son,12.0,neutral
+stu_TBLLD7751R,1,Son,2.0,boy
+stu_TBLLD7751R,19,silly,45.0,neutral
+stu_TBLLD7751R,20,I am [FIRST & LAST NAME],5.0,none
+stu_TBLLD7751R,2,Student,14.0,neutral
+stu_TBLLD7751R,4,myself,19.0,none
+stu_TBLLD7751R,16,unhappy,45.0,negative
+stu_TBLLD7751R,12,popular (Alot of my close friends say this),46.0,positive
+stu_TBLLD7751R,15,unstable,42.0,negative
+stu_TBLLD7751R,6,Bisexual,3.0,bisexual
+stu_TBLLD7751R,10,stupid,43.0,negative
+stu_TBLLD7751R,18,talkative,44.0,neutral
+stu_TBLLD7751R,7,happy,45.0,positive
+stu_TBLLD7751R,14,male,1.0,m
+stu_TBLLD7751R,8,crazy,45.0,neutral
+stu_TBLLD7751R,9,smart,43.0,positive
+stu_TBLLD7751R,5,awake,47.0,neutral
+stu_TBLLD7751R,11,interesting,40.0,positive
+stu_TZHMJ7937V,18,courages,41.0,positive
+stu_TZHMJ7937V,1,i am a latino,7.0,latino
+stu_TZHMJ7937V,17,intellegente,,
+stu_TZHMJ7937V,5,i have too many uncles to count,12.0,neutral
+stu_TZHMJ7937V,19,strong,43.0,positive
+stu_TZHMJ7937V,2,i am a 15 years old,4.0,15
+stu_TZHMJ7937V,6,my only grandparent lives in mexico,12.0,neutral
+stu_TZHMJ7937V,13,i am lazy,41.0,negative
+stu_TZHMJ7937V,12,i have 5 family members,12.0,neutral
+stu_TZHMJ7937V,11,my favorite show is dragon ball,24.0,positive
+stu_TZHMJ7937V,3,i am an A student,14.0,positive
+stu_TZHMJ7937V,8,i am the best at math in my family,25.0,positive
+stu_TZHMJ7937V,7,i am the tallest in my family,35.0,neutral
+stu_TZHMJ7937V,10,i love video games,28.0,positive
+stu_TZHMJ7937V,10,i love video games,24.0,positive
+stu_TZHMJ7937V,16,funny,44.0,positive
+stu_TZHMJ7937V,9,i teach my older brother math,12.0,neutral
+stu_TZHMJ7937V,20,hard working,41.0,positive
+stu_TZHMJ7937V,15,tall,35.0,neutral
+stu_TZHMJ7937V,4,i am the youngest son,12.0,neutral
+stu_TZHMJ7937V,4,i am the youngest son,2.0,boy
+stu_TZHMJ7937V,14,i am for the most part joyful,45.0,positive
+stu_UGGVA3982I,17,SINGING IS AWESOME!!!,26.0,positive
+stu_UGGVA3982I,20,I LOVE VOLLEYBALL!!!!!??,29.0,positive
+stu_UGGVA3982I,20,I LOVE VOLLEYBALL!!!!!??,24.0,positive
+stu_UGGVA3982I,1,I am a volleyball player.,29.0,neutral
+stu_UGGVA3982I,19,I hate snakes and cats (FIRST NAME & ANOTHER FIRST NAME).,24.0,negative
+stu_UGGVA3982I,3,I am an actress.,26.0,neutral
+stu_UGGVA3982I,12,Mathia is better then iready.,47.0,positive
+stu_UGGVA3982I,2,I am a singer.,26.0,neutral
+stu_UGGVA3982I,13,VOLLEYBALL IS AWESOME!!!!!,29.0,positive
+stu_UGGVA3982I,9,I love songwriting.,26.0,positive
+stu_UGGVA3982I,9,I love songwriting.,24.0,positive
+stu_UGGVA3982I,14,I am in 8th grade.,22.0,8thgrade
+stu_UGGVA3982I,14,I am in 8th grade.,4.0,8thgrade
+stu_UGGVA3982I,14,I am in 8th grade.,14.0,neutral
+stu_UGGVA3982I,15,I am 14.,4.0,14
+stu_UGGVA3982I,8,I love music.,24.0,positive
+stu_UGGVA3982I,18,Drawing funny things is fun.,26.0,positive
+stu_UGGVA3982I,6,I am a Star Wars fan.,24.0,positive
+stu_UGGVA3982I,16,I like writing poems.,26.0,neutral
+stu_UGGVA3982I,16,I like writing poems.,24.0,positive
+stu_UGGVA3982I,16,I like writing poems.,25.0,neutral
+stu_UGGVA3982I,11,I like using Staedtler erasers.,31.0,neutral
+stu_UGGVA3982I,11,I like using Staedtler erasers.,24.0,positive
+stu_UGGVA3982I,7,I am a Marvel fan.,24.0,positive
+stu_UGGVA3982I,5,I am a ukulele player.,26.0,neutral
+stu_UGGVA3982I,10,I love my friends.,24.0,positive
+stu_UGGVA3982I,10,I love my friends.,10.0,neutral
+stu_UGGVA3982I,4,I am a piano player.,26.0,neutral
+stu_VVZZF7786I,3,a hopeless romantic,45.0,positive
+stu_VVZZF7786I,4,a singer,26.0,neutral
+stu_VVZZF7786I,15,a comedian,45.0,positive
+stu_VVZZF7786I,2,a poet,26.0,neutral
+stu_VVZZF7786I,17,a dog lover,24.0,positive
+stu_VVZZF7786I,5,a romance novel lover,25.0,positive
+stu_VVZZF7786I,5,a romance novel lover,24.0,positive
+stu_VVZZF7786I,16,someone who loves their hair curlers,31.0,positive
+stu_VVZZF7786I,16,someone who loves their hair curlers,24.0,positive
+stu_VVZZF7786I,8,a mushroom lover,24.0,positive
+stu_VVZZF7786I,6,an emotional person,45.0,neutral
+stu_VVZZF7786I,9,an artistic mind,26.0,positive
+stu_VVZZF7786I,13,an old soul,19.0,none
+stu_VVZZF7786I,19,a swiftie,24.0,positive
+stu_VVZZF7786I,18,[A POPULAR TV SHOW WEBSITE] member,27.0,neutral
+stu_VVZZF7786I,1,A swimmer,29.0,neutral
+stu_VVZZF7786I,14,a passionate athlete,29.0,positive
+stu_VVZZF7786I,12,a music lover,26.0,neutral
+stu_VVZZF7786I,12,a music lover,24.0,positive
+stu_VVZZF7786I,7,a pisces,22.0,pisces
+stu_VVZZF7786I,20,a stresser,45.0,neutral
+stu_VVZZF7786I,10,a shoe collector,30.0,neutral
+stu_VVZZF7786I,11,someone who is allergic to pollen,36.0,neutral
+stu_XDOLV9291L,7,ur great grandma,48.0,none
+stu_XDOLV9291L,9,a straight person,3.0,straight
+stu_XDOLV9291L,19,[FRIEND'S FIRST NAME] father,10.0,neutral
+stu_XDOLV9291L,17,TREEE,48.0,none
+stu_XDOLV9291L,15,They hating,48.0,none
+stu_XDOLV9291L,6,ur grandpa,48.0,none
+stu_XDOLV9291L,16,told me to try to catch them dirty,48.0,none
+stu_XDOLV9291L,18,[FAMOUS BASEBALL PLAYER],48.0,none
+stu_XDOLV9291L,12,A Table,48.0,none
+stu_XDOLV9291L,8,ur great grandpa,48.0,none
+stu_XDOLV9291L,13,Helicopter Helicopter,48.0,none
+stu_XDOLV9291L,3,ur uncle,48.0,none
+stu_XDOLV9291L,1,ur mother,48.0,none
+stu_XDOLV9291L,11,I don't know you tell me,20.0,none
+stu_XDOLV9291L,5,ur grandma,48.0,none
+stu_XDOLV9291L,20,POKEMON GOTTA CATCH THEM ALL,28.0,neutral
+stu_XDOLV9291L,4,ur aunt,48.0,none
+stu_XDOLV9291L,2,ur father,48.0,none
+stu_XDOLV9291L,10,[FIRST & LAST NAME],5.0,none
+stu_XDOLV9291L,14,They see me rolling,48.0,none
+stu_ZCTSK2718U,1,A female.,1.0,female
+stu_ZCTSK2718U,6,Someone that is failing my classes.,14.0,negative
+stu_ZCTSK2718U,13,Water polo player.,29.0,neutral
+stu_ZCTSK2718U,2,I am white/European and Armenian.  Like the Kardashians :).,7.0,armenian
+stu_ZCTSK2718U,2,I am white/European and Armenian.  Like the Kardashians :).,6.0,white
+stu_ZCTSK2718U,4,Someone with adhd.,38.0,none
+stu_ZCTSK2718U,11,Sister.,12.0,positive
+stu_ZCTSK2718U,11,Sister.,2.0,girl
+stu_ZCTSK2718U,18,,48.0,none
+stu_ZCTSK2718U,12,Friend.,10.0,neutral
+stu_ZCTSK2718U,16,,48.0,none
+stu_ZCTSK2718U,5,Someone with anxiety.,37.0,neutral
+stu_ZCTSK2718U,10,I am very privileged money wise and very grateful for it.,34.0,rich
+stu_ZCTSK2718U,8,Atheist.,16.0,atheist
+stu_ZCTSK2718U,9,Supporter of the lgbtq+ community and blm.,23.0,"lgbtq,blm supporter"
+stu_ZCTSK2718U,7,Pansexual.,3.0,pansexual
+stu_ZCTSK2718U,19,,48.0,none
+stu_ZCTSK2718U,3,Someone that was depressed over Covid.,37.0,neutral
+stu_ZCTSK2718U,17,,48.0,none
+stu_ZWGAX6637V,16,A child,22.0,child
+stu_ZWGAX6637V,16,A child,4.0,child
+stu_ZWGAX6637V,10,A human,21.0,none
+stu_ZWGAX6637V,1,A middle schooler,22.0,middle schooler
+stu_ZWGAX6637V,18,A person,21.0,none
+stu_ZWGAX6637V,6,A human,21.0,none
+stu_ZWGAX6637V,13,A person filling out this survey.,47.0,neutral
+stu_ZWGAX6637V,5,A nintendo fan in general,28.0,positive
+stu_ZWGAX6637V,5,A nintendo fan in general,24.0,positive
+stu_ZWGAX6637V,20,A DC hater kind of,24.0,negative
+stu_ZWGAX6637V,7,A proud Armenian,7.0,armenian
+stu_ZWGAX6637V,14,A Mr. [TEACHER NAME] hater,24.0,negative
+stu_ZWGAX6637V,15,A minor,4.0,child
+stu_ZWGAX6637V,2,A kid who is good at math,25.0,positive
+stu_ZWGAX6637V,2,A kid who is good at math,4.0,child
+stu_ZWGAX6637V,17,A person,21.0,none
+stu_ZWGAX6637V,19,A Marvel and Star Wars fan,24.0,positive
+stu_ZWGAX6637V,8,A very nonathletic person,29.0,neutral
+stu_ZWGAX6637V,3,A pokemon fan,27.0,neutral
+stu_ZWGAX6637V,3,A pokemon fan,24.0,positive
+stu_ZWGAX6637V,4,A zelda fan,29.0,neutral
+stu_ZWGAX6637V,4,A zelda fan,24.0,positive
+stu_ZWGAX6637V,11,A dude,2.0,boy
+stu_ZWGAX6637V,9,A person,19.0,none
+stu_ZWGAX6637V,12,A Mathia user,22.0,mathia user
